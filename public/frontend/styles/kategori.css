@@ -1,0 +1,43 @@
+body {
+  background-color: #DFDEDA;
+}
+
+header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: medium;
+  font-size: 30px;
+  padding-top: 150px;
+  margin-left: 110px;
+}
+
+.breadcrumb {
+  margin-left: 95px;
+  background-color: #DFDEDA;
+  font-family: "Poppins", sans-serif;
+  color: #070707;
+  font-size: 15px;
+}
+
+.breadcrumb a {
+  font-family: "Poppins", sans-serif;
+  font-weight: small;
+  color: #070707;
+  font-size: 15px;
+}
+
+.content-menu {
+  max-width: 1260px;
+}
+
+.card {
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 25px;
+}
+
+.card .card-title {
+  font-size: 25px;
+  font-weight: 500;
+  color: black;
+}
+/*# sourceMappingURL=kategori.css.map */

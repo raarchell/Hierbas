@@ -1,0 +1,99 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #91b494;
+  font-family: "Assistant", sans-serif;
+}
+
+.container nav {
+  background-color: #91b494;
+  position: fixed;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.navbar-brand img {
+  max-height: 70px;
+  padding-right: 480px;
+}
+
+.login-card {
+  margin: 110px 100px 0px 100px;
+  border-radius: 60px;
+  font-size: 18px;
+  width: 600px;
+  height: 500px;
+}
+
+h6 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 15px 0 20px;
+}
+
+h6 span {
+  background: #fff;
+  padding: 0 10px;
+  color: #858585;
+}
+
+.login-card h3 {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 44px;
+}
+
+.content-login {
+  margin: 0 70px 0 70px;
+}
+
+.btn-login {
+  margin-bottom: 70px;
+  background-color: #91b494;
+  color: #fff;
+  font-size: 20px;
+  width: 180px;
+  border-radius: 10px;
+}
+
+.btn-login:hover {
+  color: #fff;
+  background-color: #a0caa5;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: -70px;
+}
+
+.register-link u {
+  font-size: 15px;
+  color: #91b494;
+}
+
+footer {
+  background-color: #91b494;
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
+footer img {
+  margin-left: 220px;
+}
+
+footer .footer-link {
+  margin-left: -130px;
+}
+
+footer .footer-link a {
+  color: black;
+}
+
+footer .copy-right {
+  margin-left: 220px;
+}
+/*# sourceMappingURL=login.css.map */

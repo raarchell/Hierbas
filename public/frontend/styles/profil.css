@@ -1,0 +1,78 @@
+header {
+  margin-top: 130px;
+  margin-left: 200px;
+}
+
+header img {
+  height: 110px;
+  width: 110px;
+}
+
+header h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: medium;
+  font-size: 30px;
+  color: #070707;
+  padding-top: 30px;
+  margin-left: 50px;
+}
+
+.content-profil h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: medium;
+  font-size: 25px;
+  color: #070707;
+  padding-top: 90px;
+  margin-left: -120px;
+}
+
+.content-profil .card {
+  background-color: #d7d7d7;
+  margin-right: 190px;
+  margin-top: 86px;
+  border-radius: 20px;
+  font-size: 20px;
+  width: 640px;
+  height: 460px;
+}
+
+.card-body .form-group {
+  margin: 10px 190px 0 20px;
+}
+
+.btn-profil {
+  margin-bottom: 50px;
+  background-color: #91b494;
+  color: #fff;
+  font-size: 20px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.btn-profil:hover {
+  color: #fff;
+  background-color: #a0caa5;
+}
+
+footer {
+  background-color: #ffff;
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
+footer img {
+  margin-left: 220px;
+}
+
+footer .footer-link {
+  margin-left: -130px;
+}
+
+footer .footer-link a {
+  color: black;
+}
+
+footer .copy-right {
+  margin-left: 220px;
+}
+/*# sourceMappingURL=profil.css.map */

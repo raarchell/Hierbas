@@ -1,0 +1,50 @@
+body {
+  background-color: #DFDEDA;
+}
+
+header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: medium;
+  font-size: 30px;
+  padding-top: 150px;
+  margin-left: 110px;
+}
+
+.content-menu {
+  max-width: 1260px;
+}
+
+.card {
+  margin-top: 50px;
+}
+
+.card .card-title {
+  font-size: 25px;
+  font-weight: 500;
+  color: black;
+}
+
+.card p {
+  color: #858585;
+  font-size: 15px;
+}
+
+.card .card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.btn-details {
+  color: white;
+  background-color: #5E935D;
+  width: 100px;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 10px grey;
+          box-shadow: 3px 3px 10px grey;
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=menu-resep-tanaman.css.map */

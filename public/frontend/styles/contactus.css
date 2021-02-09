@@ -1,0 +1,99 @@
+body {
+  background-color: #91b494;
+}
+
+header h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: medium;
+  font-size: 30px;
+  color: #ffffff;
+  padding-top: 150px;
+  margin-left: 110px;
+}
+
+.content-contact {
+  margin: 60px 130px 0 130px;
+}
+
+.contact-alamat {
+  padding-left: 100px;
+}
+
+.contact-alamat h5 {
+  color: #ffffff;
+}
+
+.sosial-media a {
+  color: #ffffff;
+}
+
+.sosial-media {
+  padding-top: 150px;
+  margin: 0 170px 30px;
+}
+
+.contact-alamat .alamat-awal {
+  padding-top: 70px;
+}
+
+.card-form {
+  background-color: #dfdeda;
+  font-size: 20px;
+  border-radius: 60px;
+  width: 600px;
+}
+
+.form-pesan {
+  margin: 50px 50px 50px 50px;
+}
+
+#nama {
+  height: 50px;
+  border-radius: 10px;
+}
+
+#email {
+  height: 50px;
+  border-radius: 10px;
+}
+
+#pesan {
+  border-radius: 10px;
+}
+
+.btn-send {
+  color: #ffffff;
+  background-color: #91b494;
+  float: right;
+  font-size: 20px;
+  width: 150px;
+  height: 48px;
+  border-radius: 15px;
+}
+
+.btn-send:hover {
+  color: #ffffff;
+  background-color: #a0caa5;
+}
+
+footer {
+  background-color: #91b494;
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
+footer img {
+  margin-left: 220px;
+}
+
+footer .footer-link {
+  margin-left: -130px;
+}
+
+footer .footer-link a {
+  color: black;
+}
+
+footer .copy-right {
+  margin-left: 220px;
+}/*# sourceMappingURL=contactus.css.map */
