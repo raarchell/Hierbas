@@ -1,0 +1,22 @@
+footer {
+  background-color: #DFDEDA;
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
+footer img {
+  margin-left: 220px;
+}
+
+footer .footer-link {
+  margin-left: -130px;
+}
+
+footer .footer-link a {
+  color: black;
+}
+
+footer .copy-right {
+  margin-left: 220px;
+}
+/*# sourceMappingURL=footer.css.map */

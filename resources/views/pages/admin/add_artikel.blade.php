@@ -1,7 +1,7 @@
 @extends('layouts.admin.admin')
 @section('title', 'add_artikel')
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Artikel</a></li>

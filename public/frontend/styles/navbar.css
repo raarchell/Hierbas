@@ -1,0 +1,41 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Assistant", sans-serif;
+}
+
+.container nav {
+  background-color: #8f9384;
+}
+
+.navbar-toggler {
+  margin-left: 30px;
+}
+
+.navbar-brand img {
+  max-height: 70px;
+  padding-right: 480px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #90b494;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.dropdown-search {
+  left: auto !important;
+  right: 0 !important;
+  width: 250px;
+}
+/*# sourceMappingURL=navbar.css.map */

@@ -1,0 +1,139 @@
+body {
+  background-color: #dfdeda;
+}
+
+header h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: medium;
+  font-size: 35px;
+  color: #070707;
+  padding-top: 130px;
+  margin-left: 85px;
+}
+
+.section-resep {
+  padding-top: 20px;
+  padding-left: 120px;
+}
+
+.breadcrumb {
+  margin-left: 70px;
+  background-color: #dfdeda;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.breadcrumb a {
+  font-family: "Poppins", sans-serif;
+  font-weight: small;
+  color: #070707;
+  font-size: 15px;
+}
+
+.section-resep .card {
+  background-color: #ffffff;
+}
+
+.card-konten {
+  border-radius: 25px;
+}
+
+.card-postawal {
+  margin: 30px 30px 30px 30px;
+}
+
+.card-title {
+  font-size: 34px;
+}
+
+.card-postawal p {
+  font-size: 20px;
+}
+
+.card .card-img-top {
+  max-height: 400px;
+  max-width: 700px;
+}
+
+.card .text-post h5 {
+  font-size: 22px;
+}
+
+.card .text-post li {
+  font-size: 17px;
+}
+
+.card .text-post p {
+  font-size: 17px;
+}
+
+.btn-submit {
+  background-color: #5e935d;
+  color: #ffffff;
+  font-size: 16px;
+  width: 128px;
+  border-radius: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #a0caa5;
+  color: #ffffff;
+}
+
+.komentar h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+}
+
+.komentar textarea {
+  width: 100%;
+}
+
+.card-komentar {
+  margin: 30px 30px 30px 30px;
+}
+
+.img-komentar {
+  margin-left: 20px;
+  height: 70px;
+  width: 70px;
+}
+
+.recommend h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+}
+
+/*.content-sidebar .card {
+  //height: 130px;
+  //width: 550px;
+  margin-right: 10px;
+}*/
+.isi-recommend {
+  margin: 15px 15px 15px 15px;
+}
+
+.isi-recommend p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+  margin-left: 15px;
+}
+
+.isi-recommend h5 {
+  margin-left: 15px;
+}
+
+.content-sidebar .card-img {
+  height: 93px;
+  width: 110px;
+}
+
+.content-sidebar h5 {
+  color: black;
+  font-weight: 600;
+}
+/*# sourceMappingURL=post.css.map */

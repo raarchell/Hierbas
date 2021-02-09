@@ -1,0 +1,79 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #91B494;
+  font-family: "Assistant", sans-serif;
+}
+
+.container nav {
+  background-color: #91B494;
+  position: fixed;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.navbar-brand img {
+  max-height: 70px;
+  padding-right: 480px;
+}
+
+.login-card {
+  margin: 110px 100px 0 100px;
+  border-radius: 60px;
+  font-size: 18px;
+  width: 900px;
+}
+
+.login-card h3 {
+  padding-top: 70px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.content-register {
+  margin: 0 70px 0 70px;
+}
+
+.content-register input {
+  border-radius: 10px;
+  height: 40px;
+}
+
+.btn-register {
+  margin-bottom: 70px;
+  background-color: #91B494;
+  color: #fff;
+  font-size: 20px;
+  width: 180px;
+  border-radius: 10px;
+}
+
+.btn-register:hover {
+  color: #fff;
+  background-color: #a0caa5;
+}
+
+footer {
+  background-color: #91B494;
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
+footer img {
+  margin-left: 220px;
+}
+
+footer .footer-link {
+  margin-left: -130px;
+}
+
+footer .footer-link a {
+  color: black;
+}
+
+footer .copy-right {
+  margin-left: 220px;
+}
+/*# sourceMappingURL=register.css.map */
