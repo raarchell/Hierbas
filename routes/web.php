@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 // ini untuk ngecek aja halamannya udah bener atau belum
 Route::get('/', function () {
-    return view('pages.admin.resep');
+    return view('pages.admin.add_kategori');
 });
