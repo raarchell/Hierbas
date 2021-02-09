@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ini untuk ngecek aja halamannya udah bener atau belum
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.admin.resep');
 });

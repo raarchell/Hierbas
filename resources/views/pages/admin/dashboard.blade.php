@@ -1,21 +1,75 @@
-{{-- @extends('layouts.') --}}
+@extends('layouts.admin.admin')
 @section('title', 'dashboard')
 @section('content')
     <div class="container-fluid">
-        <h1 class="mt-4">Add</h1>
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-table mr-1"></i>
-                Tambah nama doi
-            </div>
-            <div class="card-body">
-                <div class="main-page">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+        <h2 class="mt-4">Welcome, Admin!</h2>
+        <div class="row justify-content-center mt-5">
+            <div class="col-xl-3 col-md-4">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h1>12</h1>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="submit" value="submit">Submit</button>
-                    <a href="index.html" class="btn btn-secondary">Cancel</a>
-                    </form>
+                    <div class="card-footer">
+                        <div class="text-center">Total Resep Obat</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h1>16</h1>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center">Total Tanaman</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-4">
+                <div class="card text-white bg-info mb-4">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h1>10</h1>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center">Total Artikel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card text-white bg-danger mb-3">
+                    <div class="card-header">
+                        <div class="text-center">Kategori</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h1>13</h1>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center">Total Penyakit</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-header">
+                        <div class="text-center">Kategori</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h1>11</h1>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center">Total Khasiat</div>
+                    </div>
                 </div>
             </div>
         </div>
