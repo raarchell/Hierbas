@@ -19,21 +19,6 @@
                     <div class="form-group">
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
                     </div>
-                    <p>Khasiat</p>
-                    <div class="dropdown">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Vit. A
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                Vit. C
-                            </label>
-                        </div>
-                    </div> <br>
                     <p>Isi</p>
                     <div class="form-group">
                         <textarea id="isi" name="isi" rows="4" cols="70">
