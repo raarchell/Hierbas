@@ -15,9 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 // ini untuk ngecek aja halamannya udah bener atau belum
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('pages.menu_tanaman');
-=======
-    return view('pages.admin.profil');
->>>>>>> db275317c2fa8ef54e35ad721118d9f37494c24d
+    return view('pages.profil_user');
 });
