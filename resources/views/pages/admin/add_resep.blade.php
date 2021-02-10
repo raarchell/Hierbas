@@ -30,8 +30,7 @@
                     </div> <br>
                     <p>Bahan</p>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="bahan" name="bahan"
-                            placeholder="Nama">
+                        <textarea name="bahan" id="bahan" cols="30" rows="10"></textarea>
                     </div>
                     <p>Isi</p>
                     <div class="form-group">
