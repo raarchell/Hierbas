@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 // ini untuk ngecek aja halamannya udah bener atau belum
 Route::get('/', function () {
-    return view('pages.profil_user');
+    return view('pages.login');
 });
