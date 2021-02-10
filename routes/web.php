@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 // ini untuk ngecek aja halamannya udah bener atau belum
 Route::get('/', function () {
-    return view('pages.admin.add_tanaman');
+    return view('pages.admin.profil');
 });
