@@ -1,0 +1,1 @@
+<link href="{{ url('frontend/styles/footer.css') }}" rel="stylesheet" />

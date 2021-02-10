@@ -1,7 +1,7 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
         <a href="#" class="navbar-brand">
-            <img src="images/logo.png" alt="Logo" />
+            <img src="{{url('frontend/images/logo.png')}}" alt="Logo" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navb">
             <span class="navbar-toggler-icon"></span>

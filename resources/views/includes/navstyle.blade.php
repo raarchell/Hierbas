@@ -1,0 +1,1 @@
+<link href="{{ url('frontend/styles/navbar.css') }}" rel="stylesheet" />
