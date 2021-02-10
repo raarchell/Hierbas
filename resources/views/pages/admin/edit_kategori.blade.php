@@ -1,12 +1,12 @@
 @extends('layouts.admin.admin')
-@section('title', 'add_kategori')
+@section('title','edit_kategori')
 @section('content')
 <div class="container-fluid mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Artikel</a></li>
+            <li class="breadcrumb-item"><a href="#">Kategori</a></li>
             <li class="breadcrumb-item"><a href="#">Penyakit</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Add</li>
+            <li class="breadcrumb-item active" aria-current="page">Edit</li>
         </ol>
     </nav>
     <div class="card mb-4 mt-4">

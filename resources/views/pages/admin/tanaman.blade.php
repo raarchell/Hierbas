@@ -1,17 +1,16 @@
 @extends('layouts.admin.admin')
-@section('title', 'kategori_p')
+@section('title', 'tanaman')
 @section('content')
 <div class="container-fluid mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Kategori</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Penyakit</li>
+            <li class="breadcrumb-item active" aria-current="page">Tanaman Herbal</li>
         </ol>
     </nav>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
-            Tabel Kategori Penyakit
+            Tabel Artikel
             <form action="#" class="d-inline">
                 <div class="float-right">
                     <button a class="btn btn-primary">+ Add</button>
@@ -23,20 +22,20 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Nama</th>
+                            <th>Nama Tanaman</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Flu</td>
+                            <td>Jahe</td>
                             <td class="text-center align-middle">
-                                <form action="{{ route('edit', $item->id) }}" class="d-inline">
+                                <form action="#" class="d-inline">
                                     <div class="btn-group">
                                         <button a class="btn btn-primary">Edit</button>
                                     </div>
                                 </form>
-                                <form action="{{ route('delete', $item->id) }}" method="POST" class="d-inline">
+                                <form action="#" method="POST" class="d-inline">
                                     <div class="btn-group">
                                         <button a class="btn btn-danger">Delete</button>
                                     </div>
