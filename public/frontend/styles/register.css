@@ -10,8 +10,6 @@ body {
 .container nav {
   background-color: #91B494;
   position: fixed;
-  margin-left: 150px;
-  margin-right: 150px;
 }
 
 .navbar-brand img {
@@ -19,17 +17,46 @@ body {
   padding-right: 480px;
 }
 
+.register-card {
+  margin: 110px 100px 0 100px;
+  border-radius: 60px;
+  font-size: 18px;
+  max-width: 900px;
+}
+.register-card h3 {
+  font-family: "Poppins", sans-serif;
+  padding-top: 70px;
+  text-align: center;
+  font-size: 50px;
+}
+
 .login-card {
   margin: 110px 100px 0 100px;
   border-radius: 60px;
   font-size: 18px;
-  width: 900px;
+  max-width: 600px;
+  height: 500px;
 }
-
-.login-card h3 {
-  padding-top: 70px;
+.login-card h3{
+  font-family: "Poppins", sans-serif;
+  padding-top: 40px;
   text-align: center;
   font-size: 50px;
+}
+
+
+h6 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 15px 0 20px;
+}
+
+h6 span {
+  background: #fff;
+  padding: 0 10px;
+  color: #858585;
 }
 
 .content-register {
@@ -41,6 +68,11 @@ body {
   height: 40px;
 }
 
+.form-pesan input{
+  border-radius: 10px;
+  width: 350px;
+}
+
 .btn-register {
   margin-bottom: 70px;
   background-color: #91B494;
@@ -49,10 +81,18 @@ body {
   width: 180px;
   border-radius: 10px;
 }
-
 .btn-register:hover {
   color: #fff;
   background-color: #a0caa5;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: -70px;
+}
+.register-link u {
+  font-size: 15px;
+  color: #91b494;
 }
 
 footer {

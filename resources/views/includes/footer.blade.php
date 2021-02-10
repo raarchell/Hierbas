@@ -1,5 +1,5 @@
 <footer>
-    <div class="row">
+    <div class="row mx-auto">
         <div class="col-md-2">
             <img src="{{url('frontend/images/logo-footer.png')}}" alt="">
         </div>
