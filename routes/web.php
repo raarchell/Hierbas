@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// ini untuk ngecek aja halamannya udah bener atau belum
-Route::get('/', function () {
-    return view('pages.profil_user');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@index')
+    ->name('home');
+
+Route::prefix('admin')
+    ->middleware(['auth','admin'])
+    ->group(function(){
+        Route::get('/', 'App\Http\Controllers\AdminController@index')
+            ->name('dashboard');
+    });
+
+Auth::routes();

@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.tiny.cloud/1/l4w1imrqsjdqbag9vagmjxk4vwepqihsnjyhz2gydw0mq4s2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script src="{{url('admin/js/scripts.js')}}"></script>
+<script src="{{url('hierba-admin/js/scripts.js')}}"></script>
 <script>
     tinymce.init({
             selector:'textarea',

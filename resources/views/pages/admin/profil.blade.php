@@ -3,7 +3,7 @@
 @section('content')
 {{-- <div class="container-fluid mt-5">
     <header>
-        <img src="admin/assets/img/profil.jpg" class="rounded-circle float-left" alt="">
+        <img src="hierba-admin/assets/img/profil.jpg" class="rounded-circle float-left" alt="">
         <div class="row">
             <h3>Hai, Nama</h3>
         </div>
