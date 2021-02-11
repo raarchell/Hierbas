@@ -32,8 +32,8 @@ header h3 {
   margin-top: 86px;
   border-radius: 20px;
   font-size: 20px;
-  width: 640px;
-  height: 460px;
+  max-width: 640px;
+  /* height: 460px; */
 }
 
 .card-body .form-group {

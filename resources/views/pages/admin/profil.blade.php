@@ -1,16 +1,16 @@
 @extends('layouts.admin.admin')
 @section('title', 'profil')
 @section('content')
-<div class="container-fluid mt-5">
+{{-- <div class="container-fluid mt-5">
     <header>
         <img src="admin/assets/img/profil.jpg" class="rounded-circle float-left" alt="">
         <div class="row">
             <h3>Hai, Nama</h3>
         </div>
     </header>
-</div>
+</div> --}}
 <main>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid">
         <div class="content-profil row">
             <div class="col-sm-3">
                 <h4>Personal Information</h4>
@@ -43,7 +43,7 @@
                                 <input id="email" type="email" class="form-control" placeholder="E-mail">
                             </div>
                         </div>
-                        <a href="#" class="btn btn-profil mx-auto mt-4" style="float: right;">
+                        <a href="#" class="btn btn-primary mx-auto mt-4" style="float: right;">
                             Save
                         </a>
                     </div>
@@ -69,7 +69,7 @@
                                 <input id="password" type="password" class="form-control" placeholder="Confirm Password">
                             </div>
                         </div>
-                        <a href="#" class="btn btn-profil mx-auto mt-4" style="float: right;">
+                        <a href="#" class="btn btn-primary mx-auto mt-4" style="float: right;">
                             Save
                         </a>
                     </div>

@@ -41,6 +41,10 @@
                             <input id="email" type="email" class="form-control" placeholder="E-mail">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="form-label" for="customFile">Foto Profil</label>
+                        <input type="file" class="form-control" id="customFile" />
+                    </div>
                     <a href="#" class="btn btn-profil mx-auto mt-4" style="float: right;">
                         Save
                     </a>

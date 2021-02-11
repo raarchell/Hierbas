@@ -15,13 +15,13 @@
                             <label>E-mail</label>
                             <input id="email" type="email" class="form-control" placeholder="E-mail">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>Tanggal Lahir</label>
                             <input id="tanggal" type="date" class="form-control">
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>Jenis Kelamin</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
@@ -33,7 +33,7 @@
                                     value="option2">
                                 <label class="form-check-label" for="inlineRadio2">Wanita</label>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label>Password</label>
                             <input id="password" type="password" class="form-control" placeholder="Password">
