@@ -5,13 +5,13 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Kategori</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Penyakit</li>
+            <li class="breadcrumb-item active" aria-current="page">Resep</li>
         </ol>
     </nav>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
-            Tabel Kategori Penyakit
+            Tabel Kategori Resep
             <form action="#" class="d-inline">
                 <div class="float-right">
                     <button a class="btn btn-primary">+ Add</button>

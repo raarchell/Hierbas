@@ -20,6 +20,10 @@
                     <div class="form-group">
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
                     </div>
+                    <div class="form-group">
+                        <label class="form-label" for="customFile">Foto</label>
+                        <input type="file" class="form-control" id="customFile" />
+                    </div>
                     <button type="submit" class="btn btn-primary" name="submit" value="submit">
                         Submit
                     </button>
