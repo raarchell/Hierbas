@@ -8,17 +8,10 @@
                     </div>
                     Dashboard
                 </a>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
-                    aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link" href="{{ route('tabelkategori') }}">
                     <div class="sb-nav-link-icon"><i class="fa fa-th-list" style="font-size:15px"></i></div>
-                    Kategori
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    Kategori Resep
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Penyakit</a>
-                    </nav>
-                </div>
                 <a class="nav-link" href="#">
                     <div class="sb-nav-link-icon"><i class='fas fa-pills'></i></div>
                     Resep Obat

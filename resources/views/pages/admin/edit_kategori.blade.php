@@ -1,38 +1,49 @@
 @extends('layouts.admin.admin')
-@section('title','edit_kategori')
+@section('title', 'edit_kategori')
 @section('content')
-<div class="container-fluid mt-5">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Kategori</a></li>
-            <li class="breadcrumb-item"><a href="#">Resep</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Edit</li>
-        </ol>
-    </nav>
-    <div class="card mb-4 mt-4">
-        <div class="card-header">
-            Edit Kategori Resep
-        </div>
-        <div class="card-body">
-            <div class="main-page">
-                <form action="#" method="POST">
-                    <p>Nama Kategori Resep</p>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="customFile">Foto</label>
-                        <input type="file" class="form-control" id="customFile" />
-                    </div>
-                    <button type="submit" class="btn btn-primary" name="submit" value="submit">
-                        Submit
-                    </button>
-                    <a href="#" class="btn btn-secondary">
-                        Cancel
-                    </a>
-                </form>
+    <div class="container-fluid mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('tabelkategori') }}">Kategori Resep</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
+            </ol>
+        </nav>
+        <div class="card mb-4 mt-4">
+            <div class="card-header">
+                Edit Kategori Resep
+            </div>
+            <div class="card-body">
+                <div class="main-page">
+                    @foreach ($items as $item)
+                    <form action="{{ route('update', $item->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <div class="form-group">
+                            <p>Nama Kategori Resep</p>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="{{ $item->nama }}">
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="form-label" for="foto">Foto</label>
+                            <input type="file" class="form-control" id="foto" name="foto" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="submit" value="submit">
+                            Submit
+                        </button>
+                        <a href="{{ route('tabelkategori') }}" class="btn btn-secondary">
+                            Cancel
+                        </a>
+                    </form>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
