@@ -47,8 +47,8 @@ class KategoriController extends Controller
     }
 
     // fungsi edit
-    public function indexEdit(){
-        $items = Kategori::get();
+    public function indexEdit($id){
+        $items = Kategori::findOrFail($id);
         return view('pages.admin.edit_kategori', [
             'items' => $items
         ]);

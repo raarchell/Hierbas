@@ -14,8 +14,7 @@
             </div>
             <div class="card-body">
                 <div class="main-page">
-                    @foreach ($items as $item)
-                    <form action="{{ route('update', $item->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('update', $items->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -28,7 +27,7 @@
                         @endif
                         <div class="form-group">
                             <p>Nama Kategori Resep</p>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="{{ $item->nama }}">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="{{ $items->nama }}">
                         </div>
                         <div class="form-group mb-5">
                             <label class="form-label" for="foto">Foto</label>
@@ -41,7 +40,6 @@
                             Cancel
                         </a>
                     </form>
-                    @endforeach
                 </div>
             </div>
         </div>
