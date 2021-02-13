@@ -6,50 +6,19 @@
     </header>
     <main>
         <div class="content-menu row mx-auto">
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="images/menu-resep.png" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p>
-                            <i class='far fa-calendar-alt' style='font-size:15px'></i>&nbsp; 2 Februari 2021
-                        </p>
-                        <a href="post_resep.html" class="card-title">Ramuan Lemon dan Madu</a>
+            @foreach ($items as $item)
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="Image">
+                        <div class="card-body">
+                            <p>
+                                <i class='far fa-calendar-alt' style='font-size:15px'></i>&nbsp; {{$item->created_at}}
+                            </p>
+                            <a href="#" class="card-title">{{$item->nama}}</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="images/menu-resep.png" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p>
-                            <i class='far fa-calendar-alt' style='font-size:15px'></i>&nbsp; 2 Februari 2021
-                        </p>
-                        <a href="post_resep.html" class="card-title">Ramuan Lemon dan Madu</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="images/menu-resep.png" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p>
-                            <i class='far fa-calendar-alt' style='font-size:15px'></i>&nbsp; 2 Februari 2021
-                        </p>
-                        <a href="post_resep.html" class="card-title">Ramuan Lemon dan Madu</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="images/menu-resep.png" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p>
-                            <i class='far fa-calendar-alt' style='font-size:15px'></i>&nbsp; 2 Februari 2021
-                        </p>
-                        <a href="post_resep.html" class="card-title">Ramuan Lemon dan Madu</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </main>
 @endsection

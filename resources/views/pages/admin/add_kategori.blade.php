@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group mb-5">
                             <label class="form-label" for="foto">Foto</label>
-                            <input type="file" class="form-control" id="foto" name="foto"/>
+                            <input type="file" class="form-control" id="foto" name="foto" />
                         </div>
                         <button type="submit" class="btn btn-primary" name="submit" value="submit">
                             Submit
@@ -44,7 +44,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
     </div>
 @endsection

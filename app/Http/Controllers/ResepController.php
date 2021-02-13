@@ -3,31 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Resep;
 use App\Models\Kategori;
 
-class KategoriController extends Controller
+class ResepController extends Controller
 {
-    // tabel
+    //tabel
     public function index(Request $request){
-        $items = Kategori::get();
-        return view('pages.admin.kategori_p', [
+        $items = Resep::get();
+        return view('pages.admin.resep', [
             'items' => $items
         ]);
     }
     public function delete($id)
     {
-        $items = Kategori::findOrFail($id);
+        $items = Resep::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabelkategori');
+        return redirect()->route('tabelresep');
     }
 
-    // fungsi add
+    //add
     public function indexAdd(){
-        return view('pages.admin.add_kategori');
+        $items = Kategori::get();
+        return view('pages.admin.add_resep',[
+            'items' => $items
+        ]);
     }
     public function store(Request $request){
         $request->validate([
             'nama' => 'required|max:30',
+            'id_kategori'=>'required|integer|exists:kategori,id',
+            'bahan' => 'required',
+            'cara' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
@@ -39,24 +46,32 @@ class KategoriController extends Controller
             $file->move($tujuan_upload, $nama_file);
         $data = [
             'nama' => $request->nama,
+            'id_kategori' => $request->id_kategori,
+            'bahan' => $request->bahan,
+            'cara' => $request->cara,
             'foto' => $nama_file,
         ];
-            Kategori::create($data);
+            Resep::create($data);
 
-        return redirect()->route('tabelkategori');
+        return redirect()->route('tabelresep');
     }
 
-    // fungsi edit
+    // edit
     public function indexEdit($id){
-        $items = Kategori::findOrFail($id);
-        return view('pages.admin.edit_kategori', [
-            'items' => $items
+        $items = Resep::findOrFail($id);
+        $kategori = Kategori::get();
+        return view('pages.admin.edit_resep', [
+            'items' => $items,
+            'kategori' => $kategori
         ]);
     }
     public function update(Request $request, $id)
     {
         $request->validate([
             'nama' => 'required|max:30',
+            'id_kategori'=>'required|integer|exists:kategori,id',
+            'bahan' => 'required',
+            'cara' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
@@ -68,17 +83,20 @@ class KategoriController extends Controller
             $file->move($tujuan_upload, $nama_file);
         $data = [
             'nama' => $request->nama,
+            'id_kategori' => $request->id_kategori,
+            'bahan' => $request->bahan,
+            'cara' => $request->cara,
             'foto' => $nama_file,
         ];
-        Kategori::find($id)->update($data);
+        Resep::find($id)->update($data);
 
-        return redirect()->route('tabelkategori');
+        return redirect()->route('tabelresep');
     }
 
-    // page kategori user
-    public function indexKategori(){
-        $items = Kategori::get();
-        return view('pages.kategori', [
+    // page menu resep user
+    public function indexResep(){
+        $items = Resep::get();
+        return view('pages.menu_resep', [
             'items' => $items
         ]);
     }

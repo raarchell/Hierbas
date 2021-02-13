@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')
     ->name('home');
+//kategori
+Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
+    ->name('kategori');
+//resep
+Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
+    ->name('resep');
 
 Route::prefix('admin')
     ->middleware(['auth','admin'])
@@ -33,6 +39,19 @@ Route::prefix('admin')
         Route::get('/edit/{id}', 'App\Http\Controllers\KategoriController@indexEdit')
             ->name('edit');
         Route::post('/edit/update/{id}', 'App\Http\Controllers\KategoriController@update')
+            ->name('update');
+        // resep
+        Route::get('/resep', 'App\Http\Controllers\ResepController@index')
+            ->name('tabelresep');
+        Route::get('/addresep', 'App\Http\Controllers\ResepController@indexAdd')
+            ->name('addresep');
+        Route::post('/addresep/store', 'App\Http\Controllers\ResepController@store')
+            ->name('storeresep');
+        Route::post('/delete/{id}','App\Http\Controllers\ResepController@delete')
+            ->name('delete');
+        Route::get('/edit/{id}', 'App\Http\Controllers\ResepController@indexEdit')
+            ->name('editresep');
+        Route::post('/edit/update/{id}', 'App\Http\Controllers\ResepController@update')
             ->name('update');
     });
 
