@@ -16,7 +16,7 @@
                     <div class="sb-nav-link-icon"><i class='fas fa-pills'></i></div>
                     Resep Obat
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('tabeltanaman') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-seedling"></i></div>
                     Tanaman Herbal
                 </a>

@@ -11,7 +11,7 @@
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
             Tabel Artikel
-            <form action="#" class="d-inline">
+            <form action="{{ route('addtanaman') }}" class="d-inline">
                 <div class="float-right">
                     <button a class="btn btn-primary">+ Add</button>
                 </div>
@@ -28,7 +28,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Jahe</td>
+                            @foreach ($items as $item)
+                            <td>{{ $item->nama }}</td>
                             <td class="text-center align-middle">
                                 <form action="#" class="d-inline">
                                     <div class="btn-group">
@@ -42,6 +43,7 @@
                                 </form>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
