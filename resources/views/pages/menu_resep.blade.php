@@ -14,7 +14,7 @@
                             <p>
                                 <i class='far fa-calendar-alt' style='font-size:15px'></i>&nbsp; {{$item->created_at}}
                             </p>
-                            <a href="#" class="card-title">{{$item->nama}}</a>
+                            <a href="{{ route('postresep', $item->id) }}" class="card-title">{{$item->nama}}</a>
                         </div>
                     </div>
                 </div>

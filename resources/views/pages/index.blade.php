@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-6 mt-5">
-                    <img src="images/awal.png" alt="">
+                    <img src="{{url('frontend/images/awal.png')}}" alt="">
                 </div>
                 <div class="col-md-6 mt-5">
                     <h3>Mengapa harus obat herbal?</h3>

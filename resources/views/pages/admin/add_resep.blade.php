@@ -14,7 +14,7 @@
             </div>
             <div class="card-body">
                 <div class="main-page">
-                    <form action="{{ route('storeresep') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('storeresep') }}" method="POST" enctype="multipart/form-data" id="get-form-data">
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger">

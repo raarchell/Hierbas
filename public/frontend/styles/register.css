@@ -74,11 +74,11 @@ h6 span {
 }
 
 .btn-register {
-  margin-bottom: 70px;
+  margin: 0 0 70px 100px;
   background-color: #91B494;
   color: #fff;
   font-size: 20px;
-  width: 180px;
+  width: 150px;
   border-radius: 10px;
 }
 .btn-register:hover {
