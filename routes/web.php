@@ -41,11 +41,38 @@ Route::prefix('admin')
             ->name('edit');
         Route::post('/edit/update/{id}', 'App\Http\Controllers\KategoriController@update')
             ->name('update');
-<<<<<<< HEAD
 
         //contactus
         Route::get('/pesan', 'App\Http\Controllers\ContactusController@index')
             ->name('contactus');
+
+        // resep
+        Route::get('/resep', 'App\Http\Controllers\ResepController@index')
+            ->name('tabelresep');
+        Route::get('/addresep', 'App\Http\Controllers\ResepController@indexAdd')
+            ->name('addresep');
+        Route::post('/addresep/store', 'App\Http\Controllers\ResepController@store')
+            ->name('storeresep');
+        Route::post('/delete/{id}', 'App\Http\Controllers\ResepController@delete')
+            ->name('delete');
+        Route::get('/edit/{id}', 'App\Http\Controllers\ResepController@indexEdit')
+            ->name('editresep');
+        Route::post('/edit/update/{id}', 'App\Http\Controllers\ResepController@update')
+            ->name('update');
+
+        //artikel
+        Route::get('/artikel', 'App\Http\Controllers\ArtikelController@index')
+            ->name('tabelartikel');
+        Route::get('/addartikel', 'App\Http\Controllers\ArtikelController@indexAdd')
+            ->name('addartikel');
+        Route::post('/addartikel/store', 'App\Http\Controllers\ArtikelController@store')
+            ->name('storeartikel');
+        Route::post('/delete/{id}', 'App\Http\Controllers\ArtikelController@delete')
+            ->name('delete');
+        Route::get('/edit/{id}', 'App\Http\Controllers\ArtikelController@indexEdit')
+            ->name('editartikel');
+        Route::post('/edit/update/{id}', 'App\Http\Controllers\ArtikelController@update')
+            ->name('update');
     });
 
 Auth::routes();
@@ -55,21 +82,5 @@ Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
     ->name('addsaran');
 Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store')
     ->name('storepesan');
-=======
-        // resep
-        Route::get('/resep', 'App\Http\Controllers\ResepController@index')
-            ->name('tabelresep');
-        Route::get('/addresep', 'App\Http\Controllers\ResepController@indexAdd')
-            ->name('addresep');
-        Route::post('/addresep/store', 'App\Http\Controllers\ResepController@store')
-            ->name('storeresep');
-        Route::post('/delete/{id}','App\Http\Controllers\ResepController@delete')
-            ->name('delete');
-        Route::get('/edit/{id}', 'App\Http\Controllers\ResepController@indexEdit')
-            ->name('editresep');
-        Route::post('/edit/update/{id}', 'App\Http\Controllers\ResepController@update')
-            ->name('update');
-    });
-
-Auth::routes();
->>>>>>> 5ac34d370fa8a48299f0873d9bd9a0ac784c60e9
+Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
+    ->name('indexartikel');

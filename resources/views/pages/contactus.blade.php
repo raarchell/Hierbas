@@ -48,11 +48,11 @@
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
-                        <input id="email" type="email" class="form-control" placeholder="E-mail" required>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="E-mail" required>
                     </div>
                     <div class="form-group">
                         <label>Isi Pesan</label>
-                        <textarea id="pesan" class="form-control" rows="5"></textarea>
+                        <textarea id="pesan" name="pesan" class="form-control" rows="5"></textarea>
                     </div>
                     <button type="submit" class="btn btn-send px-4 mt-4" name="submit" value="submit">
                         Send

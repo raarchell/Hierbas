@@ -20,11 +20,11 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-seedling"></i></div>
                     Tanaman Herbal
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('tabelartikel') }}">
                     <div class="sb-nav-link-icon"><i class='fas fa-file-alt'></i></i></div>
                     Artikel
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('contactus') }}">
                     <div class="sb-nav-link-icon"><i class='fas fa-envelope'></i></div>
                     Pesan
                 </a>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMessagesTable extends Migration
+class CreateArtikelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('artikel', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->nullable();
-            $table->string('email')->nullable();
-            $table->text('pesan')->nullable();
+            $table->string('judul');
+            $table->text('isi_artikel');
+            $table->string('foto');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('artikel');
     }
 }
