@@ -31,22 +31,32 @@
         </div>
         <div class="col-md-6">
             <div class="card-form card ml-auto mr-auto">
-                <form class="form-pesan">
+                <form class="form-pesan" action="{{ route('storepesan') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <div class="form-group">
                         <label>Nama</label>
-                        <input id="nama" type="text" class="form-control" placeholder="Nama">
+                        <input id="nama" name="nama" type="text" class="form-control" placeholder="Nama" required>
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
-                        <input id="email" type="email" class="form-control" placeholder="E-mail">
+                        <input id="email" type="email" class="form-control" placeholder="E-mail" required>
                     </div>
                     <div class="form-group">
                         <label>Isi Pesan</label>
                         <textarea id="pesan" class="form-control" rows="5"></textarea>
                     </div>
-                    <a href="#" class="btn btn-send px-4 mt-4" style="position: sticky;">
+                    <button type="submit" class="btn btn-send px-4 mt-4" name="submit" value="submit">
                         Send
-                    </a>
+                    </button>
                 </form>
             </div>
         </div>

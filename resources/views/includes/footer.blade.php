@@ -8,7 +8,7 @@
         </div>
         <div class="footer-link col-md-2 mt-5">
             <a href="#">Home &nbsp;</a>&#8226;
-            <a href="contactus.html">&nbsp;Contact Us</a>
+            <a href="{{ route('addsaran') }}">&nbsp;Contact Us</a>
         </div>
     </div>
 </footer>

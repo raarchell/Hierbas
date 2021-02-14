@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,8 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')
     ->name('home');
 
 Route::prefix('admin')
-    ->middleware(['auth','admin'])
-    ->group(function(){
+    ->middleware(['auth', 'admin'])
+    ->group(function () {
         Route::get('/', 'App\Http\Controllers\AdminController@index')
             ->name('dashboard');
         // kategori
@@ -28,12 +29,22 @@ Route::prefix('admin')
             ->name('addkategori');
         Route::post('/addkategori/store', 'App\Http\Controllers\KategoriController@store')
             ->name('storekategori');
-        Route::post('/delete/{id}','App\Http\Controllers\KategoriController@delete')
+        Route::post('/delete/{id}', 'App\Http\Controllers\KategoriController@delete')
             ->name('delete');
         Route::get('/edit/{id}', 'App\Http\Controllers\KategoriController@indexEdit')
             ->name('edit');
         Route::post('/edit/update/{id}', 'App\Http\Controllers\KategoriController@update')
             ->name('update');
+
+        //contactus
+        Route::get('/pesan', 'App\Http\Controllers\ContactusController@index')
+            ->name('contactus');
     });
 
 Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
+    ->name('addsaran');
+Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store')
+    ->name('storepesan');

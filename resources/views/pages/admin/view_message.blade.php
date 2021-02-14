@@ -24,10 +24,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>User</td>
-                            <td>user@xyz.com</td>
-                            <td></td>
+                            @foreach ($items as $item)
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td>{{ $item->pesan }}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
