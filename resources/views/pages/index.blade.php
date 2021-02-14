@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <div class="see-more row mt-3">
-                    <a href="kategori.html">See More</a>
+                    <a href="{{ route('kategori') }}">See More</a>
                 </div>
             </div>
         </section>

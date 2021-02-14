@@ -12,4 +12,8 @@ class Kategori extends Model
         'foto',
     ];
     protected $table = 'kategori';
+
+    public function resep(){
+        return $this->hasMany(Resep::class,'id_kategori','id');
+    }
 }

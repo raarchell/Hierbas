@@ -12,7 +12,7 @@
                     <div class="sb-nav-link-icon"><i class="fa fa-th-list" style="font-size:15px"></i></div>
                     Kategori Resep
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('tabelresep') }}">
                     <div class="sb-nav-link-icon"><i class='fas fa-pills'></i></div>
                     Resep Obat
                 </a>

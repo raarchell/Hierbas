@@ -4,36 +4,20 @@
     <header class="ml-5">
         <h2>Kategori</h2>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Kategori</li>
         </ol>
     </header>
     <main>
         <div class="content-menu row mx-auto">
-            <div class="col-md-3">
-                <div class="card">
-                    <a href="#" class="card-title">Pegal Linu</a>
-                    <img src="images/kategori-1.png" class="card-img-top" alt="">
+            @foreach ($items as $item)
+                <div class="col-md-3">
+                    <div class="card">
+                        <a href="#" class="card-title">{{ $item->nama }}</a>
+                        <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <a href="#" class="card-title">Pegal Linu</a>
-                    <img src="images/kategori-1.png" class="card-img-top" alt="">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <a href="#" class="card-title">Pegal Linu</a>
-                    <img src="images/kategori-1.png" class="card-img-top" alt="">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <a href="#" class="card-title">Pegal Linu</a>
-                    <img src="images/kategori-1.png" class="card-img-top" alt="">
-                </div>
-            </div>
+            @endforeach
         </div>
     </main>
 @endsection

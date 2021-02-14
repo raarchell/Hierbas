@@ -27,7 +27,7 @@
                         @endif
                         <div class="form-group">
                             <p>Nama Kategori Resep</p>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="{{ $items->nama }}">
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $items->nama }}">
                         </div>
                         <div class="form-group mb-5">
                             <label class="form-label" for="foto">Foto</label>
