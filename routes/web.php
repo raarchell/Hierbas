@@ -22,6 +22,8 @@ Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
 //resep
 Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
     ->name('resep');
+Route::get('/postresep/{id}', 'App\Http\Controllers\ResepController@indexPostResep')
+    ->name('postresep');
 
 Route::prefix('admin')
     ->middleware(['auth', 'admin'])

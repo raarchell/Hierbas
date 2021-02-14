@@ -100,4 +100,12 @@ class ResepController extends Controller
             'items' => $items
         ]);
     }
+
+    // postingan resep
+    public function indexPostResep(Request $request, $id){
+        $items = Resep::findOrFail($id);
+        return view('pages.post_resep',[
+            'items' => $items
+        ]);
+    }
 }
