@@ -14,7 +14,7 @@
         </div>
         <div class="card-body">
             <div class="main-page">
-                <form action="{{ route('update', $items->id) }}" method="POST">
+                <form action="{{ route('updateartikel', $items->id) }}" method="POST">
                     @csrf
                     @if ($errors->any())
                     <div class="alert alert-danger">

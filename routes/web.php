@@ -86,12 +86,12 @@ Route::prefix('admin')
             ->name('addartikel');
         Route::post('/addartikel/store', 'App\Http\Controllers\ArtikelController@store')
             ->name('storeartikel');
-        Route::post('/delete/{id}', 'App\Http\Controllers\ArtikelController@delete')
-            ->name('delete');
-        Route::get('/edit/{id}', 'App\Http\Controllers\ArtikelController@indexEdit')
+        Route::post('/deleteartikel/{id}', 'App\Http\Controllers\ArtikelController@delete')
+            ->name('deleteartikel');
+        Route::get('/editartikel/{id}', 'App\Http\Controllers\ArtikelController@indexEdit')
             ->name('editartikel');
-        Route::post('/edit/update/{id}', 'App\Http\Controllers\ArtikelController@update')
-            ->name('update');
+        Route::post('/editartikel/update/{id}', 'App\Http\Controllers\ArtikelController@update')
+            ->name('updateartikel');
 
         //tanaman
         Route::get('/tanaman', 'App\Http\Controllers\TanamanController@index')
@@ -102,9 +102,9 @@ Route::prefix('admin')
             ->name('storetanaman');
         Route::post('/delete/{id}', 'App\Http\Controllers\TanamanController@delete')
             ->name('delete');
-        Route::get('/edit/{id}', 'App\Http\Controllers\TanamanController@indexEdit')
+        Route::get('/edittanaman/{id}', 'App\Http\Controllers\TanamanController@indexEdit')
             ->name('edittanaman');
-        Route::post('/edit/update/{id}', 'App\Http\Controllers\TanamanController@update')
+        Route::post('/edittanaman/update/{id}', 'App\Http\Controllers\TanamanController@update')
             ->name('update');
     });
 

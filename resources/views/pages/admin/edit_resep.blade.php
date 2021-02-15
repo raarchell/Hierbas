@@ -4,7 +4,7 @@
 <div class="container-fluid mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Resep</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('tabelresep') }}">Resep</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit</li>
         </ol>
     </nav>
@@ -14,7 +14,7 @@
         </div>
         <div class="card-body">
             <div class="main-page">
-                <form action="{{ route('update', $items->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('updateresep', $items->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                         <p>Cara</p>
-                        <textarea id="cara" name="cara" rows="4" cols="70">{{$items->isi_artikel}}</textarea>
+                        <textarea id="cara" name="cara" rows="4" cols="70">{{$items->cara}}</textarea>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="foto">Foto</label>

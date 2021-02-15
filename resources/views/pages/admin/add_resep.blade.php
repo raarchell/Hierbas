@@ -27,7 +27,7 @@
                     @endif
                     <div class="form-group">
                         <p>Judul Resep</p>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Judul Resep">
                     </div>
                     <div class="dropdown ml-3 mt-3">
                         <p>Kategori Penyakit</p>

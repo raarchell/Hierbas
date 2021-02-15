@@ -36,7 +36,7 @@
                                         <button a class="btn btn-primary">Edit</button>
                                     </div>
                                 </form>
-                                <form action="{{ route('delete', $item->id) }}" method="POST" class="d-inline">
+                                <form action="{{ route('deleteresep', $item->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     <div class="btn-group">
                                         <button a class="btn btn-danger">Delete</button>
