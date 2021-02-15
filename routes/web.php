@@ -85,15 +85,12 @@ Route::prefix('admin')
             ->name('addtanaman');
         Route::post('/addtanaman/store', 'App\Http\Controllers\TanamanController@store')
             ->name('storetanaman');
-<<<<<<< HEAD
         Route::post('/delete/{id}', 'App\Http\Controllers\TanamanController@delete')
             ->name('delete');
         Route::get('/edit/{id}', 'App\Http\Controllers\TanamanController@indexEdit')
             ->name('edittanaman');
         Route::post('/edit/update/{id}', 'App\Http\Controllers\TanamanController@update')
             ->name('update');
-=======
->>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
     });
 
 Auth::routes();
