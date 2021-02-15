@@ -5,7 +5,7 @@
 <header class="ml-5">
     <h2><b>Artikel</b></h2>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="artikel.html">Artikel</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('indexartikel') }}">Artikel</a></li>
         <li class="breadcrumb-item active" aria-current="page">Post</li>
     </ol>
 </header>
@@ -14,17 +14,19 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="card-konten card">
+                    @foreach ($items as $item)
                     <div class="card-postawal card-body">
-                        <h2 class="card-title">Air Rebusan Daun Dapat Mencegah Kanker</h2>
+                        <h2 class="card-title">{{ $item->judul }}</h2>
                         <p class="card-text text-muted">Posted 12 Januari 2021</p><br>
-                        <img class="card-img-top" src="images/artikel.jpg">
+                        <img class="card-img-top" src="{{ asset('assets/gallery/' . $item->foto) }}">
                         <br><br>
                         <div class="text-post" style="text-align: justify;">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                {{ $item->isi_artikel }}
                             </p>
                         </div>
                     </div>
+                    @endforeach
                 </div>
                 <div class="card-konten card my-5">
                     <div class="card-komentar card-body">

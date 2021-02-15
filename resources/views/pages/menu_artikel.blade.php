@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-sm-9">
                             <div class="card-body">
-                                <a href="post_artikel.html" class="card-title">
+                                <a href="{{ route('postartikel') }}" class="card-title">
                                     <h3>{{ $item->judul }}</h3>
                                 </a>
                                 <p>

@@ -22,6 +22,8 @@ Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
 //resep
 Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
     ->name('resep');
+Route::get('/postresep/{id}', 'App\Http\Controllers\ResepController@indexPostResep')
+    ->name('postresep');
 
 Route::prefix('admin')
     ->middleware(['auth', 'admin'])
@@ -81,12 +83,15 @@ Route::prefix('admin')
             ->name('addtanaman');
         Route::post('/addtanaman/store', 'App\Http\Controllers\TanamanController@store')
             ->name('storetanaman');
+<<<<<<< HEAD
         Route::post('/delete/{id}', 'App\Http\Controllers\TanamanController@delete')
             ->name('delete');
         Route::get('/edit/{id}', 'App\Http\Controllers\TanamanController@indexEdit')
             ->name('edittanaman');
         Route::post('/edit/update/{id}', 'App\Http\Controllers\TanamanController@update')
             ->name('update');
+=======
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
     });
 
 Auth::routes();
@@ -98,3 +103,5 @@ Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store'
     ->name('storepesan');
 Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
     ->name('indexartikel');
+Route::get('/artikel/post', 'App\Http\Controllers\ArtikelController@postArtikel')
+    ->name('postartikel');

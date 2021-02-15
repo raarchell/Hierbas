@@ -14,7 +14,11 @@
         </div>
         <div class="card-body">
             <div class="main-page">
+<<<<<<< HEAD
                 <form action="{{ route('storetanaman') }}" method="POST" enctype="multipart/form-data">
+=======
+                <form action="{{ route('storetanaman') }}" method="POST">
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
                     @csrf
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -27,6 +31,7 @@
                     @endif
                     <div class="form-group">
                         <p>Nama Tanaman</p>
+<<<<<<< HEAD
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Tanaman" />
                     </div>
                     <div class="form-group">
@@ -43,6 +48,20 @@
                     </div>
                     <div class="form-group">
                         <p> Link Video Youtube </p>
+=======
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" />
+                    </div>
+                    <div class="form-group">
+                        <p>Pengertian & Cara Menanam</p>
+                        <textarea id="isi" name="isi" rows="4" cols="70"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="foto">Foto</label>
+                        <input type="file" class="form-control" id="foto" name="foto" />
+                    </div>
+                    <div class="form-group">
+                        <p>Link Youtube</p>
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
                         <input type="text" class="form-control" id="link" name="link" placeholder="Link Youtube">
                     </div>
                     <br>

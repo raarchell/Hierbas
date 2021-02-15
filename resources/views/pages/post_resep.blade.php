@@ -5,7 +5,7 @@
 <header class="ml-5">
     <h2>Resep</h2>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="resep.html">Resep</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('resep') }}">Resep</a></li>
         <li class="breadcrumb-item active" aria-current="page">Post</li>
     </ol>
 </header>
@@ -15,24 +15,15 @@
             <div class="col-md-7">
                 <div class="card-konten card">
                     <div class="card-postawal card-body">
-                        <h2 class="card-title">Ramuan 1 (Lemon dan Madu)</h2>
-                        <p class="card-text text-muted">Posted 12 Januari 2021</p><br>
-                        <img class="card-img-top" src="images/postresep.png">
+                        <h2 class="card-title">{{ $items->nama }}</h2>
+                        <p class="card-text text-muted">Posted {{ $items->created_at }}</p><br>
+                        <img class="card-img-top" src="{{ asset('assets/gallery/' . $items->foto) }}">
                         <br><br>
                         <div class="text-post" style="text-align: justify;">
                             <h5>Bahan-Bahan : </h5>
-                            <ul style="list-style-type:dist">
-                                <li>1/4 Lemon</li>
-                                <li>1 Sendok Madu</li>
-                                <li>Air Hangat Secukupnya</li>
-                            </ul>
+                            <p>{!! $items->bahan !!}</p>
                             <h5>Cara Pembuatan : </h5>
-                            <ol type="1">
-                                <li>Masukkan Madu ke dalam wadah yang telah disediakan</li>
-                                <li>Tambahkan air secukupnya sesuai dengan selera</li>
-                                <li>Masukkan 1/4 lemon yang telah disiapkan ke dalam wadah</li>
-                                <li>Diamkan beberapa saat untuk segera dinikmati</li>
-                            </ol>
+                            <p>{!! $items->cara !!}</p>
                         </div>
                     </div>
                 </div>

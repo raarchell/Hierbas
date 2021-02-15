@@ -94,4 +94,13 @@ class ArtikelController extends Controller
             'items' => $items
         ]);
     }
+
+    //page post artikel user
+    public function postArtikel()
+    {
+        $items = Artikel::get();
+        return view('pages.post_artikel', [
+            'items' => $items
+        ]);
+    }
 }
