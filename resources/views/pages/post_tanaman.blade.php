@@ -5,7 +5,7 @@
 <header class="ml-5">
     <h2><b>Tanaman</b></h2>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="tanaman.html">Tanaman</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('tanaman') }}">Tanaman</a></li>
         <li class="breadcrumb-item active" aria-current="page">Post</li>
     </ol>
 </header>
@@ -14,22 +14,20 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="card-konten card">
+                    @foreach ($items as $item)
                     <div class="card-postawal card-body">
-                        <h2 class="card-title">Jahe</h2>
-                        <p class="card-text text-muted">Posted 12 Januari 2021</p><br>
-                        <img class="card-img-top" src="images/jahe.jpg">
+                        <h2 class="card-title">{{ $item->nama }}</h2>
+                        <p class="card-text text-muted">Posted {{ $item->created_at }}</p><br>
+                        <img class="card-img-top" src="{{ asset('assets/gallery/' . $item->foto) }}">
                         <br><br>
                         <div class="text-post" style="text-align: justify;">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                {{ $item->isi }}
                             </p>
-                            <h5>Cara Menanam : </h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <iframe width="100%" height="340" src="https://www.youtube.com/embed/TbxDIVJGh9Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="340" src="{{ $item->link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
+                    @endforeach
                 </div>
                 <div class="card-konten card my-5">
                     <div class="card-komentar card-body">

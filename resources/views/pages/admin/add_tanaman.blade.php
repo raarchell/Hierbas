@@ -14,7 +14,7 @@
         </div>
         <div class="card-body">
             <div class="main-page">
-                <form action="{{ route('storetanaman') }}" method="POST">
+                <form action="{{ route('storetanaman') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group">
                         <p>Link Youtube</p>
-                        <input type="text" class="form-control" id="link" name="link" placeholder="Link Youtube">
+                        <input type="text" class="form-control" id="link" name="link" placeholder="Link Youtube" />
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary" name="submit" value="submit">

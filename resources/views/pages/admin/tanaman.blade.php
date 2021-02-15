@@ -31,12 +31,13 @@
                             @foreach ($items as $item)
                             <td>{{ $item->nama }}</td>
                             <td class="text-center align-middle">
-                                <form action="#" class="d-inline">
+                                <form action="{{ route('edittanaman', $item->id) }}" class="d-inline">
                                     <div class="btn-group">
                                         <button a class="btn btn-primary">Edit</button>
                                     </div>
                                 </form>
-                                <form action="#" method="POST" class="d-inline">
+                                <form action="{{ route('delete', $item->id) }}" method="POST" class="d-inline">
+                                    @csrf
                                     <div class="btn-group">
                                         <button a class="btn btn-danger">Delete</button>
                                     </div>

@@ -15,21 +15,21 @@
                     <a href="{{route('resep')}}" class="nav-link">Resep</a>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a href="tanaman.html" class="nav-link">Tanaman</a>
+                    <a href="{{route('tanaman')}}" class="nav-link">Tanaman</a>
                 </li>
                 @auth
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
-                            <i class="fas fa-user-alt" style='font-size:17px'></i> &nbsp; {{ Auth::user()->name }}
-                        </a>
-                        <div class="dropdown-menu">
-                            <a href="profil.html" class="dropdown-item">Profile</a>
-                            <form action="{{ url('logout') }}" method="POST">
-                                @csrf
-                                <button class="dropdown-item" method="POST">Logout</button>
-                            </form>
-                        </div>
-                    </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                        <i class="fas fa-user-alt" style='font-size:17px'></i> &nbsp; {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="profil.html" class="dropdown-item">Profile</a>
+                        <form action="{{ url('logout') }}" method="POST">
+                            @csrf
+                            <button class="dropdown-item" method="POST">Logout</button>
+                        </form>
+                    </div>
+                </li>
                 @endauth
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link" id="navbardrop" data-toggle="dropdown">
