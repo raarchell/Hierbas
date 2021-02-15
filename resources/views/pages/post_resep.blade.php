@@ -30,7 +30,7 @@
                     <div class="card-konten card my-5">
                         <div class="card-komentar card-body">
                             @auth
-                                <form method="POST" action="{{ route('storecomment') }}">
+                                <form method="POST" action="{{ route('resepcomment') }}">
                                     @csrf
                                     <div class="komentar form-group">
                                         <label for="comment">
@@ -48,26 +48,28 @@
                                 </form>
                             @endauth
                             @guest
-                             <p><a href="{{route('login')}}">Login</a> untuk komen</p>   
+                                <p><a href="{{ route('login') }}">Login</a> untuk komen</p>
                             @endguest
                         </div>
                         <hr>
-                        <div class="profil-comment">
-                            <img src="images/profilkomen.jpg" class="img-komentar rounded-circle float-left" alt="">
-                            <div class="comment-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h3>Laura</h3>
+                        @foreach ($data as $data)
+                            <div class="profil-comment">
+                                <img src="images/profilkomen.jpg" class="img-komentar rounded-circle float-left" alt="">
+                                <div class="comment-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h3>{{ $data->id_user }}</h3>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p>Baguss banget</p>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>{{ $data->comment }}</p>
+                                        </div>
                                     </div>
+                                    <hr>
                                 </div>
-                                <hr>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="recommend col-md-4">

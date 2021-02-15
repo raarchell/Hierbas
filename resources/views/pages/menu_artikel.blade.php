@@ -21,11 +21,11 @@
                         </div>
                         <div class="col-sm-9">
                             <div class="card-body">
-                                <a href="{{ route('postartikel') }}" class="card-title">
+                                <a href="{{ route('postartikel', $item->id) }}" class="card-title">
                                     <h3>{{ $item->judul }}</h3>
                                 </a>
                                 <p>
-                                    {{ $item->isi_artikel }}
+                                    {!! $item->isi_artikel !!}
                                 </p>
                             </div>
                         </div>

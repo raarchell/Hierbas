@@ -24,6 +24,8 @@ Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
     ->name('resep');
 Route::get('/postresep/{id}', 'App\Http\Controllers\ResepController@indexPostResep')
     ->name('postresep');
+Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
+    ->name('resepcomment');
 //contactus
 Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
     ->name('addsaran');
@@ -32,15 +34,17 @@ Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store'
 //artikel
 Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
     ->name('indexartikel');
-Route::get('/artikel/post', 'App\Http\Controllers\ArtikelController@postArtikel')
+Route::get('/artikel/post/{id}', 'App\Http\Controllers\ArtikelController@postArtikel')
     ->name('postartikel');
+Route::post('/postartikel/comment', 'App\Http\Controllers\ArtikelController@comment')
+    ->name('artikelcomment');
 //tanaman
 Route::get('/tanaman', 'App\Http\Controllers\TanamanController@indexTanaman')
     ->name('tanaman');
-Route::get('/tanaman/post', 'App\Http\Controllers\TanamanController@postTanaman')
+Route::get('/tanaman/post/{id}', 'App\Http\Controllers\TanamanController@postTanaman')
     ->name('posttanaman');
-Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
-    ->name('storecomment');
+Route::post('/posttanaman/comment', 'App\Http\Controllers\TanamanController@comment')
+    ->name('tanamancomment');
 
 Route::prefix('admin')
     ->middleware(['auth', 'admin'])

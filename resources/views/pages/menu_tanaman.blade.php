@@ -15,7 +15,7 @@
                         <i class='far fa-calendar-alt' style='font-size:15px'></i>&nbsp; {{ $item->created_at }}
                     </p>
                     <h5 class="card-title">{{ $item->nama }}</h5>
-                    <p class="card-text text-justify">{{ $item->isi }}</p>
+                    {{-- <p class="card-text text-justify">{{ $item->isi }}</p> --}}
                     <div class="text-center">
                         <a href="{{ route('posttanaman', $item->id) }}" class="btn btn-details">Details</a>
                     </div>

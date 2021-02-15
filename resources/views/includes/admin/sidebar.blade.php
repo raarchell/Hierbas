@@ -2,7 +2,7 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <a class="nav-link mt-4" href="index.html">
+                <a class="nav-link mt-4" href="{{route('dashboard')}}">
                     <div class="sb-nav-link-icon">
                         <i class="fa fa-home" style="font-size:15px"></i>
                     </div>

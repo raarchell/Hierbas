@@ -13,4 +13,8 @@ class Artikel extends Model
         'foto',
     ];
     protected $table = 'artikel';
+    
+    public function artikel(){
+        return $this->hasMany(Artikel::class,'id_artikel','id');
+    }
 }
