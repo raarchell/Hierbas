@@ -4,7 +4,7 @@
 <div class="container-fluid mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Tanaman Herbal</a></li>
+            <li class="breadcrumb-item"><a href="{{ ('tabeltanaman') }}">Tanaman Herbal</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit</li>
         </ol>
     </nav>
@@ -14,24 +14,42 @@
         </div>
         <div class="card-body">
             <div class="main-page">
-                <form action="#" method="POST">
-                    <p>Nama Tanaman</p>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+                <form action="{{ route('update', $items->id) }}" method="POST">
+                    @csrf
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <p>Isi</p>
+                    @endif
                     <div class="form-group">
-                        <textarea id="isi" name="isi" rows="4" cols="70">
-                                            </textarea>
+                        <p>Nama Tanaman</p>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Tanaman" value="{{ $items->nama }}" />
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="customFile">Foto</label>
-                        <input type="file" class="form-control" id="customFile" />
-                    </div> <br>
+                        <p>Pengertian</p>
+                        <textarea id="pengertian" name="pengertian" rows="4" cols="70">{{ $items->pengertian }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <p>Cara Menanam</p>
+                        <textarea id="cara_menanam" name="cara_menanam" rows="4" cols="70">{{ $items->cara_menanam }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="foto">Foto</label>
+                        <input type="file" class="form-control" id="foto" name="foto" />
+                    </div>
+                    <div class="form-group">
+                        <p> Link Video Youtube </p>
+                        <input type="text" class="form-control" id="link" name="link" placeholder="Link Youtube">
+                    </div>
+                    <br>
                     <button type="submit" class="btn btn-primary" name="submit" value="submit">
                         Submit
                     </button>
-                    <a href="#" class="btn btn-secondary">
+                    <a href="{{ route('tabeltanaman') }}" class="btn btn-secondary">
                         Cancel
                     </a>
                 </form>

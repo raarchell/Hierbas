@@ -2,40 +2,53 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Artikel;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+use Symfony\Contracts\Service\Attribute\Required;
 
-class ArtikelController extends Controller
+class TanamanController extends Controller
+{
+    // tabel
+=======
+
+class TanamanController extends Controller
 {
     //tabel
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
     public function index(Request $request)
     {
-        $items = Artikel::get();
-        return view('pages.admin.artikel', [
+        $items = Tanaman::get();
+        return view('pages.admin.tanaman', [
             'items' => $items
         ]);
     }
     public function delete($id)
     {
-        $items = Artikel::findOrFail($id);
+        $items = Tanaman::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabelartikel');
+        return redirect()->route('tabeltanaman');
     }
 
     //add
     public function indexAdd()
     {
-        $items = Artikel::get();
-        return view('pages.admin.add_artikel', [
+        $items = Tanaman::get();
+        return view('pages.admin.add_tanaman', [
             'items' => $items
         ]);
     }
     public function store(Request $request)
     {
         $request->validate([
-            'judul' => 'required|max:50',
-            'isi_artikel' => 'required',
+            'nama' => 'required|max:30',
+<<<<<<< HEAD
+            'cara_menanam' => 'required',
+=======
+            'isi' => 'required',
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
             'foto' => 'file|image|mimes:jpeg,png,jpg',
+            'link' => 'required',
         ]);
         // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('foto');
@@ -45,29 +58,36 @@ class ArtikelController extends Controller
         $tujuan_upload = 'assets/gallery';
         $file->move($tujuan_upload, $nama_file);
         $data = [
-            'judul' => $request->judul,
-            'isi_artikel' => $request->isi_artikel,
+            'nama' => $request->nama,
+<<<<<<< HEAD
+            'cara_menanam' => $request->cara_menanam,
+=======
+            'isi' => $request->isi,
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
             'foto' => $nama_file,
+            'link' => $request->link,
         ];
-        Artikel::create($data);
+        Tanaman::create($data);
 
-        return redirect()->route('tabelartikel');
+        return redirect()->route('tabeltanaman');
     }
+<<<<<<< HEAD
 
     // edit
     public function indexEdit($id)
     {
-        $items = Artikel::findOrFail($id);
-        return view('pages.admin.edit_artikel', [
+        $items = Tanaman::findOrFail($id);
+        return view('pages.admin.edit_tanaman', [
             'items' => $items,
         ]);
     }
     public function update(Request $request, $id)
     {
         $request->validate([
-            'judul' => 'required|max:50',
-            'isi_artikel' => 'required',
+            'nama' => 'required|max:30',
+            'cara_menanam' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
+            'link' => 'required',
         ]);
         // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('foto');
@@ -77,30 +97,15 @@ class ArtikelController extends Controller
         $tujuan_upload = 'assets/gallery';
         $file->move($tujuan_upload, $nama_file);
         $data = [
-            'judul' => $request->judul,
-            'isi_artikel' => $request->isi_artikel,
+            'nama' => $request->nama,
+            'cara_menanam' => $request->cara_menanam,
             'foto' => $nama_file,
+            'link' => $request->link,
         ];
-        Artikel::find($id)->update($data);
+        Tanaman::find($id)->update($data);
 
-        return redirect()->route('tabelartikel');
+        return redirect()->route('tabeltanaman');
     }
-
-    // page menu artikel user
-    public function indexArtikel()
-    {
-        $items = Artikel::get();
-        return view('pages.menu_artikel', [
-            'items' => $items
-        ]);
-    }
-
-    //page post artikel user
-    public function postArtikel()
-    {
-        $items = Artikel::get();
-        return view('pages.post_artikel', [
-            'items' => $items
-        ]);
-    }
+=======
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
 }

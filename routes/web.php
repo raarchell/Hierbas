@@ -77,6 +77,23 @@ Route::prefix('admin')
             ->name('editartikel');
         Route::post('/edit/update/{id}', 'App\Http\Controllers\ArtikelController@update')
             ->name('update');
+
+        //tanaman
+        Route::get('/tanaman', 'App\Http\Controllers\TanamanController@index')
+            ->name('tabeltanaman');
+        Route::get('/addtanaman', 'App\Http\Controllers\TanamanController@indexAdd')
+            ->name('addtanaman');
+        Route::post('/addtanaman/store', 'App\Http\Controllers\TanamanController@store')
+            ->name('storetanaman');
+<<<<<<< HEAD
+        Route::post('/delete/{id}', 'App\Http\Controllers\TanamanController@delete')
+            ->name('delete');
+        Route::get('/edit/{id}', 'App\Http\Controllers\TanamanController@indexEdit')
+            ->name('edittanaman');
+        Route::post('/edit/update/{id}', 'App\Http\Controllers\TanamanController@update')
+            ->name('update');
+=======
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
     });
 
 Auth::routes();
@@ -88,3 +105,5 @@ Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store'
     ->name('storepesan');
 Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
     ->name('indexartikel');
+Route::get('/artikel/post', 'App\Http\Controllers\ArtikelController@postArtikel')
+    ->name('postartikel');
