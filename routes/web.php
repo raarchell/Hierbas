@@ -24,7 +24,6 @@ Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
     ->name('resep');
 Route::get('/postresep/{id}', 'App\Http\Controllers\ResepController@indexPostResep')
     ->name('postresep');
-<<<<<<< HEAD
 //contactus
 Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
     ->name('addsaran');
@@ -40,10 +39,8 @@ Route::get('/tanaman', 'App\Http\Controllers\TanamanController@indexTanaman')
     ->name('tanaman');
 Route::get('/tanaman/post', 'App\Http\Controllers\TanamanController@postTanaman')
     ->name('posttanaman');
-=======
 Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
     ->name('storecomment');
->>>>>>> d256c3b4445ac650eddd3a313bec2047ab2a86eb
 
 Route::prefix('admin')
     ->middleware(['auth', 'admin'])

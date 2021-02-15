@@ -11,7 +11,7 @@
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
             Tabel Artikel
-            <form action="{{ route('tabelartikel') }}" class="d-inline">
+            <form action="{{ route('addartikel') }}" class="d-inline">
                 <div class="float-right">
                     <button a class="btn btn-primary">+ Add</button>
                 </div>
@@ -31,13 +31,13 @@
                             @foreach ($items as $item)
                             <td>{{ $item->judul }}</td>
                             <td class="text-center align-middle">
-                                <form action="{{ route('editartikel', $item->id) }}" class="d-inline">
+                                <form action="{{ route('editartikel' , $item->id )}}" class="d-inline">
                                     @csrf
                                     <div class="btn-group">
                                         <button a class="btn btn-primary">Edit</button>
                                     </div>
                                 </form>
-                                <form action="{{ route('delete', $item->id) }}" method="POST" class="d-inline">
+                                <form action="{{ route('delete' , $item->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     <div class="btn-group">
                                         <button a class="btn btn-danger">Delete</button>
