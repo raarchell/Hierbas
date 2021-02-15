@@ -14,7 +14,7 @@
             </div>
             <div class="card-body">
                 <div class="main-page">
-                    <form action="{{ route('update', $items->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('updatekategori', $items->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger">

@@ -116,10 +116,10 @@ class ResepController extends Controller
         //     'items' => $id
         // ]);
         // // $items = Resep::where('id',$id)->value('id');
-        $id = ResepComment::lastest()->pluck('id_resep');
 
         $data = $request->all();
         ResepComment::create($data);
+        $id = ResepComment::orderBy('id','desc')->value('id_resep');
         return redirect()->route('postresep',$id );
     }
 }

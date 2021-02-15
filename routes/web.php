@@ -54,12 +54,12 @@ Route::prefix('admin')
             ->name('addkategori');
         Route::post('/addkategori/store', 'App\Http\Controllers\KategoriController@store')
             ->name('storekategori');
-        Route::post('/delete/{id}', 'App\Http\Controllers\KategoriController@delete')
-            ->name('delete');
-        Route::get('/edit/{id}', 'App\Http\Controllers\KategoriController@indexEdit')
-            ->name('edit');
-        Route::post('/edit/update/{id}', 'App\Http\Controllers\KategoriController@update')
-            ->name('update');
+        Route::post('/deletekategori/{id}', 'App\Http\Controllers\KategoriController@delete')
+            ->name('deletekategori');
+        Route::get('/editkategori/{id}', 'App\Http\Controllers\KategoriController@indexEdit')
+            ->name('editkategori');
+        Route::post('/editkategori/update/{id}', 'App\Http\Controllers\KategoriController@update')
+            ->name('updatekategori');
 
         //contactus
         Route::get('/pesan', 'App\Http\Controllers\ContactusController@index')
@@ -72,12 +72,12 @@ Route::prefix('admin')
             ->name('addresep');
         Route::post('/addresep/store', 'App\Http\Controllers\ResepController@store')
             ->name('storeresep');
-        Route::post('/delete/{id}', 'App\Http\Controllers\ResepController@delete')
-            ->name('delete');
-        Route::get('/edit/{id}', 'App\Http\Controllers\ResepController@indexEdit')
+        Route::post('/deleteresep/{id}', 'App\Http\Controllers\ResepController@delete')
+            ->name('deleteresep');
+        Route::get('/editresep/{id}', 'App\Http\Controllers\ResepController@indexEdit')
             ->name('editresep');
-        Route::post('/edit/update/{id}', 'App\Http\Controllers\ResepController@update')
-            ->name('update');
+        Route::post('/editresep/update/{id}', 'App\Http\Controllers\ResepController@update')
+            ->name('updateresep');
 
         //artikel
         Route::get('/artikel', 'App\Http\Controllers\ArtikelController@index')
