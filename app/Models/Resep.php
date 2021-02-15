@@ -19,4 +19,7 @@ class Resep extends Model
     public function kategori(){
         return $this->belongsTo(Kategori::class,'id_kategori','id');
     }
+    public function resep(){
+        return $this->hasMany(Resep::class,'id_resep','id');
+    }
 }
