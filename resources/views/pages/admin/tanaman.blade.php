@@ -32,6 +32,10 @@
                             <td>{{ $item->nama }}</td>
                             <td class="text-center align-middle">
                                 <form action="{{ route('edittanaman', $item->id) }}" class="d-inline">
+<<<<<<< HEAD
+=======
+                                    @csrf
+>>>>>>> d256c3b4445ac650eddd3a313bec2047ab2a86eb
                                     <div class="btn-group">
                                         <button a class="btn btn-primary">Edit</button>
                                     </div>

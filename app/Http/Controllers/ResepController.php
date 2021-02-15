@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Resep;
 use App\Models\Kategori;
+use App\Models\ResepComment;
 
 class ResepController extends Controller
 {
@@ -107,5 +108,18 @@ class ResepController extends Controller
         return view('pages.post_resep',[
             'items' => $items
         ]);
+    }
+    public function comment(Request $request)
+    {
+        // $id = Resep::findOrFail($id);
+        // return view('pages.post_resep',[
+        //     'items' => $id
+        // ]);
+        // // $items = Resep::where('id',$id)->value('id');
+        $id = ResepComment::lastest()->pluck('id_resep');
+
+        $data = $request->all();
+        ResepComment::create($data);
+        return redirect()->route('postresep',$id );
     }
 }

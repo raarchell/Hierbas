@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Tanaman;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+use Symfony\Contracts\Service\Attribute\Required;
+
+class TanamanController extends Controller
+{
+    // tabel
+=======
 
 class TanamanController extends Controller
 {
     //tabel
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
     public function index(Request $request)
     {
         $items = Tanaman::get();
@@ -34,7 +42,11 @@ class TanamanController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:30',
+<<<<<<< HEAD
+            'cara_menanam' => 'required',
+=======
             'isi' => 'required',
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
             'foto' => 'file|image|mimes:jpeg,png,jpg',
             'link' => 'required',
         ]);
@@ -47,7 +59,11 @@ class TanamanController extends Controller
         $file->move($tujuan_upload, $nama_file);
         $data = [
             'nama' => $request->nama,
+<<<<<<< HEAD
+            'cara_menanam' => $request->cara_menanam,
+=======
             'isi' => $request->isi,
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
             'foto' => $nama_file,
             'link' => $request->link,
         ];
@@ -55,6 +71,10 @@ class TanamanController extends Controller
 
         return redirect()->route('tabeltanaman');
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d256c3b4445ac650eddd3a313bec2047ab2a86eb
 
     // edit
     public function indexEdit($id)
@@ -68,7 +88,11 @@ class TanamanController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:30',
+<<<<<<< HEAD
             'isi' => 'required',
+=======
+            'cara_menanam' => 'required',
+>>>>>>> d256c3b4445ac650eddd3a313bec2047ab2a86eb
             'foto' => 'file|image|mimes:jpeg,png,jpg',
             'link' => 'required',
         ]);
@@ -81,7 +105,11 @@ class TanamanController extends Controller
         $file->move($tujuan_upload, $nama_file);
         $data = [
             'nama' => $request->nama,
+<<<<<<< HEAD
             'isi' => $request->isi,
+=======
+            'cara_menanam' => $request->cara_menanam,
+>>>>>>> d256c3b4445ac650eddd3a313bec2047ab2a86eb
             'foto' => $nama_file,
             'link' => $request->link,
         ];
@@ -89,6 +117,7 @@ class TanamanController extends Controller
 
         return redirect()->route('tabeltanaman');
     }
+<<<<<<< HEAD
 
     // page menu tanaman user
     public function indexTanaman()
@@ -107,4 +136,8 @@ class TanamanController extends Controller
             'items' => $items
         ]);
     }
+=======
+=======
+>>>>>>> 7d210ac9a623afbc8254e4eb7345beda151025a0
+>>>>>>> d256c3b4445ac650eddd3a313bec2047ab2a86eb
 }
