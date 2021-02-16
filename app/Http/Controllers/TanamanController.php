@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tanaman;
+use App\Models\TanamanComment;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -101,11 +102,18 @@ class TanamanController extends Controller
     }
 
     //page post tanaman user
-    public function postTanaman()
-    {
-        $items = Tanaman::get();
-        return view('pages.post_tanaman', [
-            'items' => $items
+    public function postTanaman(Request $request, $id){
+        $items = Tanaman::findOrFail($id);
+        $data = TanamanComment::get();
+        return view('pages.post_tanaman',[
+            'items' => $items,
+            'data' => $data
         ]);
+    }
+    public function comment(Request $request){
+        $data = $request->all();
+        TanamanComment::create($data);
+        $id = TanamanComment::orderBy('id','desc')->value('id_tanaman');
+        return redirect()->route('posttanaman', $id);
     }
 }

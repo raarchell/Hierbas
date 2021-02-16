@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\ArtikelComment;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -97,11 +98,18 @@ class ArtikelController extends Controller
     }
 
     //page post artikel user
-    public function postArtikel()
-    {
-        $items = Artikel::get();
-        return view('pages.post_artikel', [
-            'items' => $items
+    public function postArtikel(Request $request, $id){
+        $items = Artikel::findOrFail($id);
+        $data = ArtikelComment::get();
+        return view('pages.post_artikel',[
+            'items' => $items,
+            'data' => $data
         ]);
+    }
+    public function comment(Request $request){
+        $data = $request->all();
+        ArtikelComment::create($data);
+        $id = ArtikelComment::orderBy('id','desc')->value('id_artikel');
+        return redirect()->route('postartikel', $id);
     }
 }

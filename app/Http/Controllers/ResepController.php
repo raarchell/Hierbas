@@ -105,21 +105,16 @@ class ResepController extends Controller
     // postingan resep
     public function indexPostResep(Request $request, $id){
         $items = Resep::findOrFail($id);
+        $data = ResepComment::get();
         return view('pages.post_resep',[
-            'items' => $items
+            'items' => $items,
+            'data' => $data
         ]);
     }
-    public function comment(Request $request)
-    {
-        // $id = Resep::findOrFail($id);
-        // return view('pages.post_resep',[
-        //     'items' => $id
-        // ]);
-        // // $items = Resep::where('id',$id)->value('id');
-
+    public function comment(Request $request){
         $data = $request->all();
         ResepComment::create($data);
         $id = ResepComment::orderBy('id','desc')->value('id_resep');
-        return redirect()->route('postresep',$id );
+        return redirect()->route('postresep', $id);
     }
 }

@@ -14,4 +14,8 @@ class Tanaman extends Model
                 'link',
         ];
         protected $table = 'tanaman';
+
+        public function resep(){
+                return $this->hasMany(Tanaman::class,'id_tanaman','id');
+        }
 }
