@@ -1,92 +1,92 @@
 header h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: medium;
-  font-size: 30px;
-  padding-top: 150px;
-  margin-left: 110px;
+    font-family: "Poppins", sans-serif;
+    font-weight: medium;
+    font-size: 30px;
+    padding-top: 150px;
+    margin-left: 110px;
 }
 
 .breadcrumb {
-  margin-left: 95px;
-  background-color: #ffff;
-  font-family: "Poppins", sans-serif;
-  color: #070707;
-  font-size: 15px;
+    margin-left: 95px;
+    background-color: #ffff;
+    font-family: "Poppins", sans-serif;
+    color: #070707;
+    font-size: 15px;
 }
 
 .breadcrumb a {
-  font-family: "Poppins", sans-serif;
-  font-weight: small;
-  color: #070707;
-  font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: small;
+    color: #070707;
+    font-size: 15px;
 }
 
 .content-menu {
-  margin-left: 150px;
-  max-width: 985px;
+    margin-left: 150px;
+    max-width: 985px;
 }
 
 .card {
-  background-color: #c4c4c4;
-  margin: 30px 0 0 20px;
+    background-color: #c4c4c4;
+    margin: 20px 0 0 20px;
 }
 
 .card-img {
-  margin: 15px 0 0 15px;
-  width: 130px;
-  height: 130px;
+    margin: 15px 0 0 15px;
+    width: 130px;
+    height: 130px;
 }
 
 .card .card-title h3 {
-  font-size: 23px;
-  font-weight: 500;
-  color: black;
-  margin-left: 20px;
+    font-size: 22px;
+    font-weight: 500;
+    color: black;
+    margin-left: 20px;
 }
 
 .card p {
-  color: #858585;
-  font-size: 15px;
-  margin-left: 20px;
+    color: #858585;
+    font-size: 15px;
+    margin-left: 20px;
 }
 
 .isi-artikel p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* number of lines to show */
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 .card .card-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* number of lines to show */
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 footer {
-  background-color: #ffff;
-  padding-top: 130px;
-  padding-bottom: 30px;
+    background-color: #ffff;
+    padding-top: 130px;
+    padding-bottom: 30px;
 }
 
 footer img {
-  margin-left: 220px;
+    margin-left: 220px;
 }
 
 footer .footer-link {
-  margin-left: -130px;
+    margin-left: -130px;
 }
 
 footer .footer-link a {
-  color: black;
+    color: black;
 }
 
 footer .copy-right {
-  margin-left: 220px;
+    margin-left: 220px;
 }
 /*# sourceMappingURL=artikel.css.map */

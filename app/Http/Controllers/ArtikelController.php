@@ -98,18 +98,30 @@ class ArtikelController extends Controller
     }
 
     //page post artikel user
-    public function postArtikel(Request $request, $id){
+    public function postArtikel(Request $request, $id)
+    {
         $items = Artikel::findOrFail($id);
         $data = ArtikelComment::get();
-        return view('pages.post_artikel',[
+        return view('pages.post_artikel', [
             'items' => $items,
             'data' => $data
         ]);
     }
-    public function comment(Request $request){
+    public function comment(Request $request)
+    {
         $data = $request->all();
         ArtikelComment::create($data);
-        $id = ArtikelComment::orderBy('id','desc')->value('id_artikel');
+        $id = ArtikelComment::orderBy('id', 'desc')->value('id_artikel');
         return redirect()->route('postartikel', $id);
+    }
+
+    //rekomendasi
+    public function rekomendasi()
+    {
+        $items = Artikel::latest(3);
+        return view('pages.post_artikel', [
+            'items' => $items
+        ]);
+        //dd($items);
     }
 }

@@ -12,36 +12,69 @@
 <main>
     <div class="container-fluid">
         <div class="content-profil row">
+            @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="alert-text">{{ session('success') }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+            @if(session('failed'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <span class="alert-text">{{ session('failed') }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+            @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Whoops!</strong> Terjadi kesalahan<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="col-sm-3">
                 <h4>Personal Information</h4>
             </div>
             <div class=col-sm-9>
                 <div class="card ml-auto mr-auto">
                     <div class="card-body">
-                        <form action="{{ route('updateprofil', $items->id) }}" method="POST" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label>Nama</label>
-                                <input id="nama" type="text" class="form-control" placeholder="Nama">
-                            </div>
-                            <div class="form-group">
-                                <label>Jenis Kelamin</label><br>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                    <label class="form-check-label" for="inlineRadio1">Pria</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                    <label class="form-check-label" for="inlineRadio2">Wanita</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Tanggal Lahir</label>
-                                <input id="tanggal" type="date" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <input id="email" type="email" class="form-control" placeholder="E-mail">
-                            </div>
+                        <form>
+                            @if(Auth::user()->admin)
+                            <form action="{{ route('pages.admin.profil') }}" method="POST">
+                                @else
+                                <form action="{{ route('update-akun') }}" method="POST">
+                                    @endif
+                                    @csrf
+                                    @method('patch')
+                                    <div class="form-group">
+                                        <label>Nama</label>
+                                        <input id="nama" type="text" class="form-control" placeholder="Nama" value=" {{ $auth->user->nama }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Jenis Kelamin</label><br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">Pria</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">Wanita</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tanggal Lahir</label>
+                                        <input id="tanggal" type="date" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>E-mail</label>
+                                        <input id="email" type="email" class="form-control" placeholder="E-mail">
+                                    </div>
                     </div>
                     <a href="#" class="btn btn-primary mx-auto mt-4" style="float: right;">
                         Save

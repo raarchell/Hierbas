@@ -12,9 +12,9 @@
 <main>
     <div class="content-menu row mx-auto">
         <div class="row">
+            @foreach ($items as $item)
             <div class="col-sm-6">
                 <div class="card ml-auto mr-auto">
-                    @foreach ($items as $item)
                     <div class="isi-artikel row">
                         <div class="col-sm-3">
                             <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img" alt="">
@@ -30,10 +30,11 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
                 </div>
             </div>
+            @endforeach
         </div>
+    </div>
 </main>
 @endsection
 

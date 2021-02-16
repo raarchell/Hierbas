@@ -110,8 +110,15 @@ Route::prefix('admin')
             ->name('edittanaman');
         Route::post('/edittanaman/update/{id}', 'App\Http\Controllers\TanamanController@update')
             ->name('updatetanaman');
+
+        //profil
+        Route::get('/profil', 'App\Http\Controllers\ProfilController@indexEdit')
+            ->name('profil');
+        Route::patch('/profil', 'App\Http\Controllers\ProfilController@store');
     });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('akun', [ProfilController::class, 'indexEdit'])->name('akun');
+Route::patch('/update-akun', [ProfilController::class, 'store'])->name('update-akun');
