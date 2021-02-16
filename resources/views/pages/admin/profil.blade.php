@@ -1,14 +1,14 @@
 @extends('layouts.admin.admin')
 @section('title', 'profil')
 @section('content')
-{{-- <div class="container-fluid mt-5">
+<div class="container-fluid mt-5">
     <header>
         <img src="hierba-admin/assets/img/profil.jpg" class="rounded-circle float-left" alt="">
         <div class="row">
             <h3>Hai, Nama</h3>
         </div>
     </header>
-</div> --}}
+</div>
 <main>
     <div class="container-fluid">
         <div class="content-profil row">
@@ -18,7 +18,7 @@
             <div class=col-sm-9>
                 <div class="card ml-auto mr-auto">
                     <div class="card-body">
-                        <div class="form">
+                        <form action="{{ route('updateprofil', $items->id) }}" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Nama</label>
                                 <input id="nama" type="text" class="form-control" placeholder="Nama">
@@ -42,40 +42,40 @@
                                 <label>E-mail</label>
                                 <input id="email" type="email" class="form-control" placeholder="E-mail">
                             </div>
-                        </div>
-                        <a href="#" class="btn btn-primary mx-auto mt-4" style="float: right;">
-                            Save
-                        </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <h4>Update Password</h4>
-            </div>
-            <div class="col-sm-9">
-                <div class="card ml-auto mr-auto">
-                    <div class="card-body">
-                        <div class="form">
-                            <div class="form-group">
-                                <label>Current Password</label>
-                                <input id="password" type="password" class="form-control" placeholder="Current Password">
-                            </div>
-                            <div class="form-group">
-                                <label>New Password</label>
-                                <input id="password" type="password" class="form-control" placeholder="New Password">
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input id="password" type="password" class="form-control" placeholder="Confirm Password">
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary mx-auto mt-4" style="float: right;">
-                            Save
-                        </a>
-                    </div>
+                    <a href="#" class="btn btn-primary mx-auto mt-4" style="float: right;">
+                        Save
+                    </a>
                 </div>
             </div>
         </div>
+        <div class="col-sm-3">
+            <h4>Update Password</h4>
+        </div>
+        <div class="col-sm-9">
+            <div class="card ml-auto mr-auto">
+                <div class="card-body">
+                    <div class="form">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input id="password" type="password" class="form-control" placeholder="Current Password">
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input id="password" type="password" class="form-control" placeholder="New Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input id="password" type="password" class="form-control" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary mx-auto mt-4" style="float: right;">
+                        Save
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </main>
 @endsection

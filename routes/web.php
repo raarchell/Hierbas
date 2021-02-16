@@ -105,7 +105,7 @@ Route::prefix('admin')
         Route::get('/edittanaman/{id}', 'App\Http\Controllers\TanamanController@indexEdit')
             ->name('edittanaman');
         Route::post('/edittanaman/update/{id}', 'App\Http\Controllers\TanamanController@update')
-            ->name('update');
+            ->name('updatetanaman');
     });
 
 Auth::routes();

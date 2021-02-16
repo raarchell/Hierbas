@@ -17,7 +17,7 @@
                     @foreach ($items as $item)
                     <div class="card-postawal card-body">
                         <h2 class="card-title">{{ $item->judul }}</h2>
-                        <p class="card-text text-muted">Posted 12 Januari 2021</p><br>
+                        <p class="card-text text-muted">Posted {{ $item->created_at }}</p><br>
                         <img class="card-img-top" src="{{ asset('assets/gallery/' . $item->foto) }}">
                         <br><br>
                         <div class="text-post" style="text-align: justify;">
