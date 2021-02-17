@@ -102,9 +102,11 @@ class ArtikelController extends Controller
     {
         $items = Artikel::findOrFail($id);
         $data = ArtikelComment::get();
+        $post = Artikel::latest()->get()->random(3);
         return view('pages.post_artikel', [
             'items' => $items,
-            'data' => $data
+            'data' => $data,
+            'post' => $post
         ]);
     }
     public function comment(Request $request)
@@ -113,15 +115,5 @@ class ArtikelController extends Controller
         ArtikelComment::create($data);
         $id = ArtikelComment::orderBy('id', 'desc')->value('id_artikel');
         return redirect()->route('postartikel', $id);
-    }
-
-    //rekomendasi
-    public function rekomendasi()
-    {
-        $items = Artikel::latest(3);
-        return view('pages.post_artikel', [
-            'items' => $items
-        ]);
-        //dd($items);
     }
 }
