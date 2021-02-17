@@ -19,6 +19,8 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')
 //kategori
 Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
     ->name('kategori');
+Route::get('/kategori/resep/{slug}', 'App\Http\Controllers\KategoriController@resep')
+    ->name('kat_resep');
 //resep
 Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
     ->name('resep');

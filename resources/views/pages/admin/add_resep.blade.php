@@ -31,10 +31,10 @@
                     </div>
                     <div class="dropdown ml-3 mt-3">
                         <p>Kategori Penyakit</p>
-                        <select name="id_kategori" class="form-control" style="width: 210px">
+                        <select name="slug" class="form-control" style="width: 210px">
                             <option selected>Kategori</option>
                             @foreach ($items as $items)
-                            <option value="{{ $items->id }}">
+                            <option value="{{ $items->slug }}">
                                 {{ $items->nama }}
                             </option>
                             @endforeach

@@ -10,10 +10,8 @@ class Kategori extends Model
     protected $fillable=[
         'nama',
         'foto',
+        'slug',
     ];
     protected $table = 'kategori';
 
-    public function resep(){
-        return $this->hasMany(Resep::class,'id_kategori','id');
-    }
 }

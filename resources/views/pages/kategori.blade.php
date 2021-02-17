@@ -13,7 +13,7 @@
             @foreach ($items as $item)
                 <div class="col-md-3">
                     <div class="card">
-                        <a href="#" class="card-title">{{ $item->nama }}</a>
+                        <a href="{{ route('kat_resep', $item->slug)}}" class="card-title">{{ $item->nama }}</a>
                         <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="">
                     </div>
                 </div>

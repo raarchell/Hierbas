@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use App\Models\Resep;
 
 class KategoriController extends Controller
 {
@@ -27,7 +29,7 @@ class KategoriController extends Controller
     }
     public function store(Request $request){
         $request->validate([
-            'nama' => 'required|max:30',
+            'nama' => 'required|unique:kategori|max:30',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
@@ -40,6 +42,7 @@ class KategoriController extends Controller
         $data = [
             'nama' => $request->nama,
             'foto' => $nama_file,
+            'slug' => Str::slug($request->nama)
         ];
             Kategori::create($data);
 
@@ -80,6 +83,16 @@ class KategoriController extends Controller
         $items = Kategori::get();
         return view('pages.kategori', [
             'items' => $items
+        ]);
+    }
+
+    // resep per kategori
+    public function resep($slug){
+        $items = Resep::where('slug', $slug)->get();
+        $kategori = Kategori::where('slug', $slug)->first();
+        return view('pages.menu_resepkategori',[
+            'items' => $items,
+            'kategori' => $kategori
         ]);
     }
 }

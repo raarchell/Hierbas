@@ -3,11 +3,25 @@ body {
 }
 
 header h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: medium;
-  font-size: 30px;
-  padding-top: 150px;
-  margin-left: 110px;
+  font-size: 35px;
+  color: #070707;
+  padding-top: 130px;
+  margin-left: 85px;
+}
+.breadcrumb {
+  margin-left: 70px;
+  background-color: #dfdeda;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.breadcrumb a {
+  font-family: "Poppins", sans-serif;
+  font-weight: small;
+  color: #070707;
+  font-size: 15px;
 }
 
 .content-menu {

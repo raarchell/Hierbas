@@ -17,7 +17,7 @@ class CreateResepTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nama');
-            $table->integer('id_kategori');
+            $table->string('slug');
             $table->text('bahan');
             $table->text('cara');
             $table->string('foto');
