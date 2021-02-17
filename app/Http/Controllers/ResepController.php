@@ -10,7 +10,8 @@ use App\Models\ResepComment;
 class ResepController extends Controller
 {
     //tabel
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $items = Resep::get();
         return view('pages.admin.resep', [
             'items' => $items
@@ -24,27 +25,33 @@ class ResepController extends Controller
     }
 
     //add
-    public function indexAdd(){
+    public function indexAdd()
+    {
         $items = Kategori::get();
-        return view('pages.admin.add_resep',[
+        return view('pages.admin.add_resep', [
             'items' => $items
         ]);
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'nama' => 'required|max:30',
+<<<<<<< HEAD
             'slug'=>'required',
+=======
+            'id_kategori' => 'required|integer|exists:kategori,id',
+>>>>>>> 757f00e6905651f9fd9c068e8e45131ab98907c7
             'bahan' => 'required',
             'cara' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
-            $file = $request->file('foto');
+        $file = $request->file('foto');
 
-            $nama_file = time() . "_" . $file->getClientOriginalName();
-            // isi dengan nama folder tempat kemana file diupload
-            $tujuan_upload = 'assets/gallery';
-            $file->move($tujuan_upload, $nama_file);
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'assets/gallery';
+        $file->move($tujuan_upload, $nama_file);
         $data = [
             'nama' => $request->nama,
             'slug' => $request->slug,
@@ -52,13 +59,14 @@ class ResepController extends Controller
             'cara' => $request->cara,
             'foto' => $nama_file,
         ];
-            Resep::create($data);
+        Resep::create($data);
 
         return redirect()->route('tabelresep');
     }
 
     // edit
-    public function indexEdit($id){
+    public function indexEdit($id)
+    {
         $items = Resep::findOrFail($id);
         $kategori = Kategori::get();
         return view('pages.admin.edit_resep', [
@@ -70,18 +78,18 @@ class ResepController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:30',
-            'id_kategori'=>'required|integer|exists:kategori,id',
+            'id_kategori' => 'required|integer|exists:kategori,id',
             'bahan' => 'required',
             'cara' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
-            $file = $request->file('foto');
+        $file = $request->file('foto');
 
-            $nama_file = time() . "_" . $file->getClientOriginalName();
-            // isi dengan nama folder tempat kemana file diupload
-            $tujuan_upload = 'assets/gallery';
-            $file->move($tujuan_upload, $nama_file);
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'assets/gallery';
+        $file->move($tujuan_upload, $nama_file);
         $data = [
             'nama' => $request->nama,
             'id_kategori' => $request->id_kategori,
@@ -95,7 +103,8 @@ class ResepController extends Controller
     }
 
     // page menu resep user
-    public function indexResep(){
+    public function indexResep()
+    {
         $items = Resep::get();
         return view('pages.menu_resep', [
             'items' => $items
@@ -103,18 +112,22 @@ class ResepController extends Controller
     }
 
     // postingan resep
-    public function indexPostResep(Request $request, $id){
+    public function indexPostResep(Request $request, $id)
+    {
         $items = Resep::findOrFail($id);
         $data = ResepComment::get();
-        return view('pages.post_resep',[
+        $post = Resep::latest()->get()->random(3);
+        return view('pages.post_resep', [
             'items' => $items,
-            'data' => $data
+            'data' => $data,
+            'post' => $post
         ]);
     }
-    public function comment(Request $request){
+    public function comment(Request $request)
+    {
         $data = $request->all();
         ResepComment::create($data);
-        $id = ResepComment::orderBy('id','desc')->value('id_resep');
+        $id = ResepComment::orderBy('id', 'desc')->value('id_resep');
         return redirect()->route('postresep', $id);
     }
 }

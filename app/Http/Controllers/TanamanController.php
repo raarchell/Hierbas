@@ -102,18 +102,22 @@ class TanamanController extends Controller
     }
 
     //page post tanaman user
-    public function postTanaman(Request $request, $id){
+    public function postTanaman(Request $request, $id)
+    {
         $items = Tanaman::findOrFail($id);
         $data = TanamanComment::get();
-        return view('pages.post_tanaman',[
+        $post = Tanaman::latest()->get()->random(3);
+        return view('pages.post_tanaman', [
             'items' => $items,
-            'data' => $data
+            'data' => $data,
+            'post' => $post
         ]);
     }
-    public function comment(Request $request){
+    public function comment(Request $request)
+    {
         $data = $request->all();
         TanamanComment::create($data);
-        $id = TanamanComment::orderBy('id','desc')->value('id_tanaman');
+        $id = TanamanComment::orderBy('id', 'desc')->value('id_tanaman');
         return redirect()->route('posttanaman', $id);
     }
 }

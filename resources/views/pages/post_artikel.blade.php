@@ -72,19 +72,20 @@
             </div>
             <div class="recommend col-md-4">
                 <h3>Recommended Post</h3>
-                @foreach ($items as $items)
-                <div class="content-sidebar mt-4">
+                @foreach ($post as $post)
+                <div class="content-sidebar mt-3">
                     <div class="card">
                         <div class="isi-recommend row">
                             <div class="col-sm-3">
-                                <img src="" class="card-img" alt="">
+                                <img src="{{ asset('assets/gallery/' . $post->foto) }}" class="card-img" alt="">
                             </div>
                             <div class="col-sm-9">
                                 <div class="card-body">
-                                    <a href="#" class="card-title">
-                                        <h5></h5>
+                                    <a href="{{route('postartikel', $post->id)}}" class="card-title">
+                                        <h5>{{ $post->judul }}</h5>
                                     </a>
-                                    <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, </p>
+                                    <!--<p>-->{!! $post->isi_artikel !!}
+                                    <!--</p>-->
                                 </div>
                             </div>
                         </div>
