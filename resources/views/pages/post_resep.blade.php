@@ -85,7 +85,7 @@
                                     <a href="{{route('postresep', $post->id)}}" class="card-title">
                                         <h5>{{ $post->nama }}</h5>
                                     </a>
-                                    <p>{!! $post->cara !!} </p>
+                                    {{-- <p>{!! $post->cara !!} </p> --}}
                                 </div>
                             </div>
                         </div>

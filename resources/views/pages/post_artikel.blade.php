@@ -84,8 +84,8 @@
                                     <a href="{{route('postartikel', $post->id)}}" class="card-title">
                                         <h5>{{ $post->judul }}</h5>
                                     </a>
-                                    <!--<p>-->{!! $post->isi_artikel !!}
-                                    <!--</p>-->
+                                    {{-- <p>{!! $post->isi_artikel !!}
+                                    </p>--}}
                                 </div>
                             </div>
                         </div>

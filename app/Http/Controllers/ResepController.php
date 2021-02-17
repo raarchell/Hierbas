@@ -36,11 +36,7 @@ class ResepController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:30',
-<<<<<<< HEAD
             'slug'=>'required',
-=======
-            'id_kategori' => 'required|integer|exists:kategori,id',
->>>>>>> 757f00e6905651f9fd9c068e8e45131ab98907c7
             'bahan' => 'required',
             'cara' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',

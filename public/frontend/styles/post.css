@@ -104,24 +104,22 @@ header h2 {
   font-size: 25px;
 }
 
-/*.content-sidebar .card {
-  //height: 130px;
-  //width: 550px;
+.content-sidebar .card {
+  /* max-height: 130px; */
   margin-right: 10px;
-}*/
+}
 .isi-recommend {
   margin: 15px 15px 15px 15px;
 }
 
-.isi-recommend p {
+/* .isi-recommend p {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* number of lines to show */
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   margin-left: 15px;
-}
+} */
 
 .isi-recommend h5 {
   margin-left: 15px;
