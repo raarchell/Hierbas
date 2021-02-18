@@ -151,8 +151,20 @@ header .btn-login:hover {
 }
 
 .section-artikel .isi-artikel {
-  margin-left: 20px;
-  margin-right: -20px;
+  margin-left: -30px;
+  /* margin-right: -20px; */
+}
+
+.img-artikel{
+  max-height: 100px;
+}
+
+.judul-artikel{
+  color: black;
+  font-size: 20px;
+}
+.judul-artikel:hover{
+  color: gray;
 }
 
 .section-artikel .see-more a {

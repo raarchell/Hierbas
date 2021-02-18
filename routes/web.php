@@ -28,6 +28,8 @@ Route::get('/postresep/{id}', 'App\Http\Controllers\ResepController@indexPostRes
     ->name('postresep');
 Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
     ->name('resepcomment');
+Route::post('/postresep/comment/delete', 'App\Http\Controllers\ResepController@deleteComment')
+    ->name('delresepcomment');
 //contactus
 Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
     ->name('addsaran');

@@ -35,7 +35,7 @@ body {
   border-radius: 60px;
   font-size: 18px;
   max-width: 600px;
-  height: 500px;
+  height: 550px;
 }
 .login-card h3{
   font-family: "Poppins", sans-serif;
@@ -44,6 +44,19 @@ body {
   font-size: 50px;
 }
 
+.reset-card{
+  margin: 45px 100px 0 100px;
+  border-radius: 60px;
+  font-size: 18px;
+  max-width: 600px;
+  height: 350px;
+}
+.reset-card h3{
+  font-family: "Poppins", sans-serif;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 40px;
+}
 
 h6 {
   width: 100%;
@@ -68,9 +81,13 @@ h6 span {
   height: 40px;
 }
 
-.form-pesan input{
+.form-group input{
   border-radius: 10px;
   width: 350px;
+}
+
+.form-email{
+  margin-top: 100px;
 }
 
 .btn-register {
@@ -84,6 +101,27 @@ h6 span {
 .btn-register:hover {
   color: #fff;
   background-color: #a0caa5;
+}
+
+.btn-reset {
+  margin: 0 0 70px -40px;
+  background-color: #91B494;
+  color: #fff;
+  font-size: 15px;
+  width: 250px;
+  border-radius: 10px;
+}
+.btn-reset:hover {
+  color: #fff;
+  background-color: #a0caa5;
+}
+
+.btn-link{
+  font-size: 15px;
+  color: #91B494;
+}
+.btn-link:hover{
+  color: #a0caa5;
 }
 
 .register-link {
