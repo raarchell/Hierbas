@@ -125,11 +125,10 @@ Route::prefix('admin')
         //profil
         Route::get('/profil', 'App\Http\Controllers\ProfilController@indexEdit')
             ->name('profil');
-        Route::patch('/profil', 'App\Http\Controllers\ProfilController@store');
+        Route::put('/profil', 'App\Http\Controllers\ProfilController@update')
+            ->name('profil-update');
     });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('akun', [ProfilController::class, 'indexEdit'])->name('akun');
-Route::patch('/update-akun', [ProfilController::class, 'store'])->name('update-akun');
