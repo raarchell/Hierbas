@@ -74,7 +74,7 @@ class ResepController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:30',
-            'id_kategori' => 'required|integer|exists:kategori,id',
+            'slug'=>'required',
             'bahan' => 'required',
             'cara' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
@@ -88,7 +88,7 @@ class ResepController extends Controller
         $file->move($tujuan_upload, $nama_file);
         $data = [
             'nama' => $request->nama,
-            'id_kategori' => $request->id_kategori,
+            'slug' => $request->slug,
             'bahan' => $request->bahan,
             'cara' => $request->cara,
             'foto' => $nama_file,
@@ -125,5 +125,11 @@ class ResepController extends Controller
         ResepComment::create($data);
         $id = ResepComment::orderBy('id', 'desc')->value('id_resep');
         return redirect()->route('postresep', $id);
+    }
+    public function deleteComment($id)
+    {
+        $items = ResepComment::findOrFail($id);
+        $items->delete();
+        return redirect()->route('postresep');
     }
 }
