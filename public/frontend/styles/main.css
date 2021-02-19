@@ -99,38 +99,33 @@ header .btn-login:hover {
   font-weight: 600;
 }
 
+.card {
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 25px;
+  background-color: #dfdeda;
+}
+
+.card .card-title {
+  font-size: 25px;
+  font-weight: 500;
+  color: black;
+}
 .section-kategori {
   padding-top: 90px;
 }
-
 .section-kategori-heading h3 {
   font-family: "Poppins", sans-serif;
   font-size: 30px;
 }
-
-.section-kategori-content {
-  padding-top: 45px;
-}
-
-.card-kategori {
-  height: 380px;
-  width: 270px;
-}
-
-.penyakit-nama {
-  padding-top: 310px;
-}
-
-.card-kategori a {
-  color: #ffffff;
-  font-size: 30px;
-}
-
 .section-kategori-content .see-more a {
   color: #858585;
   margin-left: 30px;
   font-size: 20px;
   font-weight: 600;
+}
+.content-kategori img{
+  height: 120px;
 }
 
 .section-artikel {
@@ -148,11 +143,6 @@ header .btn-login:hover {
   font-family: "Poppins", sans-serif;
   font-size: 30px;
   margin: 30px;
-}
-
-.section-artikel .isi-artikel {
-  margin-left: -30px;
-  /* margin-right: -20px; */
 }
 
 .img-artikel{
