@@ -24,37 +24,37 @@ Route::get('/artikel/post/{id}', 'App\Http\Controllers\ArtikelController@postArt
 Route::middleware(['auth'])->group(function () {
     //kategori
     Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
-    ->name('kategori');
+        ->name('kategori');
     Route::get('/kategori/resep/{slug}', 'App\Http\Controllers\KategoriController@resep')
-    ->name('kat_resep');
+        ->name('kat_resep');
     //resep
     Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
-    ->name('resep');
+        ->name('resep');
     Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
-    ->name('resepcomment');
+        ->name('resepcomment');
     Route::post('/postresep/comment/delete/{id}', 'App\Http\Controllers\ResepController@deleteComment')
-    ->name('delresepcomment');
+        ->name('delresepcomment');
     //contactus
     Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
-    ->name('addsaran');
+        ->name('addsaran');
     Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store')
-    ->name('storepesan');
+        ->name('storepesan');
     //artikel
     Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
-    ->name('indexartikel');
+        ->name('indexartikel');
     Route::post('/postartikel/comment', 'App\Http\Controllers\ArtikelController@comment')
-    ->name('artikelcomment');
+        ->name('artikelcomment');
     Route::post('/postartikel/comment/delete/{id}', 'App\Http\Controllers\ArtikelController@deleteComment')
-    ->name('delartikelcomment');
+        ->name('delartikelcomment');
     //tanaman
     Route::get('/tanaman', 'App\Http\Controllers\TanamanController@indexTanaman')
-    ->name('tanaman');
+        ->name('tanaman');
     Route::get('/tanaman/post/{id}', 'App\Http\Controllers\TanamanController@postTanaman')
-    ->name('posttanaman');
+        ->name('posttanaman');
     Route::post('/posttanaman/comment', 'App\Http\Controllers\TanamanController@comment')
-    ->name('tanamancomment');
+        ->name('tanamancomment');
     Route::post('/posttanaman/comment/delete/{id}', 'App\Http\Controllers\TanamanController@deleteComment')
-    ->name('deltanamancomment');
+        ->name('deltanamancomment');
 });
 
 Route::prefix('admin')
@@ -62,6 +62,7 @@ Route::prefix('admin')
     ->group(function () {
         Route::get('/', 'App\Http\Controllers\AdminController@index')
             ->name('dashboard');
+        Route::get('/search', 'App\Http\Controllers\AdminController@search');
         // kategori
         Route::get('/kategori', 'App\Http\Controllers\KategoriController@index')
             ->name('tabelkategori');

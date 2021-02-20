@@ -59,7 +59,7 @@
                         <div class="form" action="{{ route('profil-update') }}" method="POST">
                             <div class="form-group">
                                 <label>Current Password</label>
-                                <input id="password" type="password" class="form-control" placeholder="Current Password" value="{{  }}">
+                                <input id="password" type="password" class="form-control" placeholder="Current Password" value="">
                             </div>
                             <div class="form-group">
                                 <label>New Password</label>
