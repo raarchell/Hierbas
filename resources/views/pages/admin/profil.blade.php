@@ -18,9 +18,8 @@
             <div class=col-sm-9>
                 <div class="card ml-auto mr-auto">
                     <div class="card-body">
-                        <div class="form" action="{{ route('profil-update') }}" method="POST">
-                            @csrf
-                            @method('PUT')
+                        <div class="form" action="{{ route('profil-update') }}" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 <label>Nama</label>
                                 <input id="name" name="name" type="text" class="form-control" placeholder="Nama" value=" {{ $user->name }}">
@@ -38,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Lahir</label>
-                                <input id="tanggal" type="date" class="form-control">
+                                <input id="tanggal" type="date" class="form-control" value="{{ $user->tanggal }}">
                             </div>
                             <div class="form-group">
                                 <label>E-mail</label>
@@ -60,7 +59,7 @@
                         <div class="form" action="{{ route('profil-update') }}" method="POST">
                             <div class="form-group">
                                 <label>Current Password</label>
-                                <input id="password" type="password" class="form-control" placeholder="Current Password" value="{{ $user->password }}">
+                                <input id="password" type="password" class="form-control" placeholder="Current Password" value="{{  }}">
                             </div>
                             <div class="form-group">
                                 <label>New Password</label>

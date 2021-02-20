@@ -118,7 +118,7 @@ Route::prefix('admin')
         //profil
         Route::get('/profil', 'App\Http\Controllers\ProfilController@indexEdit')
             ->name('profil');
-        Route::put('/profil', 'App\Http\Controllers\ProfilController@update')
+        Route::post('/profil', 'App\Http\Controllers\ProfilController@update')
             ->name('profil-update');
     });
 
