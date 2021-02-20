@@ -16,39 +16,46 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')
     ->name('home');
-//kategori
-Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
-    ->name('kategori');
-Route::get('/kategori/resep/{slug}', 'App\Http\Controllers\KategoriController@resep')
-    ->name('kat_resep');
-//resep
-Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
-    ->name('resep');
 Route::get('/postresep/{id}', 'App\Http\Controllers\ResepController@indexPostResep')
     ->name('postresep');
-Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
-    ->name('resepcomment');
-Route::post('/postresep/comment/delete', 'App\Http\Controllers\ResepController@deleteComment')
-    ->name('delresepcomment');
-//contactus
-Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
-    ->name('addsaran');
-Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store')
-    ->name('storepesan');
-//artikel
-Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
-    ->name('indexartikel');
 Route::get('/artikel/post/{id}', 'App\Http\Controllers\ArtikelController@postArtikel')
     ->name('postartikel');
-Route::post('/postartikel/comment', 'App\Http\Controllers\ArtikelController@comment')
+
+Route::middleware(['auth'])->group(function () {
+    //kategori
+    Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
+    ->name('kategori');
+    Route::get('/kategori/resep/{slug}', 'App\Http\Controllers\KategoriController@resep')
+    ->name('kat_resep');
+    //resep
+    Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
+    ->name('resep');
+    Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
+    ->name('resepcomment');
+    Route::post('/postresep/comment/delete/{id}', 'App\Http\Controllers\ResepController@deleteComment')
+    ->name('delresepcomment');
+    //contactus
+    Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
+    ->name('addsaran');
+    Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store')
+    ->name('storepesan');
+    //artikel
+    Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
+    ->name('indexartikel');
+    Route::post('/postartikel/comment', 'App\Http\Controllers\ArtikelController@comment')
     ->name('artikelcomment');
-//tanaman
-Route::get('/tanaman', 'App\Http\Controllers\TanamanController@indexTanaman')
+    Route::post('/postartikel/comment/delete/{id}', 'App\Http\Controllers\ArtikelController@deleteComment')
+    ->name('delartikelcomment');
+    //tanaman
+    Route::get('/tanaman', 'App\Http\Controllers\TanamanController@indexTanaman')
     ->name('tanaman');
-Route::get('/tanaman/post/{id}', 'App\Http\Controllers\TanamanController@postTanaman')
+    Route::get('/tanaman/post/{id}', 'App\Http\Controllers\TanamanController@postTanaman')
     ->name('posttanaman');
-Route::post('/posttanaman/comment', 'App\Http\Controllers\TanamanController@comment')
+    Route::post('/posttanaman/comment', 'App\Http\Controllers\TanamanController@comment')
     ->name('tanamancomment');
+    Route::post('/posttanaman/comment/delete/{id}', 'App\Http\Controllers\TanamanController@deleteComment')
+    ->name('deltanamancomment');
+});
 
 Route::prefix('admin')
     ->middleware(['auth', 'admin'])

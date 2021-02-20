@@ -50,64 +50,59 @@
                 </div>
             </section>
         </div>
+        @guest
         <section class="section-kategori mt-5" id="penyakit">
             <div class="container">
                 <div class="row">
                     <div class="col section-kategori-heading">
-                        <h3>Kategori Resep</h3>
+                        <h3>Resep Obat Herbal</h3>
                     </div>
                 </div>
             </div>
         </section>
         <section class="section-kategori-content" id="kategoriContent">
             <div class="container">
-                <div class="section-kategori-penyakit row justify-content-center">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-kategori text-center d-flex flex-column"
-                            style="background-image: url('images/penyakit1.png');">
-                            <div class="penyakit-nama">
-                                <a href="#" class="">
-                                    Sakit Kepala
-                                </a>
+                <div class="content-kategori row mx-auto">
+                    @foreach ($resep as $item)
+                        <div class="col-md-3">
+                            <div class="card">
+                                <a href="{{ route('postresep', $item->id) }}" class="card-title">{{ $item->nama }}</a>
+                                <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-kategori text-center d-flex flex-column"
-                            style="background-image: url('images/penyakit2.png');">
-                            <div class="penyakit-nama">
-                                <a href="#" class="">
-                                    Pegal Linu
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-kategori text-center d-flex flex-column"
-                            style="background-image: url('images/penyakit1.png');">
-                            <div class="penyakit-nama">
-                                <a href="#" class="">
-                                    Flu
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-kategori text-center d-flex flex-column"
-                            style="background-image: url('images/penyakit1.png');">
-                            <div class="penyakit-nama">
-                                <a href="#" class="">
-                                    Menjaga Imun
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="see-more row mt-3">
-                    <a href="{{ route('kategori') }}">See More</a>
+                    @endforeach
                 </div>
             </div>
         </section>
+        @endguest
+        @auth
+            <section class="section-kategori mt-5" id="penyakit">
+                <div class="container">
+                    <div class="row">
+                        <div class="col section-kategori-heading">
+                            <h3>Kategori Resep</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-kategori-content" id="kategoriContent">
+                <div class="container">
+                    <div class="content-kategori row mx-auto">
+                        @foreach ($kategori as $item)
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <a href="{{ route('kat_resep', $item->slug) }}" class="card-title">{{ $item->nama }}</a>
+                                    <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="">
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="see-more row mt-3">
+                        <a href="{{ route('kategori') }}">See More</a>
+                    </div>
+                </div>
+            </section>
+        @endauth
         <section class="section-artikel" id="artikel">
             <div class="container">
                 <div class="row">
@@ -125,9 +120,16 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="see-more row mt-3">
-                    <a href="{{ route('indexartikel') }}">See More</a>
-                </div>
+                @auth
+                    <div class="see-more row mt-3">
+                        <a href="{{ route('indexartikel') }}">See More</a>
+                    </div>
+                @endauth
+                @guest
+                    <div class="see-more row mt-3">
+                        <a href="{{ route('login') }}">See More</a>
+                    </div>
+                @endguest
             </div>
         </section>
     </main>

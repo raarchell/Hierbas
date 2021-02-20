@@ -105,11 +105,11 @@ class TanamanController extends Controller
     public function postTanaman(Request $request, $id)
     {
         $items = Tanaman::findOrFail($id);
-        $data = TanamanComment::get();
+        $comment = TanamanComment::with(['user'])->where('id_tanaman', $id)->get();
         $post = Tanaman::latest()->get()->random(3);
         return view('pages.post_tanaman', [
             'items' => $items,
-            'data' => $data,
+            'comment' => $comment,
             'post' => $post
         ]);
     }
@@ -119,5 +119,11 @@ class TanamanController extends Controller
         TanamanComment::create($data);
         $id = TanamanComment::orderBy('id', 'desc')->value('id_tanaman');
         return redirect()->route('posttanaman', $id);
+    }
+    public function deleteComment(Request $request , $id)
+    {
+        $items = TanamanComment::where('id', $id)->value('id_tanaman');
+        TanamanComment::find($id)->delete();
+        return redirect()->route('posttanaman', $items);
     }
 }

@@ -101,11 +101,11 @@ class ArtikelController extends Controller
     public function postArtikel(Request $request, $id)
     {
         $items = Artikel::findOrFail($id);
-        $data = ArtikelComment::get();
+        $comment = ArtikelComment::with(['user'])->where('id_artikel', $id)->get();
         $post = Artikel::latest()->get()->random(3);
         return view('pages.post_artikel', [
             'items' => $items,
-            'data' => $data,
+            'comment' => $comment,
             'post' => $post
         ]);
     }
@@ -115,5 +115,10 @@ class ArtikelController extends Controller
         ArtikelComment::create($data);
         $id = ArtikelComment::orderBy('id', 'desc')->value('id_artikel');
         return redirect()->route('postartikel', $id);
+    }public function deleteComment(Request $request , $id)
+    {
+        $items = ArtikelComment::where('id', $id)->value('id_artikel');
+        ArtikelComment::find($id)->delete();
+        return redirect()->route('postartikel', $items);
     }
 }

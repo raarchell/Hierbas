@@ -4,10 +4,12 @@
     <!-- header atas -->
     <header class="ml-5">
         <h2>Resep</h2>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('resep') }}">Resep</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Post</li>
-        </ol>
+        @auth
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('resep') }}">Resep</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Post</li>
+            </ol>
+        @endauth
     </header>
     <main>
         <section class="section-resep">
@@ -48,28 +50,29 @@
                                 </form>
                             @endauth
                             @guest
-                                <p><a href="{{ route('login') }}">Login</a> untuk komen</p>
+                                <p><a href="{{ route('login') }}">Login</a> untuk memberikan komentar</p>
                             @endguest
                         </div>
                         <hr>
-                        @foreach ($data as $data)
+                        @foreach ($comment as $comment)
                             <div class="profil-comment">
                                 <img src="images/profilkomen.jpg" class="img-komentar rounded-circle float-left" alt="">
                                 <div class="comment-body row">
                                     <div class="col-md-9">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h3>{{ $data->id_user }}</h3>
+                                                <h3>{{$comment->user->name}}</h3>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <p>{{ $data->comment }}</p>
+                                                <p>{{ $comment->comment }}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <form action="{{ route('delresepcomment', $data->id) }}" method="POST" class="d-inline">
+                                        <form action="{{ route('delresepcomment', $comment->id) }}" method="POST"
+                                            class="d-inline">
                                             @csrf
                                             <div class="btn-group">
                                                 <button class="btn">Delete</button>
@@ -82,28 +85,30 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="recommend col-md-4">
-                    <h3>Recommended Post</h3>
-                    @foreach ($post as $post)
-                        <div class="content-sidebar mt-4">
-                            <div class="card">
-                                <div class="isi-recommend row">
-                                    <div class="col-sm-3">
-                                        <img src="{{ asset('assets/gallery/' . $post->foto) }}" class="card-img" alt="">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="card-body">
-                                            <a href="{{ route('postresep', $post->id) }}" class="card-title">
-                                                <h5>{{ $post->nama }}</h5>
-                                            </a>
-                                            {{-- <p>{!!  $post->cara !!} </p> --}}
+                @auth
+                    <div class="recommend col-md-4">
+                        <h3>Recommended Post</h3>
+                        @foreach ($post as $post)
+                            <div class="content-sidebar mt-4">
+                                <div class="card">
+                                    <div class="isi-recommend row">
+                                        <div class="col-sm-3">
+                                            <img src="{{ asset('assets/gallery/' . $post->foto) }}" class="card-img" alt="">
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <div class="card-body">
+                                                <a href="{{ route('postresep', $post->id) }}" class="card-title">
+                                                    <h5>{{ $post->nama }}</h5>
+                                                </a>
+                                                {{-- <p>{!!  $post->cara !!} </p> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
+                @endauth
             </div>
         </section>
     </main>
