@@ -34,7 +34,7 @@
                             <i class="fas fa-user-alt" style='font-size:17px'></i> &nbsp; {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu">
-                            <a href="profil.html" class="dropdown-item">Profile</a>
+                            <a href="{{ route('profil') }}" class="dropdown-item">Profile</a>
                             <form action="{{ url('logout') }}" method="POST">
                                 @csrf
                                 <button class="dropdown-item" method="POST">Logout</button>
@@ -43,10 +43,14 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link" id="navbardrop" data-toggle="dropdown">
-                            <i class="fa fa-search"></i>
+                            <i class="fa fa-search"></i> Search
                         </a>
                         <div class="dropdown-search dropdown-menu">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <form action="{{ route('search') }}" method="GET">
+                                @csrf
+                                <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">
+                                <input type="submit" value="Go">
+                            </form>
                         </div>
                     </li>
                 @endauth

@@ -22,6 +22,16 @@ Route::get('/artikel/post/{id}', 'App\Http\Controllers\ArtikelController@postArt
     ->name('postartikel');
 
 Route::middleware(['auth'])->group(function () {
+    //profil
+    Route::get('/profil', 'App\Http\Controllers\ProfilController@indexProfil')
+        ->name('profil');
+    Route::post('/profil/update/{id}', 'App\Http\Controllers\ProfilController@update')
+        ->name('profilupdate');
+    Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePass')
+        ->name('profilupdatePass');
+    //search
+    Route::get('/search', 'App\Http\Controllers\HomeController@search')
+        ->name('search');
     //kategori
     Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
         ->name('kategori');
@@ -126,9 +136,9 @@ Route::prefix('admin')
         //profil
         Route::get('/profil', 'App\Http\Controllers\ProfilController@indexEdit')
             ->name('profiladmin');
-        Route::post('/profil/update/{id}', 'App\Http\Controllers\ProfilController@update')
+        Route::post('/profil/update/{id}', 'App\Http\Controllers\ProfilController@updateAdmin')
             ->name('profil-update');
-        Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePass')
+        Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePassAdmin')
             ->name('profil-updatePass');
     });
 

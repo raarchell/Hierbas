@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Artikel;
 use App\Models\Kategori;
 use App\Models\Resep;
+use App\Models\Tanaman;
 
 class HomeController extends Controller
 {
@@ -25,4 +27,25 @@ class HomeController extends Controller
             'resep' => $resep
         ]);
     }
+
+    // public function indexSearch(){
+    //     return view('pages.search');
+    // }
+    public function search(Request $request)
+	{
+		$search = $request->search;
+
+		$resep = Resep::where('nama','like',"%".$search."%")->paginate();
+        $kategori = Kategori::where('nama','like',"%".$search."%")->paginate();
+        $tanaman = Tanaman::where('nama','like',"%".$search."%")->paginate();
+        $artikel = Artikel::where('judul','like',"%".$search."%")->paginate();
+ 
+		return view('pages.search', [
+            'resep' => $resep,
+            'kategori' => $kategori,
+            'tanaman' => $tanaman,
+            'artikel' => $artikel
+        ]);
+ 
+	}
 }
