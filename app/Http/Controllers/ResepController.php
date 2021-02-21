@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Resep;
 use App\Models\Kategori;
 use App\Models\ResepComment;
-use App\Models\User; 
+use App\Models\User;
 use DB;
 
 class ResepController extends Controller
@@ -37,8 +37,8 @@ class ResepController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required|max:30',
-            'slug'=>'required',
+            'nama' => 'required|max:50',
+            'slug' => 'required',
             'bahan' => 'required',
             'cara' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
@@ -75,8 +75,8 @@ class ResepController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required|max:30',
-            'slug'=>'required',
+            'nama' => 'required|max:50',
+            'slug' => 'required',
             'bahan' => 'required',
             'cara' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
@@ -128,7 +128,7 @@ class ResepController extends Controller
         $id = ResepComment::orderBy('id', 'desc')->value('id_resep');
         return redirect()->route('postresep', $id);
     }
-    public function deleteComment(Request $request , $id)
+    public function deleteComment(Request $request, $id)
     {
         $items = ResepComment::where('id', $id)->value('id_resep');
         ResepComment::find($id)->delete();

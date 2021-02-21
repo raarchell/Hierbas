@@ -45,7 +45,7 @@
                         <textarea name="bahan" id="bahan" cols="30" rows="10"></textarea>
                     </div>
                     <div class="form-group">
-                        <p>Cara</p>
+                        <p>Cara Pembuatan</p>
                         <textarea id="cara" name="cara" rows="4" cols="70"></textarea>
                     </div>
                     <div class="form-group">

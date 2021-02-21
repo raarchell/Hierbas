@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function index()
     {
         $post = Artikel::latest()->get()->random(3);
-        $kategori = Kategori::latest()->get()->random(2);
+        $kategori = Kategori::latest()->get()->random(4);
         $resep = Resep::latest()->get()->random(3);
         return view('pages.index', [
             'post' => $post,
@@ -32,20 +32,19 @@ class HomeController extends Controller
     //     return view('pages.search');
     // }
     public function search(Request $request)
-	{
-		$search = $request->search;
+    {
+        $search = $request->search;
 
-		$resep = Resep::where('nama','like',"%".$search."%")->paginate();
-        $kategori = Kategori::where('nama','like',"%".$search."%")->paginate();
-        $tanaman = Tanaman::where('nama','like',"%".$search."%")->paginate();
-        $artikel = Artikel::where('judul','like',"%".$search."%")->paginate();
- 
-		return view('pages.search', [
+        $resep = Resep::where('nama', 'like', "%" . $search . "%")->paginate();
+        $kategori = Kategori::where('nama', 'like', "%" . $search . "%")->paginate();
+        $tanaman = Tanaman::where('nama', 'like', "%" . $search . "%")->paginate();
+        $artikel = Artikel::where('judul', 'like', "%" . $search . "%")->paginate();
+
+        return view('pages.search', [
             'resep' => $resep,
             'kategori' => $kategori,
             'tanaman' => $tanaman,
             'artikel' => $artikel
         ]);
- 
-	}
+    }
 }

@@ -40,7 +40,7 @@ class ArtikelController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'judul' => 'required|max:50',
+            'judul' => 'required|max:200',
             'isi_artikel' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
@@ -72,7 +72,7 @@ class ArtikelController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'judul' => 'required|max:50',
+            'judul' => 'required|max:200',
             'isi_artikel' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
