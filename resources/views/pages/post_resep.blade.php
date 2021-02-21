@@ -56,7 +56,7 @@
                         <hr>
                         @foreach ($comment as $comment)
                             <div class="profil-comment">
-                                <img src="images/profilkomen.jpg" class="img-komentar rounded-circle float-left" alt="">
+                                <img src="{{ asset('assets/avatar/' . $comment->user->foto) }}" class="img-komentar rounded-circle float-left" alt="" style="object-fit: cover">
                                 <div class="comment-body row">
                                     <div class="col-md-9">
                                         <div class="row">
