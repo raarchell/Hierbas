@@ -7,10 +7,12 @@ use App\Models\Kategori;
 use App\Models\Resep;
 use App\Models\Tanaman;
 use App\Models\Artikel;
+use App\Models\User;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('pages.admin.dashboard', [
             'jmlkat' => Kategori::count(),
             'jmlrsp' => Resep::count(),

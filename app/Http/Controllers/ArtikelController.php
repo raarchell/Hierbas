@@ -16,6 +16,11 @@ class ArtikelController extends Controller
         return view('pages.admin.artikel', [
             'items' => $items
         ]);
+        /*if ($request->has('search')) {
+            $items = Artikel::where('judul', 'LIKE', '%', $request->search, '%')->get();
+        } else {
+            $items = Artikel::all();
+        }*/
     }
     public function delete($id)
     {
@@ -115,10 +120,20 @@ class ArtikelController extends Controller
         ArtikelComment::create($data);
         $id = ArtikelComment::orderBy('id', 'desc')->value('id_artikel');
         return redirect()->route('postartikel', $id);
-    }public function deleteComment(Request $request , $id)
+    }
+    public function deleteComment(Request $request, $id)
     {
         $items = ArtikelComment::where('id', $id)->value('id_artikel');
         ArtikelComment::find($id)->delete();
         return redirect()->route('postartikel', $items);
+    }
+
+    //search
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $result = Artikel::where('judul', 'LIKE', '%', $search, '%')->get();
+
+        return view('pages.admin.artikel', compact('result'));
     }
 }
