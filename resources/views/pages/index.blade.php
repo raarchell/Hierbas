@@ -67,7 +67,7 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <a href="{{ route('postresep', $item->id) }}" class="card-title">{{ $item->nama }}</a>
-                                <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="">
+                                <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="" style="object-fit: cover">
                             </div>
                         </div>
                     @endforeach

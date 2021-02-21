@@ -7,37 +7,53 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\UpdatePasswordRequest;
 
 class ProfilController extends Controller
 {
     // edit dan view
     public function indexEdit()
     {
-        return view('pages.admin.profil')->with('user', auth()->user());
+        return view('pages.admin.profil');
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        //melakukan validasi data
+        $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'jenis_kelamin' => 'required',
-            'tanggal' => 'required'
+            'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
+        // menyimpan data file yang diupload ke variabel $file
+        if ($request->foto != null) {
+            $file = $request->file('foto');
 
-        $user = Auth::user();
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'assets/avatar';
+            $file->move($tujuan_upload, $nama_file);
+        } else
+            $nama_file = User::where('id', $id)->value('foto');
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tanggal' => $request->tanggal,
+            'foto' => $nama_file,
+        ];
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->jenis_kelamin = $request->jenis_kelamin;
-        $user->tanggal = $request->tanggal;
+            User::find($id)->update($data);
 
-        if ($request->has('password')) {
-            $user->password = bcrypt($request->password);
-        }
+        return redirect()->route('profiladmin');
+    }
 
-        /*Session::flash('success', 'Akun Profil telah diupdate');*/
-
-        return redirect()->back();
+    public function updatePass(UpdatePasswordRequest $request)
+    {
+        $request->user()->update([
+            'password' => Hash::make($request->get('password'))
+        ]);
+    
+        return redirect()->route('profiladmin');
     }
 }

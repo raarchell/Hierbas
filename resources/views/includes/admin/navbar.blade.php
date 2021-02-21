@@ -18,7 +18,7 @@
                 {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{ route('profil') }}">Profile</a>
+                <a class="dropdown-item" href="{{ route('profiladmin') }}">Profile</a>
                 <div class="dropdown-divider"></div>
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf

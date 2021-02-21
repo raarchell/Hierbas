@@ -124,9 +124,11 @@ Route::prefix('admin')
 
         //profil
         Route::get('/profil', 'App\Http\Controllers\ProfilController@indexEdit')
-            ->name('profil');
-        Route::post('/profil', 'App\Http\Controllers\ProfilController@update')
+            ->name('profiladmin');
+        Route::post('/profil/update/{id}', 'App\Http\Controllers\ProfilController@update')
             ->name('profil-update');
+        Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePass')
+            ->name('profil-updatePass');
     });
 
 Auth::routes();
