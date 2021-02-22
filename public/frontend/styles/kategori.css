@@ -43,5 +43,6 @@ header h2 {
 
 .card .card-img-top {
     height: 120px;
+    object-fit: cover;
 }
 /*# sourceMappingURL=kategori.css.map */
