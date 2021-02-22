@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $post = Artikel::latest()->get()->random(3);
         $kategori = Kategori::latest()->get()->random(4);
-        $resep = Resep::latest()->get()->random(3);
+        $resep = Resep::latest()->get()->random(4);
         return view('pages.index', [
             'post' => $post,
             'kategori' => $kategori,
