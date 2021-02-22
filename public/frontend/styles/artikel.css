@@ -32,9 +32,9 @@ header h2 {
 }
 
 .card-img {
-    margin: 25px 0 30px 15px;
-    width: 130px;
-    height: 130px;
+    margin: 20px 0 30px 25px;
+    width: 100px;
+    height: 70px;
 }
 
 .card .card-title h3 {

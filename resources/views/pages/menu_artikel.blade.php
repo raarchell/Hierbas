@@ -24,7 +24,6 @@
                                 <a href="{{ route('postartikel', $item->id) }}" class="card-title">
                                     <h3>{{ $item->judul }}</h3>
                                 </a>
-                                {!! $item->isi_artikel !!}
                             </div>
                         </div>
                     </div>
