@@ -1,68 +1,69 @@
 body {
-  background-color: #DFDEDA;
+    background-color: #dfdeda;
 }
 
 header h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: medium;
-  font-size: 35px;
-  color: #070707;
-  padding-top: 130px;
-  margin-left: 85px;
+    font-family: "Poppins", sans-serif;
+    font-weight: medium;
+    font-size: 35px;
+    color: #070707;
+    padding-top: 130px;
+    margin-left: 85px;
 }
 .breadcrumb {
-  margin-left: 70px;
-  background-color: #dfdeda;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
+    margin-left: 70px;
+    background-color: #dfdeda;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
 }
 
 .breadcrumb a {
-  font-family: "Poppins", sans-serif;
-  font-weight: small;
-  color: #070707;
-  font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: small;
+    color: #070707;
+    font-size: 15px;
 }
 
 .content-menu {
-  max-width: 1260px;
+    max-width: 1260px;
 }
 
 .card {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
-.card-img-top{
-  max-height: 200px;
+.card-img-top {
+    height: 200px;
 }
 
 .card .card-title {
-  font-size: 25px;
-  font-weight: 500;
-  color: black;
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
 }
 
 .card p {
-  color: #858585;
-  font-size: 15px;
+    color: #858585;
+    font-size: 15px;
 }
 
 .card .card-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* number of lines to show */
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 .btn-details {
-  color: white;
-  background-color: #5E935D;
-  width: 100px;
-  border-radius: 10px;
-  -webkit-box-shadow: 3px 3px 10px grey;
-          box-shadow: 3px 3px 10px grey;
-  margin-bottom: 30px;
+    color: white;
+    background-color: #5e935d;
+    width: 100px;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 10px grey;
+    box-shadow: 3px 3px 10px grey;
+    margin-bottom: 30px;
+    margin-top: 35px;
 }
 /*# sourceMappingURL=menu-resep-tanaman.css.map */
