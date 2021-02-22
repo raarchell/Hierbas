@@ -42,17 +42,17 @@ class ProfilController extends Controller
             'foto' => $nama_file,
         ];
 
-            User::find($id)->update($data);
+        User::find($id)->update($data);
 
-        return redirect()->route('profil');
+        return redirect()->route('profiladmin');
     }
     public function updatePassAdmin(UpdatePasswordRequest $request)
     {
         $request->user()->update([
             'password' => Hash::make($request->get('password'))
         ]);
-    
-        return redirect()->route('profil');
+
+        return redirect()->route('profiladmin');
     }
 
     public function indexProfil()
@@ -85,7 +85,7 @@ class ProfilController extends Controller
             'foto' => $nama_file,
         ];
 
-            User::find($id)->update($data);
+        User::find($id)->update($data);
 
         return redirect()->route('profiladmin');
     }
@@ -94,7 +94,7 @@ class ProfilController extends Controller
         $request->user()->update([
             'password' => Hash::make($request->get('password'))
         ]);
-    
+
         return redirect()->route('profiladmin');
     }
 }

@@ -20,6 +20,11 @@ Route::get('/postresep/{id}', 'App\Http\Controllers\ResepController@indexPostRes
     ->name('postresep');
 Route::get('/artikel/post/{id}', 'App\Http\Controllers\ArtikelController@postArtikel')
     ->name('postartikel');
+//contactus
+Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
+    ->name('addsaran');
+Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store')
+    ->name('storepesan');
 
 Route::middleware(['auth'])->group(function () {
     //profil
@@ -44,11 +49,6 @@ Route::middleware(['auth'])->group(function () {
         ->name('resepcomment');
     Route::post('/postresep/comment/delete/{id}', 'App\Http\Controllers\ResepController@deleteComment')
         ->name('delresepcomment');
-    //contactus
-    Route::get('/contactus', 'App\Http\Controllers\ContactusController@Adduser')
-        ->name('addsaran');
-    Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store')
-        ->name('storepesan');
     //artikel
     Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
         ->name('indexartikel');
