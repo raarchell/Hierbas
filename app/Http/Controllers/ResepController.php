@@ -14,7 +14,7 @@ class ResepController extends Controller
     //tabel
     public function index(Request $request)
     {
-        $items = Resep::get();
+        $items = Resep::paginate(15);
         return view('pages.admin.resep', [
             'items' => $items
         ]);
@@ -23,7 +23,15 @@ class ResepController extends Controller
     {
         $items = Resep::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabelresep')->with('message', 'Resep obat berhasil dihapus!');
+        return redirect()->route('tabelresep')->with('status', 'Resep berhasil dihapus');
+    }
+    public function search(Request $request)
+    {
+	$cari = $request->cari;
+	$items = Resep::where('nama','like',"%".$cari."%")->paginate();
+	return view('pages.admin.resep', [
+        'items' => $items]);
+ 
     }
 
     //add

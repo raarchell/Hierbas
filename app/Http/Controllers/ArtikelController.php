@@ -12,7 +12,7 @@ class ArtikelController extends Controller
     //tabel
     public function index(Request $request)
     {
-        $items = Artikel::get();
+        $items = Artikel::paginate(15);
         return view('pages.admin.artikel', [
             'items' => $items
         ]);

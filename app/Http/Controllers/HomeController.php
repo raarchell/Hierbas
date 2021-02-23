@@ -28,9 +28,6 @@ class HomeController extends Controller
         ]);
     }
 
-    // public function indexSearch(){
-    //     return view('pages.search');
-    // }
     public function search(Request $request)
     {
         $search = $request->search;

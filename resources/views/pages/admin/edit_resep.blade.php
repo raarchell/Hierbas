@@ -33,7 +33,7 @@
                             <p>Kategori Penyakit</p>
                             <select name="slug" class="form-control" style="width: 210px">
                                 @foreach ($kategori as $kategori)
-                                    <option value="{{ $kategori->id }}" {{($kategori->slug == $items->slug) ? 'selected' : ''}}>
+                                    <option value="{{ $kategori->slug }}" {{($kategori->slug == $items->slug) ? 'selected' : ''}}>
                                         {{ $kategori->nama }}
                                     </option>
                                 @endforeach

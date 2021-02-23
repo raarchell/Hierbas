@@ -20,4 +20,21 @@ class AdminController extends Controller
             'jmlart' => Artikel::count()
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+
+        $resep = Resep::where('nama', 'like', "%" . $search . "%")->paginate();
+        $kategori = Kategori::where('nama', 'like', "%" . $search . "%")->paginate();
+        $tanaman = Tanaman::where('nama', 'like', "%" . $search . "%")->paginate();
+        $artikel = Artikel::where('judul', 'like', "%" . $search . "%")->paginate();
+
+        return view('pages.admin.search', [
+            'resep' => $resep,
+            'kategori' => $kategori,
+            'tanaman' => $tanaman,
+            'artikel' => $artikel
+        ]);
+    }
 }

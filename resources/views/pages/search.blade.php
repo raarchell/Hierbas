@@ -12,7 +12,7 @@
         <div class="content-menu row" style="margin-left: 150px">
             <form action="{{ route('search') }}" method="GET">
                 <input type="text" name="search" placeholder="Search" value="{{ old('search') }}">
-                <input type="submit" value="Search">
+                <input type="submit" value="Go">
             </form>
         </div>
         <div class="content-menu row mx-auto">

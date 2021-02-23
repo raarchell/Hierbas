@@ -72,7 +72,9 @@ Route::prefix('admin')
     ->group(function () {
         Route::get('/', 'App\Http\Controllers\AdminController@index')
             ->name('dashboard');
-        Route::get('/search', 'App\Http\Controllers\AdminController@search');
+        //search
+        Route::get('/search', 'App\Http\Controllers\AdminController@search')
+            ->name('searchAdmin');
         // kategori
         Route::get('/kategori', 'App\Http\Controllers\KategoriController@index')
             ->name('tabelkategori');
@@ -86,6 +88,8 @@ Route::prefix('admin')
             ->name('editkategori');
         Route::post('/editkategori/update/{id}', 'App\Http\Controllers\KategoriController@update')
             ->name('updatekategori');
+        Route::get('/searchkategori', 'App\Http\Controllers\KategoriController@search')
+            ->name('searchkategori');
 
         //contactus
         Route::get('/pesan', 'App\Http\Controllers\ContactusController@index')
@@ -104,6 +108,8 @@ Route::prefix('admin')
             ->name('editresep');
         Route::post('/editresep/update/{id}', 'App\Http\Controllers\ResepController@update')
             ->name('updateresep');
+        Route::get('/searchresep', 'App\Http\Controllers\ResepController@search')
+            ->name('searchresep');
 
         //artikel
         Route::get('/artikel', 'App\Http\Controllers\ArtikelController@index')
@@ -132,6 +138,8 @@ Route::prefix('admin')
             ->name('edittanaman');
         Route::post('/edittanaman/update/{id}', 'App\Http\Controllers\TanamanController@update')
             ->name('updatetanaman');
+        Route::get('/searchtanaman', 'App\Http\Controllers\TanamanController@search')
+            ->name('searchtanaman');
 
         //profil
         Route::get('/profil', 'App\Http\Controllers\ProfilController@indexEdit')
