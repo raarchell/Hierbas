@@ -148,6 +148,16 @@ Route::prefix('admin')
             ->name('profil-update');
         Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePassAdmin')
             ->name('profil-updatePass');
+
+        //data user
+        Route::get('/datauser', 'App\Http\Controllers\UserController@index')
+            ->name('tabeluser');
+        Route::post('/deleteuser/{id}', 'App\Http\Controllers\UserController@delete')
+            ->name('deleteuser');
+        Route::get('/editdatauser/{id}', 'App\Http\Controllers\UserController@indexEdit')
+            ->name('editdatauser');
+        Route::post('/editdatauser/update/{id}', 'App\Http\Controllers\UserController@update')
+            ->name('updatedatauser');
     });
 
 Auth::routes();

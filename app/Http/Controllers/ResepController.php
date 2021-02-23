@@ -67,7 +67,7 @@ class ResepController extends Controller
         ];
         Resep::create($data);
 
-        return redirect()->route('tabelresep');
+        return redirect()->route('tabelresep')->with('message', 'Resep obat berhasil ditambahkan!');
     }
 
     // edit
@@ -105,7 +105,7 @@ class ResepController extends Controller
         ];
         Resep::find($id)->update($data);
 
-        return redirect()->route('tabelresep');
+        return redirect()->route('tabelresep')->with('message', 'Resep obat berhasil diupdate!');
     }
 
     // page menu resep user

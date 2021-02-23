@@ -24,6 +24,10 @@
                     <div class="sb-nav-link-icon"><i class='fas fa-file-alt'></i></i></div>
                     Artikel
                 </a>
+                <a class="nav-link" href="{{ route('tabeluser') }}">
+                    <div class="sb-nav-link-icon"><i class='fas fa-user fa-fw'></i></i></div>
+                    Data User
+                </a>
                 <a class="nav-link" href="{{ route('contactus') }}">
                     <div class="sb-nav-link-icon"><i class='fas fa-envelope'></i></div>
                     Pesan

@@ -1,166 +1,170 @@
 html {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 body {
-  background-color: #ffffff;
-  font-family: "Assistant", sans-serif;
+    background-color: #ffffff;
+    font-family: "Assistant", sans-serif;
 }
 
 .navbar-brand img {
-  max-height: 70px;
+    max-height: 70px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: #ffffff;
-  font-size: 20px;
-  text-shadow: 0px 0px 5px grey;
+    color: #ffffff;
+    font-size: 20px;
+    text-shadow: 0px 0px 5px grey;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #90b494;
+    color: #90b494;
 }
 
 .navbar-dark .navbar-nav .nav-link.active {
-  font-weight: bold;
-  color: #ffffff;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .dropdown-search {
-  left: auto !important;
-  right: 0 !important;
-  width: 250px;
+    left: auto !important;
+    right: 0 !important;
+    width: 250px;
 }
 
 header {
-  padding: 350px 0 165px;
-  margin-top: -100px;
-  background-image: url("../images/header.png");
-  background-size: cover;
+    padding: 350px 0 165px;
+    margin-top: -100px;
+    background-image: url("../images/header.png");
+    background-size: cover;
 }
 
 header h1 {
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  font-weight: medium;
-  font-size: 50px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-weight: medium;
+    font-size: 50px;
 }
 
 header p {
-  color: #ffffff;
-  font-size: 25px;
+    color: #ffffff;
+    font-size: 25px;
 }
 
 header .btn-login {
-  background-color: #90b494;
-  color: #ffffff;
-  width: 150px;
+    background-color: #90b494;
+    color: #ffffff;
+    width: 150px;
 }
 
 header .btn-login:hover {
-  background-color: #a0caa5;
-  color: #ffffff;
+    background-color: #a0caa5;
+    color: #ffffff;
 }
 
 .section-awal {
-  padding: 10px 0 180px;
-  background-color: #90b494;
+    padding: 10px 0 180px;
+    background-color: #90b494;
 }
 
 .section-awal img {
-  float: right;
-  margin-right: 50px;
-  max-height: 215px;
+    float: right;
+    margin-right: 50px;
+    max-height: 215px;
 }
 
 .section-awal h3 {
-  font-family: "Poppins", sans-serif;
-  color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
 }
 
 .section-awal p {
-  color: #ffffff;
-  text-align: justify;
-  font-size: 18px;
+    color: #ffffff;
+    text-align: justify;
+    font-size: 18px;
 }
 
 .section-slogan {
-  margin-top: -50px;
-  padding-bottom: 40px;
-  box-shadow: 10px 10px 30px grey;
+    margin-top: -50px;
+    padding-bottom: 40px;
+    box-shadow: 10px 10px 30px grey;
 }
 
 .section-slogan .slogan-detail {
-  padding-top: 35px;
-  background-color: #ffffff;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 25px;
-  font-weight: 600;
+    padding-top: 35px;
+    background-color: #ffffff;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .card {
-  margin-top: 50px;
-  padding: 30px;
-  border-radius: 25px;
-  background-color: #dfdeda;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 25px;
+    background-color: #dfdeda;
 }
 
 .card .card-title {
-  font-size: 25px;
-  font-weight: 500;
-  color: black;
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
 }
 .section-kategori {
-  padding-top: 90px;
+    padding-top: 90px;
 }
 .section-kategori-heading h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
 }
 .section-kategori-content .see-more a {
-  color: #858585;
-  margin-left: 30px;
-  font-size: 20px;
-  font-weight: 600;
+    color: #858585;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: 600;
 }
-.content-kategori img{
-  height: 120px;
+.content-kategori img {
+    height: 120px;
+}
+
+.content-kategori .card .card-resep {
+    height: 230px;
 }
 
 .section-artikel {
-  margin-top: 100px;
-  padding-top: 50px;
-  background-color: #dfdeda;
+    margin-top: 100px;
+    padding-top: 50px;
+    background-color: #dfdeda;
 }
 
 .section-artikel .container {
-  background-color: #ffffff;
-  margin-top: 30px;
+    background-color: #ffffff;
+    margin-top: 30px;
 }
 
 .section-artikel h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 30px;
-  margin: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    margin: 30px;
 }
 
-.img-artikel{
-  max-height: 100px;
+.img-artikel {
+    max-height: 100px;
 }
 
-.judul-artikel{
-  color: black;
-  font-size: 20px;
+.judul-artikel {
+    color: black;
+    font-size: 20px;
 }
-.judul-artikel:hover{
-  color: gray;
+.judul-artikel:hover {
+    color: gray;
 }
 
 .section-artikel .see-more a {
-  color: #858585;
-  margin-left: 20px;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 25px;
+    color: #858585;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
 }
