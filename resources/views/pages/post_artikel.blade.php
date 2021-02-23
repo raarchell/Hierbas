@@ -19,7 +19,7 @@
                         <div class="card-postawal card-body">
                             <h2 class="card-title">{{ $items->judul }}</h2>
                             <p class="card-text text-muted">Posted {{ $items->created_at }}</p><br>
-                            <img class="card-img-top" src="{{ asset('assets/gallery/' . $items->foto) }}">
+                            <img class="card-img-top" src="{{ asset('assets/gallery/' . $items->foto) }}" style="object-fit: contain">
                             <br><br>
                             <div class="text-post" style="text-align: justify;">
                                 <p>
@@ -92,15 +92,13 @@
                                 <div class="card">
                                     <div class="isi-recommend row">
                                         <div class="col-sm-3">
-                                            <img src="{{ asset('assets/gallery/' . $post->foto) }}" class="card-img" alt="">
+                                            <img src="{{ asset('assets/gallery/' . $post->foto) }}" class="card-img" alt="" style="object-fit: cover">
                                         </div>
                                         <div class="col-sm-9">
                                             <div class="card-body">
                                                 <a href="{{ route('postartikel', $post->id) }}" class="card-title">
                                                     <h5>{{ $post->judul }}</h5>
                                                 </a>
-                                                {{-- <p>{!!  $post->isi_artikel !!}
-                                    </p> --}}
                                             </div>
                                         </div>
                                     </div>
