@@ -21,7 +21,7 @@ class TanamanController extends Controller
     {
         $items = Tanaman::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabeltanaman');
+        return redirect()->route('tabeltanaman')->with('message', 'Tanaman berhasil dihapus!');
     }
 
     //add
@@ -55,7 +55,7 @@ class TanamanController extends Controller
         ];
         Tanaman::create($data);
 
-        return redirect()->route('tabeltanaman');
+        return redirect()->route('tabeltanaman')->with('message', 'Tanaman berhasil ditambahkan!');
     }
 
     // edit
@@ -89,7 +89,7 @@ class TanamanController extends Controller
         ];
         Tanaman::find($id)->update($data);
 
-        return redirect()->route('tabeltanaman');
+        return redirect()->route('tabeltanaman')->with('message', 'Tanaman berhasil diupdate!');
     }
 
     // page menu tanaman user
@@ -120,7 +120,7 @@ class TanamanController extends Controller
         $id = TanamanComment::orderBy('id', 'desc')->value('id_tanaman');
         return redirect()->route('posttanaman', $id);
     }
-    public function deleteComment(Request $request , $id)
+    public function deleteComment(Request $request, $id)
     {
         $items = TanamanComment::where('id', $id)->value('id_tanaman');
         TanamanComment::find($id)->delete();

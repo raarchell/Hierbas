@@ -2,6 +2,9 @@
 @section('title', 'resep')
 @section('content')
 <div class="container-fluid mt-5">
+    @if(session('message'))
+    <div class="alert alert-success">{{ session('message') }}</div>
+    @endif
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Resep</li>

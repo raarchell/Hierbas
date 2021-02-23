@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         $items = User::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabeluser');
+        return redirect()->route('tabeluser')->with('message', 'Data user berhasil dihapus!');
     }
 
     // fungsi edit
@@ -49,6 +49,6 @@ class UserController extends Controller
         ];
         User::find($id)->update($data);
 
-        return redirect()->route('tabeluser');
+        return redirect()->route('tabeluser')->with('message', 'Data user berhasil diupdate!');
     }
 }
