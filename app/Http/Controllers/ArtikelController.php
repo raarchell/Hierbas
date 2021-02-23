@@ -12,15 +12,10 @@ class ArtikelController extends Controller
     //tabel
     public function index(Request $request)
     {
-        $items = Artikel::get();
+        $items = Artikel::paginate(15);
         return view('pages.admin.artikel', [
             'items' => $items
         ]);
-        /*if ($request->has('search')) {
-            $items = Artikel::where('judul', 'LIKE', '%', $request->search, '%')->get();
-        } else {
-            $items = Artikel::all();
-        }*/
     }
     public function delete($id)
     {

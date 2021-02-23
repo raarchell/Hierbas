@@ -10,7 +10,7 @@ class ContactusController extends Controller
     // tabel
     public function index(Request $request)
     {
-        $items = Contactus::get();
+        $items = Contactus::paginate(15);
         return view('pages.admin.view_message', [
             'items' => $items
         ]);
@@ -19,7 +19,7 @@ class ContactusController extends Controller
     {
         $items = Contactus::findOrFail($id);
         $items->delete();
-        return redirect()->route('contactus');
+        return redirect()->route('contactus')->with('status', 'Pesan berhasil dihapus');
     }
 
     //tambahsaranuser

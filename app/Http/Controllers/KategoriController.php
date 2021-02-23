@@ -11,7 +11,7 @@ class KategoriController extends Controller
 {
     // tabel
     public function index(Request $request){
-        $items = Kategori::get();
+        $items = Kategori::paginate(15);
         return view('pages.admin.kategori_p', [
             'items' => $items
         ]);
@@ -20,7 +20,14 @@ class KategoriController extends Controller
     {
         $items = Kategori::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabelkategori');
+        return redirect()->route('tabelkategori')->with('status', 'Kategori berhasil dihapus');
+    }
+    public function search(Request $request)
+    {
+	$cari = $request->cari;
+	$items = Kategori::where('nama','like',"%".$cari."%")->paginate();
+	return view('pages.admin.kategori_p', [
+        'items' => $items]);
     }
 
     // fungsi add

@@ -50,6 +50,13 @@
                 </table>
             </div>
         </div>
+        <div class="container" style="margin-left: 10px">
+            Halaman : {{ $items->currentPage() }} <br />
+            Jumlah Data : {{ $items->total() }} <br />
+            Data Per Halaman : {{ $items->perPage() }} <br />
+            <br>
+            {{ $items->links('pagination::bootstrap-4') }}
+        </div>
     </div>
 </div>
 @endsection

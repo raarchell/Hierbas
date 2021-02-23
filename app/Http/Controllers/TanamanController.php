@@ -12,7 +12,7 @@ class TanamanController extends Controller
     // tabel
     public function index(Request $request)
     {
-        $items = Tanaman::get();
+        $items = Tanaman::paginate(15);
         return view('pages.admin.tanaman', [
             'items' => $items
         ]);
@@ -21,7 +21,15 @@ class TanamanController extends Controller
     {
         $items = Tanaman::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabeltanaman');
+        return redirect()->route('tabeltanaman')->with('status', 'Tanaman herbal berhasil dihapus');
+    }
+    public function search(Request $request)
+    {
+	$cari = $request->cari;
+	$items = Tanaman::where('nama','like',"%".$cari."%")->paginate();
+	return view('pages.admin.tanaman', [
+        'items' => $items]);
+ 
     }
 
     //add
