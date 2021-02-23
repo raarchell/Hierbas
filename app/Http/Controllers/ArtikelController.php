@@ -23,6 +23,14 @@ class ArtikelController extends Controller
         $items->delete();
         return redirect()->route('tabelartikel')->with('message', 'Artikel berhasil dihapus!');
     }
+    public function search(Request $request)
+    {
+        $cari = $request->cari;
+        $items = Artikel::where('judul', 'like', "%" . $cari . "%")->paginate();
+        return view('pages.admin.artikel', [
+            'items' => $items
+        ]);
+    }
 
     //add
     public function indexAdd()

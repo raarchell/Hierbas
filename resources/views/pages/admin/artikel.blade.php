@@ -2,14 +2,14 @@
 @section('title', 'artikel')
 @section('content')
 <div class="container-fluid mt-5">
-    @if(session('message'))
-    <div class="alert alert-success">{{ session('message') }}</div>
-    @endif
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Artikel</li>
         </ol>
     </nav>
+    @if(session('message'))
+    <div class="alert alert-success">{{ session('message') }}</div>
+    @endif
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
@@ -18,6 +18,10 @@
                 <div class="float-right">
                     <button a class="btn btn-primary">+ Add</button>
                 </div>
+            </form>
+            <form action="{{ route('searchartikel') }}" method="GET" class="mt-4">
+                <input type="text" name="cari" placeholder="Search 'artikel'" value="{{ old('cari') }}">
+                <input type="submit" value="Search">
             </form>
         </div>
         <div class="card-body">
@@ -40,7 +44,7 @@
                                         <button a class="btn btn-primary">Edit</button>
                                     </div>
                                 </form>
-                                <form action="{{ route('deleteartikel', $item->id) }}" method="POST" class="d-inline">
+                                <form action="{{ route('deleteartikel', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
                                     @csrf
                                     <div class="btn-group">
                                         <button a class="btn btn-danger">Delete</button>

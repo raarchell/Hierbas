@@ -42,6 +42,10 @@
                         <p>Link Youtube</p>
                         <input type="text" class="form-control" id="link" name="link" placeholder="Link Youtube" value="{{ $items->link }}">
                     </div>
+                    <div class="form-group">
+                        <label class="form-label" for="video">Video</label>
+                        <input type="file" class="form-control" id="video" name="video" />
+                    </div>
                     <br>
                     <button type="submit" class="btn btn-primary" name="submit" value="submit">
                         Submit

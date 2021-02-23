@@ -49,6 +49,10 @@
                         <textarea id="cara" name="cara" rows="4" cols="70"></textarea>
                     </div>
                     <div class="form-group">
+                        <p>Cara Pemakaian</p>
+                        <textarea id="pemakaian" name="pemakaian" rows="4" cols="30"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label class="form-label" for="foto">Foto</label>
                         <input type="file" class="form-control" id="foto" name="foto" />
                     </div> <br>

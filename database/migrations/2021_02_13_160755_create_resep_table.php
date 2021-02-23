@@ -21,6 +21,7 @@ class CreateResepTable extends Migration
             $table->text('bahan');
             $table->text('cara');
             $table->string('foto');
+            $table->text('pemakaian');
         });
     }
 

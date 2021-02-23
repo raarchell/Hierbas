@@ -25,11 +25,11 @@ class TanamanController extends Controller
     }
     public function search(Request $request)
     {
-	$cari = $request->cari;
-	$items = Tanaman::where('nama','like',"%".$cari."%")->paginate();
-	return view('pages.admin.tanaman', [
-        'items' => $items]);
- 
+        $cari = $request->cari;
+        $items = Tanaman::where('nama', 'like', "%" . $cari . "%")->paginate();
+        return view('pages.admin.tanaman', [
+            'items' => $items
+        ]);
     }
 
     //add
@@ -46,24 +46,29 @@ class TanamanController extends Controller
             'nama' => 'required|max:30',
             'isi' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
-            'link' => 'required',
+            'video' => 'nullable|file|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv',
         ]);
         // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('foto');
+        $file1 = $request->file('video');
 
         $nama_file = time() . "_" . $file->getClientOriginalName();
+        $nama_file1 = time() . "_" . $file1->getClientOriginalName();
         // isi dengan nama folder tempat kemana file diupload
         $tujuan_upload = 'assets/gallery';
         $file->move($tujuan_upload, $nama_file);
+        $file1->move($tujuan_upload, $nama_file1);
         $data = [
             'nama' => $request->nama,
             'isi' => $request->isi,
             'foto' => $nama_file,
             'link' => $request->link,
+            'video' => $nama_file1,
+
         ];
         Tanaman::create($data);
 
-        return redirect()->route('tabeltanaman')->with('message', 'Tanaman berhasil ditambahkan!');
+        return redirect()->route('tabeltanaman')->with('status', 'Tanaman berhasil ditambahkan!');
     }
 
     // edit
@@ -80,12 +85,15 @@ class TanamanController extends Controller
             'nama' => 'required|max:30',
             'isi' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
-            'link' => 'required',
+            'link' => 'nullable',
+            'video' => 'nullable|file|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv',
         ]);
         // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('foto');
+        $file1 = $request->file('video');
 
         $nama_file = time() . "_" . $file->getClientOriginalName();
+        $nama_file1 = time() . "_" . $file1->getClientOriginalName();
         // isi dengan nama folder tempat kemana file diupload
         $tujuan_upload = 'assets/gallery';
         $file->move($tujuan_upload, $nama_file);
@@ -94,10 +102,11 @@ class TanamanController extends Controller
             'isi' => $request->isi,
             'foto' => $nama_file,
             'link' => $request->link,
+            'video' => $nama_file1,
         ];
         Tanaman::find($id)->update($data);
 
-        return redirect()->route('tabeltanaman')->with('message', 'Tanaman berhasil diupdate!');
+        return redirect()->route('tabeltanaman')->with('status', 'Tanaman berhasil diupdate!');
     }
 
     // page menu tanaman user

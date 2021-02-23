@@ -27,11 +27,11 @@ class ResepController extends Controller
     }
     public function search(Request $request)
     {
-	$cari = $request->cari;
-	$items = Resep::where('nama','like',"%".$cari."%")->paginate();
-	return view('pages.admin.resep', [
-        'items' => $items]);
- 
+        $cari = $request->cari;
+        $items = Resep::where('nama', 'like', "%" . $cari . "%")->paginate();
+        return view('pages.admin.resep', [
+            'items' => $items
+        ]);
     }
 
     //add
@@ -49,6 +49,7 @@ class ResepController extends Controller
             'slug' => 'required',
             'bahan' => 'required',
             'cara' => 'required',
+            'pemakaian' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
@@ -63,11 +64,12 @@ class ResepController extends Controller
             'slug' => $request->slug,
             'bahan' => $request->bahan,
             'cara' => $request->cara,
+            'pemakaian' => $request->pemakaian,
             'foto' => $nama_file,
         ];
         Resep::create($data);
 
-        return redirect()->route('tabelresep')->with('message', 'Resep obat berhasil ditambahkan!');
+        return redirect()->route('tabelresep')->with('status', 'Resep obat berhasil ditambahkan!');
     }
 
     // edit
@@ -87,6 +89,7 @@ class ResepController extends Controller
             'slug' => 'required',
             'bahan' => 'required',
             'cara' => 'required',
+            'pemakaian' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
@@ -101,11 +104,12 @@ class ResepController extends Controller
             'slug' => $request->slug,
             'bahan' => $request->bahan,
             'cara' => $request->cara,
+            'pemakaian' => $request->pemakaian,
             'foto' => $nama_file,
         ];
         Resep::find($id)->update($data);
 
-        return redirect()->route('tabelresep')->with('message', 'Resep obat berhasil diupdate!');
+        return redirect()->route('tabelresep')->with('status', 'Resep obat berhasil diupdate!');
     }
 
     // page menu resep user

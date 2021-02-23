@@ -10,7 +10,8 @@ use App\Models\Resep;
 class KategoriController extends Controller
 {
     // tabel
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $items = Kategori::paginate(15);
         return view('pages.admin.kategori_p', [
             'items' => $items
@@ -24,10 +25,11 @@ class KategoriController extends Controller
     }
     public function search(Request $request)
     {
-	$cari = $request->cari;
-	$items = Kategori::where('nama','like',"%".$cari."%")->paginate();
-	return view('pages.admin.kategori_p', [
-        'items' => $items]);
+        $cari = $request->cari;
+        $items = Kategori::where('nama', 'like', "%" . $cari . "%")->paginate();
+        return view('pages.admin.kategori_p', [
+            'items' => $items
+        ]);
     }
 
     // fungsi add
@@ -55,7 +57,7 @@ class KategoriController extends Controller
         ];
         Kategori::create($data);
 
-        return redirect()->route('tabelkategori')->with('message', 'Kategori berhasil ditambahkan!');
+        return redirect()->route('tabelkategori')->with('status', 'Kategori berhasil ditambahkan!');
     }
 
     // fungsi edit
@@ -85,7 +87,7 @@ class KategoriController extends Controller
         ];
         Kategori::find($id)->update($data);
 
-        return redirect()->route('tabelkategori')->with('message', 'Kategori berhasil diupdate!');
+        return redirect()->route('tabelkategori')->with('status', 'Kategori berhasil diupdate!');
     }
 
     // page kategori user

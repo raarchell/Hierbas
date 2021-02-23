@@ -24,6 +24,9 @@
                                 {!! $items->isi !!}
                             </p>
                             <iframe width="100%" height="340" src="{!! $items->link !!}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <video width=”400px” height=”300px” controls>
+                                <source src="{{ asset('assets/gallery/' . $items->video) }}" style="object-fit: contain">
+                            </video>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class Tanaman extends Model
 {
@@ -12,10 +13,12 @@ class Tanaman extends Model
                 'isi',
                 'foto',
                 'link',
+                'video'
         ];
         protected $table = 'tanaman';
 
-        public function resep(){
-                return $this->hasMany(Tanaman::class,'id_tanaman','id');
+        public function resep()
+        {
+                return $this->hasMany(Tanaman::class, 'id_tanaman', 'id');
         }
 }

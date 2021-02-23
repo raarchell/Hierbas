@@ -124,6 +124,8 @@ Route::prefix('admin')
             ->name('editartikel');
         Route::post('/editartikel/update/{id}', 'App\Http\Controllers\ArtikelController@update')
             ->name('updateartikel');
+        Route::get('/searchartikel', 'App\Http\Controllers\ArtikelController@search')
+            ->name('searchartikel');
 
         //tanaman
         Route::get('/tanaman', 'App\Http\Controllers\TanamanController@index')

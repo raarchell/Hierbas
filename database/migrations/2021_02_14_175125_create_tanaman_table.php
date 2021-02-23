@@ -18,7 +18,8 @@ class CreateTanamanTable extends Migration
             $table->string('nama');
             $table->text('isi');
             $table->string('foto')->nullable();
-            $table->string('link');
+            $table->string('link')->nullable();
+            $table->string('video')->nullable();
             $table->timestamps();
         });
     }
