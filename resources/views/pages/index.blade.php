@@ -94,7 +94,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <a href="{{ route('kat_resep', $item->slug) }}" class="card-title">{{ $item->nama }}</a>
-                        <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="">
+                        <img src="{{ asset('assets/gallery/' . $item->foto) }}" class="card-img-top" alt="" style="object-fit: cover">
                     </div>
                 </div>
                 @endforeach
@@ -113,7 +113,7 @@
             <div class="row">
                 @foreach ($post as $post)
                 <div class="col-md-2">
-                    <img src="{{ asset('assets/gallery/' . $post->foto) }}" class="img-artikel">
+                    <img src="{{ asset('assets/gallery/' . $post->foto) }}" class="img-artikel" style="object-fit: cover">
                 </div>
                 <div class="isi-artikel col-md-2">
                     <a href="{{ route('postartikel', $post->id) }}" class="judul-artikel">

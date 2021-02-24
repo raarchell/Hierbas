@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class IsAdmin
+class RolePenulis
 {
     /**
      * Handle an incoming request.
@@ -17,9 +17,9 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user() && Auth::user()->roles == 'ADMIN'){
+        if(Auth::user() && Auth::user()->roles == 'PENULIS'){
             return $next($request);
         }
-        return redirect('/admin');
+        return redirect('penulis/dashboard');
     }
 }
