@@ -28,45 +28,45 @@ Route::post('/contactus/store', 'App\Http\Controllers\ContactusController@store'
 
 Route::middleware(['auth'])
     ->group(function () {
-    //profil
-    Route::get('/profil', 'App\Http\Controllers\ProfilController@indexProfil')
-        ->name('profil');
-    Route::post('/profil/update/{id}', 'App\Http\Controllers\ProfilController@update')
-        ->name('profilupdate');
-    Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePass')
-        ->name('profilupdatePass');
-    //search
-    Route::get('/search', 'App\Http\Controllers\HomeController@search')
-        ->name('search');
-    //kategori
-    Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
-        ->name('kategori');
-    Route::get('/kategori/resep/{slug}', 'App\Http\Controllers\KategoriController@resep')
-        ->name('kat_resep');
-    //resep
-    Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
-        ->name('resep');
-    Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
-        ->name('resepcomment');
-    Route::post('/postresep/comment/delete/{id}', 'App\Http\Controllers\ResepController@deleteComment')
-        ->name('delresepcomment');
-    //artikel
-    Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
-        ->name('indexartikel');
-    Route::post('/postartikel/comment', 'App\Http\Controllers\ArtikelController@comment')
-        ->name('artikelcomment');
-    Route::post('/postartikel/comment/delete/{id}', 'App\Http\Controllers\ArtikelController@deleteComment')
-        ->name('delartikelcomment');
-    //tanaman
-    Route::get('/tanaman', 'App\Http\Controllers\TanamanController@indexTanaman')
-        ->name('tanaman');
-    Route::get('/tanaman/post/{id}', 'App\Http\Controllers\TanamanController@postTanaman')
-        ->name('posttanaman');
-    Route::post('/posttanaman/comment', 'App\Http\Controllers\TanamanController@comment')
-        ->name('tanamancomment');
-    Route::post('/posttanaman/comment/delete/{id}', 'App\Http\Controllers\TanamanController@deleteComment')
-        ->name('deltanamancomment');
-});
+        //profil
+        Route::get('/profil', 'App\Http\Controllers\ProfilController@indexProfil')
+            ->name('profil');
+        Route::post('/profil/update/{id}', 'App\Http\Controllers\ProfilController@update')
+            ->name('profilupdate');
+        Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePass')
+            ->name('profilupdatePass');
+        //search
+        Route::get('/search', 'App\Http\Controllers\HomeController@search')
+            ->name('search');
+        //kategori
+        Route::get('/kategori', 'App\Http\Controllers\KategoriController@indexKategori')
+            ->name('kategori');
+        Route::get('/kategori/resep/{slug}', 'App\Http\Controllers\KategoriController@resep')
+            ->name('kat_resep');
+        //resep
+        Route::get('/resep', 'App\Http\Controllers\ResepController@indexResep')
+            ->name('resep');
+        Route::post('/postresep/comment', 'App\Http\Controllers\ResepController@comment')
+            ->name('resepcomment');
+        Route::post('/postresep/comment/delete/{id}', 'App\Http\Controllers\ResepController@deleteComment')
+            ->name('delresepcomment');
+        //artikel
+        Route::get('/artikel', 'App\Http\Controllers\ArtikelController@indexArtikel')
+            ->name('indexartikel');
+        Route::post('/postartikel/comment', 'App\Http\Controllers\ArtikelController@comment')
+            ->name('artikelcomment');
+        Route::post('/postartikel/comment/delete/{id}', 'App\Http\Controllers\ArtikelController@deleteComment')
+            ->name('delartikelcomment');
+        //tanaman
+        Route::get('/tanaman', 'App\Http\Controllers\TanamanController@indexTanaman')
+            ->name('tanaman');
+        Route::get('/tanaman/post/{id}', 'App\Http\Controllers\TanamanController@postTanaman')
+            ->name('posttanaman');
+        Route::post('/posttanaman/comment', 'App\Http\Controllers\TanamanController@comment')
+            ->name('tanamancomment');
+        Route::post('/posttanaman/comment/delete/{id}', 'App\Http\Controllers\TanamanController@deleteComment')
+            ->name('deltanamancomment');
+    });
 
 Route::prefix('admin')
     ->middleware(['auth', 'admin'])
@@ -239,27 +239,27 @@ Route::prefix('penulis')
         // Route::get('/search', 'App\Http\Controllers\AdminController@search')
         //     ->name('searchAdmin');
 
-        // //artikel
-        // Route::get('/artikel', 'App\Http\Controllers\ArtikelController@index')
-        //     ->name('tabelartikel');
-        // Route::get('/addartikel', 'App\Http\Controllers\ArtikelController@indexAdd')
-        //     ->name('addartikel');
-        // Route::post('/addartikel/store', 'App\Http\Controllers\ArtikelController@store')
-        //     ->name('storeartikel');
-        // Route::post('/deleteartikel/{id}', 'App\Http\Controllers\ArtikelController@delete')
-        //     ->name('deleteartikel');
-        // Route::get('/editartikel/{id}', 'App\Http\Controllers\ArtikelController@indexEdit')
-        //     ->name('editartikel');
-        // Route::post('/editartikel/update/{id}', 'App\Http\Controllers\ArtikelController@update')
-        //     ->name('updateartikel');
-        // Route::get('/searchartikel', 'App\Http\Controllers\ArtikelController@search')
-        //     ->name('searchartikel');
+        //artikel
+        Route::get('/artikel', 'App\Http\Controllers\PenulisController@indexTabel')
+            ->name('tabelartikel');
+        Route::get('/addartikel', 'App\Http\Controllers\PenulisController@indexAdd')
+            ->name('addartikel');
+        Route::post('/addartikel/store', 'App\Http\Controllers\PenulisController@store')
+            ->name('storeartikel');
+        Route::post('/deleteartikel/{id}', 'App\Http\Controllers\PenulisController@delete')
+            ->name('deleteartikel');
+        Route::get('/editartikel/{id}', 'App\Http\Controllers\PenulisController@indexEdit')
+            ->name('editartikel');
+        Route::post('/editartikel/update/{id}', 'App\Http\Controllers\PenulisController@updateArtikel')
+            ->name('updateartikel');
+        Route::get('/searchartikel', 'App\Http\Controllers\PenulisController@search')
+            ->name('searchartikel');
 
-        // //profil
-        // Route::get('/profil', 'App\Http\Controllers\ProfilController@indexEdit')
-        //     ->name('profiladmin');
-        // Route::post('/profil/update/{id}', 'App\Http\Controllers\ProfilController@updateAdmin')
-        //     ->name('profil-update');
+        //profil
+        Route::get('/profil', 'App\Http\Controllers\PenulisController@indexEditProfil')
+            ->name('profilpenulis');
+        Route::post('/profil/update/{id}', 'App\Http\Controllers\PenulisController@updatePenulis')
+            ->name('profil-update');
         // Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePassAdmin')
         //     ->name('profil-updatePass');
     });
