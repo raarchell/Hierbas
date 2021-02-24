@@ -1,10 +1,10 @@
-@extends('layouts.admin.admin')
-@section('title', 'kategori_p')
+@extends('layouts.admin.apoteker')
+@section('title', 'kategori')
 @section('content')
 <div class="container-fluid mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('tabelkategori') }}">Kategori Resep</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('Aptabelkategori') }}">Kategori Resep</a></li>
         </ol>
     </nav>
     @if (session('status'))
@@ -16,12 +16,12 @@
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
             Tabel Kategori Resep
-            <form action="{{ route('addkategori') }}" class="d-inline">
+            <form action="{{ route('Apaddkategori') }}" class="d-inline">
                 <div class="float-right">
                     <button a class="btn btn-primary">+ Add</button>
                 </div>
             </form>
-            <form action="{{ route('searchkategori') }}" method="GET" class="mt-4">
+            <form action="{{ route('Apsearchkategori') }}" method="GET" class="mt-4">
                 <input type="text" name="cari" placeholder="Search 'kategori'" value="{{ old('cari') }}">
                 <input type="submit" value="Search">
             </form>
@@ -32,7 +32,7 @@
                     <thead>
                         <tr>
                             <th>Nama</th>
-                            <th class="text-center align-middle">Action</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,13 +40,13 @@
                             @foreach ($items as $item)
                             <td>{{ $item->nama }}</td>
                             <td class="text-center align-middle">
-                                <form action="{{ route('editkategori', $item->id) }}" class="d-inline">
+                                <form action="{{ route('Apeditkategori', $item->id) }}" class="d-inline">
                                     @csrf
                                     <div class="btn-group">
                                         <button a class="btn btn-primary">Edit</button>
                                     </div>
                                 </form>
-                                <form action="{{ route('deletekategori', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
+                                <form action="{{ route('Apdeletekategori', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
                                     @csrf
                                     <div class="btn-group">
                                         <button a class="btn btn-danger">Delete</button>

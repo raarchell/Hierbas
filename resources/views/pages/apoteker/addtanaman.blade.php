@@ -1,20 +1,20 @@
-@extends('layouts.admin.admin')
-@section('title', 'edit_tanaman')
+@extends('layouts.admin.apoteker')
+@section('title', 'add tanaman')
 @section('content')
 <div class="container-fluid mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('tabeltanaman') }}">Tanaman Herbal</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Edit</li>
+            <li class="breadcrumb-item"><a href="{{ route('Aptabeltanaman') }}">Tanaman Herbal</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add</li>
         </ol>
     </nav>
     <div class="card mb-4 mt-4">
         <div class="card-header">
-            Edit Jenis Tanaman
+            Tambah Jenis Tanaman
         </div>
         <div class="card-body">
             <div class="main-page">
-                <form action="{{ route('updatetanaman' , $items->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('Apstoretanaman') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -27,11 +27,11 @@
                     @endif
                     <div class="form-group">
                         <p>Nama Tanaman</p>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Judul Artikel" value="{{ $items->nama }}">
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Tanaman" />
                     </div>
                     <div class="form-group">
                         <p>Deskripsi & Cara Menanam</p>
-                        <textarea id="isi" name="isi" rows="4" cols="70">{{ $items->isi }}</textarea>
+                        <textarea id="isi" name="isi" rows="4" cols="70"></textarea>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="foto">Foto</label>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group">
                         <p>Link Youtube</p>
-                        <input type="text" class="form-control" id="link" name="link" placeholder="Link Youtube" value="{{ $items->link }}">
+                        <input type="text" class="form-control" id="link" name="link" placeholder="Link Youtube">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="video">Video</label>
@@ -49,7 +49,7 @@
                     <button type="submit" class="btn btn-primary" name="submit" value="submit">
                         Submit
                     </button>
-                    <a href="{{ route('tabeltanaman') }}" class="btn btn-secondary">
+                    <a href="{{ route('Aptabeltanaman') }}" class="btn btn-secondary">
                         Cancel
                     </a>
                 </form>

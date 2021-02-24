@@ -1,22 +1,28 @@
-@extends('layouts.admin.admin')
-@section('title', 'user')
+@extends('layouts.admin.apoteker')
+@section('title', 'resep')
 @section('content')
     <div class="container-fluid mt-5">
-        @if (session('message'))
-            <div class="alert alert-success">{{ session('message') }}</div>
-        @endif
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('tabeluser') }}">Data User</a>
-                </li>
+                <li class="breadcrumb-item"><a href="{{ route('Aptabelresep') }}">Resep</a></li>
             </ol>
         </nav>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table mr-1"></i>
-                Tabel Data User
-                <form action="{{ route('searchUser') }}" method="GET" class="mt-4">
-                    <input type="text" name="cari" placeholder="Search nama user" value="{{ old('cari') }}">
+                Tabel Resep
+                <form action="{{ route('Apaddresep') }}" class="d-inline">
+                    <div class="float-right">
+                        <button a class="btn btn-primary">+ Add</button>
+                    </div>
+                </form>
+                <form action="{{ route('Apsearchresep') }}" method="GET" class="mt-4">
+                    <input type="text" name="cari" placeholder="Search 'resep'" value="{{ old('cari') }}">
                     <input type="submit" value="Search">
                 </form>
             </div>
@@ -25,27 +31,22 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Nama User</th>
-                                <th>Email</th>
-                                <th>Roles</th>
-                                <th class="text-center align-middle">Action</th>
+                                <th>Nama Resep</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 @foreach ($items as $item)
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->roles }}</td>
+                                    <td>{{ $item->nama }}</td>
                                     <td class="text-center align-middle">
-                                        <form action="{{ route('editdatauser', $item->id) }}" class="d-inline">
-                                            @csrf
+                                        <form action="{{ route('Apeditresep', $item->id) }}" class="d-inline">
                                             <div class="btn-group">
-                                                <button a class="btn btn-primary">Edit Roles</button>
+                                                <button a class="btn btn-primary">Edit</button>
                                             </div>
                                         </form>
-                                        <form action="{{ route('deleteuser', $item->id) }}" method="POST"
-                                            class="d-inline">
+                                        <form action="{{ route('Apdeleteresep', $item->id) }}" method="POST"
+                                            class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
                                             @csrf
                                             <div class="btn-group">
                                                 <button a class="btn btn-danger">Delete</button>

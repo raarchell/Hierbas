@@ -1,10 +1,10 @@
-@extends('layouts.admin.admin')
-@section('title', 'edit_tanaman')
+@extends('layouts.admin.apoteker')
+@section('title', 'edit tanaman')
 @section('content')
 <div class="container-fluid mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('tabeltanaman') }}">Tanaman Herbal</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('Aptabeltanaman') }}">Tanaman Herbal</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit</li>
         </ol>
     </nav>
@@ -14,7 +14,7 @@
         </div>
         <div class="card-body">
             <div class="main-page">
-                <form action="{{ route('updatetanaman' , $items->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('Apupdatetanaman' , $items->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -49,7 +49,7 @@
                     <button type="submit" class="btn btn-primary" name="submit" value="submit">
                         Submit
                     </button>
-                    <a href="{{ route('tabeltanaman') }}" class="btn btn-secondary">
+                    <a href="{{ route('Aptabeltanaman') }}" class="btn btn-secondary">
                         Cancel
                     </a>
                 </form>

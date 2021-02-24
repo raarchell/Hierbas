@@ -32,7 +32,7 @@
                     <thead>
                         <tr>
                             <th>Nama Tanaman</th>
-                            <th>Action</th>
+                            <th class="text-center align-middle">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,7 +45,7 @@
                                         <button a class="btn btn-primary">Edit</button>
                                     </div>
                                 </form>
-                                <form action="{{ route('delete', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
+                                <form action="{{ route('delete', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')" >
                                     @csrf
                                     <div class="btn-group">
                                         <button a class="btn btn-danger">Delete</button>

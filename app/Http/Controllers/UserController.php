@@ -10,7 +10,7 @@ class UserController extends Controller
     // tabel
     public function index(Request $request)
     {
-        $items = User::get();
+        $items = User::paginate(15);
         return view('pages.admin.data_user', [
             'items' => $items
         ]);
@@ -19,7 +19,15 @@ class UserController extends Controller
     {
         $items = User::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabeluser')->with('message', 'Data user berhasil dihapus!');
+        return redirect()->route('tabeluser')->with('message', 'User berhasil dihapus!');
+    }
+    public function search(Request $request)
+    {
+        $cari = $request->cari;
+        $items = User::where('name', 'like', "%" . $cari . "%")->paginate();
+        return view('pages.admin.data_user', [
+            'items' => $items
+        ]);
     }
 
     // fungsi edit
@@ -30,25 +38,10 @@ class UserController extends Controller
             'items' => $items
         ]);
     }
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required|max:30',
-            'foto' => 'file|image|mimes:jpeg,png,jpg',
-        ]);
-        // menyimpan data file yang diupload ke variabel $file
-        $file = $request->file('foto');
-
-        $nama_file = time() . "_" . $file->getClientOriginalName();
-        // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload = 'assets/avatar';
-        $file->move($tujuan_upload, $nama_file);
-        $data = [
-            'name' => $request->nama,
-            'foto' => $nama_file,
-        ];
+    public function update(Request $request, $id){
+        $data = $request->all();
         User::find($id)->update($data);
 
-        return redirect()->route('tabeluser')->with('message', 'Data user berhasil diupdate!');
+        return redirect()->route('tabeluser')->with('message', 'Roles user berhasil diupdate!');
     }
 }

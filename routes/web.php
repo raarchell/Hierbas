@@ -161,71 +161,73 @@ Route::prefix('admin')
             ->name('editdatauser');
         Route::post('/editdatauser/update/{id}', 'App\Http\Controllers\UserController@update')
             ->name('updatedatauser');
+        Route::get('/searchtanaman', 'App\Http\Controllers\UserController@search')
+            ->name('searchUser');
     });
 
 Route::prefix('apoteker')
     ->middleware(['auth', 'apoteker'])
     ->group(function () {
-        Route::get('/', 'App\Http\Controllers\ApotekerController@index')
+        Route::get('/', 'App\Http\Controllers\ApotekerController@dashboard')
             ->name('dashboardApoteker');
-        // //search
-        // Route::get('/search', 'App\Http\Controllers\AdminController@search')
-        //     ->name('searchAdmin');
-        // // kategori
-        // Route::get('/kategori', 'App\Http\Controllers\KategoriController@index')
-        //     ->name('tabelkategori');
-        // Route::get('/addkategori', 'App\Http\Controllers\KategoriController@indexAdd')
-        //     ->name('addkategori');
-        // Route::post('/addkategori/store', 'App\Http\Controllers\KategoriController@store')
-        //     ->name('storekategori');
-        // Route::post('/deletekategori/{id}', 'App\Http\Controllers\KategoriController@delete')
-        //     ->name('deletekategori');
-        // Route::get('/editkategori/{id}', 'App\Http\Controllers\KategoriController@indexEdit')
-        //     ->name('editkategori');
-        // Route::post('/editkategori/update/{id}', 'App\Http\Controllers\KategoriController@update')
-        //     ->name('updatekategori');
-        // Route::get('/searchkategori', 'App\Http\Controllers\KategoriController@search')
-        //     ->name('searchkategori');
+        //search
+        Route::get('/search', 'App\Http\Controllers\ApotekerController@search')
+            ->name('searchApoteker');
+        // kategori
+        Route::get('/kategori', 'App\Http\Controllers\ApotekerController@indexKategori')
+             ->name('Aptabelkategori');
+        Route::get('/addkategori', 'App\Http\Controllers\ApotekerController@indexAddKategori')
+            ->name('Apaddkategori');
+        Route::post('/addkategori/store', 'App\Http\Controllers\ApotekerController@storeKategori')
+            ->name('Apstorekategori');
+        Route::post('/deletekategori/{id}', 'App\Http\Controllers\ApotekerController@deleteKategori')
+            ->name('Apdeletekategori');
+        Route::get('/editkategori/{id}', 'App\Http\Controllers\ApotekerController@indexEditKategori')
+            ->name('Apeditkategori');
+        Route::post('/editkategori/update/{id}', 'App\Http\Controllers\ApotekerController@updateKategori')
+            ->name('Apupdatekategori');
+        Route::get('/searchkategori', 'App\Http\Controllers\ApotekerController@searchKategori')
+            ->name('Apsearchkategori');
 
-        // // resep
-        // Route::get('/resep', 'App\Http\Controllers\ResepController@index')
-        //     ->name('tabelresep');
-        // Route::get('/addresep', 'App\Http\Controllers\ResepController@indexAdd')
-        //     ->name('addresep');
-        // Route::post('/addresep/store', 'App\Http\Controllers\ResepController@store')
-        //     ->name('storeresep');
-        // Route::post('/deleteresep/{id}', 'App\Http\Controllers\ResepController@delete')
-        //     ->name('deleteresep');
-        // Route::get('/editresep/{id}', 'App\Http\Controllers\ResepController@indexEdit')
-        //     ->name('editresep');
-        // Route::post('/editresep/update/{id}', 'App\Http\Controllers\ResepController@update')
-        //     ->name('updateresep');
-        // Route::get('/searchresep', 'App\Http\Controllers\ResepController@search')
-        //     ->name('searchresep');
+        // resep
+        Route::get('/resep', 'App\Http\Controllers\ApotekerController@indexResep')
+            ->name('Aptabelresep');
+        Route::get('/addresep', 'App\Http\Controllers\ApotekerController@indexAddResep')
+            ->name('Apaddresep');
+        Route::post('/addresep/store', 'App\Http\Controllers\ApotekerController@storeResep')
+            ->name('Apstoreresep');
+        Route::post('/deleteresep/{id}', 'App\Http\Controllers\ApotekerController@deleteResep')
+            ->name('Apdeleteresep');
+        Route::get('/editresep/{id}', 'App\Http\Controllers\ApotekerController@indexEditResep')
+            ->name('Apeditresep');
+        Route::post('/editresep/update/{id}', 'App\Http\Controllers\ApotekerController@updateResep')
+            ->name('Apupdateresep');
+        Route::get('/searchresep', 'App\Http\Controllers\ApotekerController@searchResep')
+            ->name('Apsearchresep');
 
-        // //tanaman
-        // Route::get('/tanaman', 'App\Http\Controllers\TanamanController@index')
-        //     ->name('tabeltanaman');
-        // Route::get('/addtanaman', 'App\Http\Controllers\TanamanController@indexAdd')
-        //     ->name('addtanaman');
-        // Route::post('/addtanaman/store', 'App\Http\Controllers\TanamanController@store')
-        //     ->name('storetanaman');
-        // Route::post('/delete/{id}', 'App\Http\Controllers\TanamanController@delete')
-        //     ->name('delete');
-        // Route::get('/edittanaman/{id}', 'App\Http\Controllers\TanamanController@indexEdit')
-        //     ->name('edittanaman');
-        // Route::post('/edittanaman/update/{id}', 'App\Http\Controllers\TanamanController@update')
-        //     ->name('updatetanaman');
-        // Route::get('/searchtanaman', 'App\Http\Controllers\TanamanController@search')
-        //     ->name('searchtanaman');
+        //tanaman
+        Route::get('/tanaman', 'App\Http\Controllers\ApotekerController@indexTanaman')
+            ->name('Aptabeltanaman');
+        Route::get('/addtanaman', 'App\Http\Controllers\ApotekerController@indexAddTanaman')
+            ->name('Apaddtanaman');
+        Route::post('/addtanaman/store', 'App\Http\Controllers\ApotekerController@storeTanaman')
+            ->name('Apstoretanaman');
+        Route::post('/delete/{id}', 'App\Http\Controllers\ApotekerController@deleteTanaman')
+            ->name('Apdelete');
+        Route::get('/edittanaman/{id}', 'App\Http\Controllers\ApotekerController@indexEditTanaman')
+            ->name('Apedittanaman');
+        Route::post('/edittanaman/update/{id}', 'App\Http\Controllers\ApotekerController@updateTanaman')
+            ->name('Apupdatetanaman');
+        Route::get('/searchtanaman', 'App\Http\Controllers\ApotekerController@searchTanaman')
+            ->name('Apsearchtanaman');
 
-        // //profil
-        // Route::get('/profil', 'App\Http\Controllers\ProfilController@indexEdit')
-        //     ->name('profiladmin');
-        // Route::post('/profil/update/{id}', 'App\Http\Controllers\ProfilController@updateAdmin')
-        //     ->name('profil-update');
-        // Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePassAdmin')
-        //     ->name('profil-updatePass');
+        //profil
+        Route::get('/profil', 'App\Http\Controllers\ApotekerController@profilApoteker')
+            ->name('profilapoteker');
+        Route::post('/profil/update/{id}', 'App\Http\Controllers\ApotekerController@updateProfilApoteker')
+            ->name('Approfil-update');
+        Route::patch('/profil/update/pass', 'App\Http\Controllers\ApotekerController@updatePassApoteker')
+            ->name('Approfil-updatePass');
     });
 
 Route::prefix('penulis')
