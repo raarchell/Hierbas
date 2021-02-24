@@ -68,6 +68,7 @@ class TanamanController extends Controller
                 'link' => $request->link,
                 'video' => $nama_file1,
             ];
+            Tanaman::create($data);
         }
         $data = [
             'nama' => $request->nama,
@@ -95,9 +96,8 @@ class TanamanController extends Controller
             'isi' => 'required',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
             'link' => 'nullable',
-            'video' => 'nullable|file|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv',
+            'video' => 'file|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv',
         ]);
-        // menyimpan data file yang diupload ke variabel $file
         // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('foto');
         $nama_file = time() . "_" . $file->getClientOriginalName();
@@ -118,6 +118,7 @@ class TanamanController extends Controller
                 'link' => $request->link,
                 'video' => $nama_file1,
             ];
+            Tanaman::find($id)->update($data);
         }
         $data = [
             'nama' => $request->nama,
@@ -143,14 +144,10 @@ class TanamanController extends Controller
     public function postTanaman(Request $request, $id)
     {
         $items = Tanaman::findOrFail($id);
-        $file = Tanaman::findOrFail($id);
-        $file1 = Tanaman::findOrFail($id);
         $comment = TanamanComment::with(['user'])->where('id_tanaman', $id)->get();
         $post = Tanaman::latest()->get()->random(3);
         return view('pages.post_tanaman', [
             'items' => $items,
-            'file' => $file,
-            'file1' => $file1,
             'comment' => $comment,
             'post' => $post
         ]);

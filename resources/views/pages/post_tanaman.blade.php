@@ -23,12 +23,12 @@
                             <p>
                                 {!! $items->isi !!}
                             </p>
-                            @if ($items->video == 'null')
-                            <video width=”400px” height=”300px” controls>
-                                <source src="{{ asset('assets/gallery/' . $file1->video) }}" style="object-fit: contain">
-                            </video>
-                            @else
+                            @if (empty($items->video))
                             <iframe width="100%" height="340" src="{!! $items->link !!}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            @else
+                            <video width=”400px” height=”300px” controls>
+                                <source src="{{ asset('assets/gallery/' . $items->video) }}" style="object-fit: contain">
+                            </video>
                             @endif
                         </div>
                     </div>
