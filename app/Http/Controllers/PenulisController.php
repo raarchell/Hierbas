@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
-use App\Models\Kategori;
-use App\Models\Resep;
-use App\Models\Tanaman;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -13,15 +10,6 @@ use App\Http\Requests\UpdatePasswordRequest;
 
 class PenulisController extends Controller
 {
-    public function index()
-    {
-        return view('pages.penulis.dashboard', [
-            'jmlkat' => Kategori::count(),
-            'jmlrsp' => Resep::count(),
-            'jmltnm' => Tanaman::count(),
-            'jmlart' => Artikel::count()
-        ]);
-    }
 
     //tabel
     public function indexTabel(Request $request)

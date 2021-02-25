@@ -13,14 +13,11 @@
 
 <body class="sb-nav-fixed">
     @include('includes.admin.navbarPenulis')
-    <div id="layoutSidenav">
-        @include('includes.admin.sidebarPenulis')
-        <div id="layoutSidenav_content">
-            <main>
-                @yield('content')
-            </main>
-            @include('includes.admin.footer')
-        </div>
+    <div id="layoutSidenav_content">
+        <main>
+            @yield('content')
+        </main>
+        @include('includes.admin.footer')
     </div>
     @include('includes.admin.script')
 </body>

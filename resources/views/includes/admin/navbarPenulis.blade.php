@@ -1,6 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ route('dashboardPenulis') }}">Dashboard</a>
-    <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="{{ route('dashboardPenulis') }}"><i class="fas fa-bars"></i></button>
+    <a class="navbar-brand" href="{{ route('tabelartikel') }}">Dashboard</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="{{ route('tabelartikel') }}"></button>
     <!-- Navbar-->
     <ul class="navbar-nav ml-auto ml-auto">
         <li class="nav-item dropdown">

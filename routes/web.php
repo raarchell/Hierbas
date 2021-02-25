@@ -175,7 +175,7 @@ Route::prefix('apoteker')
             ->name('searchApoteker');
         // kategori
         Route::get('/kategori', 'App\Http\Controllers\ApotekerController@indexKategori')
-             ->name('Aptabelkategori');
+            ->name('Aptabelkategori');
         Route::get('/addkategori', 'App\Http\Controllers\ApotekerController@indexAddKategori')
             ->name('Apaddkategori');
         Route::post('/addkategori/store', 'App\Http\Controllers\ApotekerController@storeKategori')
@@ -233,11 +233,8 @@ Route::prefix('apoteker')
 Route::prefix('penulis')
     ->middleware(['auth', 'penulis'])
     ->group(function () {
-        Route::get('/', 'App\Http\Controllers\PenulisController@index')
-            ->name('dashboardPenulis');
-
         //artikel
-        Route::get('/artikel', 'App\Http\Controllers\PenulisController@indexTabel')
+        Route::get('/', 'App\Http\Controllers\PenulisController@indexTabel')
             ->name('tabelartikel');
         Route::get('/addartikel', 'App\Http\Controllers\PenulisController@indexAdd')
             ->name('addartikel');
