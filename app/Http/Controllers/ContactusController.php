@@ -31,6 +31,6 @@ class ContactusController extends Controller
     {
         $data = $request->all();
         Contactus::create($data);
-        return redirect()->route('contactus');
+        return redirect()->route('addsaran');
     }
 }

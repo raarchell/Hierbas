@@ -87,7 +87,7 @@ class ProfilController extends Controller
 
         User::find($id)->update($data);
 
-        return redirect()->route('profilpenulis');
+        return redirect()->route('profil');
     }
     public function updatePass(UpdatePasswordRequest $request)
     {
@@ -95,6 +95,6 @@ class ProfilController extends Controller
             'password' => Hash::make($request->get('password'))
         ]);
 
-        return redirect()->route('profilpenulis');
+        return redirect()->route('profil');
     }
 }

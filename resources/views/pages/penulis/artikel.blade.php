@@ -17,12 +17,12 @@
             <div class="card-header">
                 <i class="fas fa-table mr-1"></i>
                 Tabel Artikel
-                <form action="{{ route('addartikel') }}" class="d-inline">
+                <form action="{{ route('addartikel1') }}" class="d-inline">
                     <div class="float-right">
                         <button a class="btn btn-primary">+ Add</button>
                     </div>
                 </form>
-                <form action="{{ route('searchartikel') }}" method="GET" class="mt-4">
+                <form action="{{ route('searchartikel1') }}" method="GET" class="mt-4">
                     <input type="text" name="cari" placeholder="Search 'artikel'" value="{{ old('cari') }}">
                     <input type="submit" value="Search">
                 </form>
@@ -41,13 +41,13 @@
                                 @foreach ($items as $item)
                                 <td>{{ $item->judul }}</td>
                                 <td class="text-center align-middle">
-                                    <form action="{{ route('editartikel', $item->id) }}" class="d-inline">
+                                    <form action="{{ route('editartikel1', $item->id) }}" class="d-inline">
                                         @csrf
                                         <div class="btn-group">
                                             <button a class="btn btn-primary">Edit</button>
                                         </div>
                                     </form>
-                                    <form action="{{ route('deleteartikel', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
+                                    <form action="{{ route('deleteartikel1', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
                                         @csrf
                                         <div class="btn-group">
                                             <button a class="btn btn-danger">Delete</button>

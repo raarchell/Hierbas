@@ -28,7 +28,7 @@
                 <div class=col-sm-9>
                     <div class="card ml-auto mr-auto">
                         <div class="card-body">
-                            <form action="{{ route('profil-update', Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('profilupdateP', Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label>Nama</label>
@@ -70,7 +70,7 @@
                 <div class="col-sm-9">
                     <div class="card ml-auto mr-auto">
                         <div class="card-body">
-                            <form action="{{ route('profil-updatePass') }}" method="POST">
+                            <form action="{{ route('profilupdatePassP') }}" method="POST">
                                 @method('patch')
                                 @csrf
                                 @if ($message = Session::get('error'))

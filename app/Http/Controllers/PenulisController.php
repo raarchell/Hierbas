@@ -23,7 +23,7 @@ class PenulisController extends Controller
     {
         $items = Artikel::findOrFail($id);
         $items->delete();
-        return redirect()->route('tabelartikel')->with('message', 'Artikel berhasil dihapus!');
+        return redirect()->route('tabelartikel1')->with('message', 'Artikel berhasil dihapus!');
     }
     public function search(Request $request)
     {
@@ -63,7 +63,7 @@ class PenulisController extends Controller
         ];
         Artikel::create($data);
 
-        return redirect()->route('tabelartikel')->with('message', 'Artikel berhasil ditambahkan!');
+        return redirect()->route('tabelartikel1')->with('message', 'Artikel berhasil ditambahkan!');
     }
 
     // edit
@@ -95,7 +95,7 @@ class PenulisController extends Controller
         ];
         Artikel::find($id)->update($data);
 
-        return redirect()->route('tabelartikel')->with('message', 'Artikel berhasil diupdate!');
+        return redirect()->route('tabelartikel1')->with('message', 'Artikel berhasil diupdate!');
     }
 
     // edit dan view

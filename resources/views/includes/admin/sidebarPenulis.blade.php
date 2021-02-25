@@ -8,7 +8,7 @@
                     </div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="{{ route('tabelartikel') }}">
+                <a class="nav-link" href="{{ route('tabelartikel1') }}">
                     <div class="sb-nav-link-icon"><i class='fas fa-file-alt'></i></i></div>
                     Artikel
                 </a>

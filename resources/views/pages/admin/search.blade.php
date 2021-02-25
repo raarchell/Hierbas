@@ -71,7 +71,7 @@
                                                 <button a class="btn btn-primary">Edit</button>
                                             </div>
                                         </form>
-                                        <form action="{{ route('deletetanaman', $item->id) }}" method="POST"
+                                        <form action="{{ route('delete', $item->id) }}" method="POST"
                                             class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')" >
                                             @csrf
                                             <div class="btn-group">

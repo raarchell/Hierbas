@@ -5,7 +5,7 @@
     <div class="container-fluid mt-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('tabelartikel') }}">Artikel</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('tabelartikel1') }}">Artikel</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit</li>
             </ol>
         </nav>
@@ -15,7 +15,7 @@
             </div>
             <div class="card-body">
                 <div class="main-page">
-                    <form action="{{ route('updateartikel', $items->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('updateartikel1', $items->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @if ($errors->any())
                         <div class="alert alert-danger">
@@ -42,7 +42,7 @@
                         <button type="submit" class="btn btn-primary" name="submit" value="submit">
                             Submit
                         </button>
-                        <a href="{{ route('tabelartikel') }}" class="btn btn-secondary">
+                        <a href="{{ route('tabelartikel1') }}" class="btn btn-secondary">
                             Cancel
                         </a>
                     </form>

@@ -45,7 +45,7 @@
                                             </div>
                                         </form>
                                         <form action="{{ route('deleteuser', $item->id) }}" method="POST"
-                                            class="d-inline">
+                                            class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
                                             @csrf
                                             <div class="btn-group">
                                                 <button a class="btn btn-danger">Delete</button>

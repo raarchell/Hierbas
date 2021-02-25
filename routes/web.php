@@ -161,7 +161,7 @@ Route::prefix('admin')
             ->name('editdatauser');
         Route::post('/editdatauser/update/{id}', 'App\Http\Controllers\UserController@update')
             ->name('updatedatauser');
-        Route::get('/searchtanaman', 'App\Http\Controllers\UserController@search')
+        Route::get('/searchuser', 'App\Http\Controllers\UserController@search')
             ->name('searchUser');
     });
 
@@ -235,27 +235,27 @@ Route::prefix('penulis')
     ->group(function () {
         //artikel
         Route::get('/', 'App\Http\Controllers\PenulisController@indexTabel')
-            ->name('tabelartikel');
+            ->name('tabelartikel1');
         Route::get('/addartikel', 'App\Http\Controllers\PenulisController@indexAdd')
-            ->name('addartikel');
+            ->name('addartikel1');
         Route::post('/addartikel/store', 'App\Http\Controllers\PenulisController@store')
-            ->name('storeartikel');
+            ->name('storeartikel1');
         Route::post('/deleteartikel/{id}', 'App\Http\Controllers\PenulisController@delete')
-            ->name('deleteartikel');
+            ->name('deleteartikel1');
         Route::get('/editartikel/{id}', 'App\Http\Controllers\PenulisController@indexEdit')
-            ->name('editartikel');
+            ->name('editartikel1');
         Route::post('/editartikel/update/{id}', 'App\Http\Controllers\PenulisController@updateArtikel')
-            ->name('updateartikel');
+            ->name('updateartikel1');
         Route::get('/searchartikel', 'App\Http\Controllers\PenulisController@search')
-            ->name('searchartikel');
+            ->name('searchartikel1');
 
         //profil
         Route::get('/profil', 'App\Http\Controllers\PenulisController@indexEditProfil')
             ->name('profilpenulis');
         Route::post('/profil/update/{id}', 'App\Http\Controllers\PenulisController@updatePenulis')
-            ->name('profil-update');
+            ->name('profilupdateP');
         Route::patch('/profil/update/pass', 'App\Http\Controllers\PenulisController@updatePass')
-            ->name('profil-updatePass');
+            ->name('profilupdatePassP');
     });
 
 Auth::routes();
