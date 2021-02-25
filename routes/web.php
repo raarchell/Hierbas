@@ -235,9 +235,6 @@ Route::prefix('penulis')
     ->group(function () {
         Route::get('/', 'App\Http\Controllers\PenulisController@index')
             ->name('dashboardPenulis');
-        // //search
-        // Route::get('/search', 'App\Http\Controllers\AdminController@search')
-        //     ->name('searchAdmin');
 
         //artikel
         Route::get('/artikel', 'App\Http\Controllers\PenulisController@indexTabel')
@@ -260,8 +257,8 @@ Route::prefix('penulis')
             ->name('profilpenulis');
         Route::post('/profil/update/{id}', 'App\Http\Controllers\PenulisController@updatePenulis')
             ->name('profil-update');
-        // Route::patch('/profil/update/pass', 'App\Http\Controllers\ProfilController@updatePassAdmin')
-        //     ->name('profil-updatePass');
+        Route::patch('/profil/update/pass', 'App\Http\Controllers\PenulisController@updatePass')
+            ->name('profil-updatePass');
     });
 
 Auth::routes();
