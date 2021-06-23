@@ -45,7 +45,7 @@ class TanamanController extends Controller
         $request->validate([
             'nama' => 'required|max:30',
             'isi' => 'required',
-            'foto' => 'file|image|mimes:jpeg,png,jpg',
+            'foto' => 'required | file|image|mimes:jpeg,png,jpg',
             'video' => 'nullable|file|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv',
         ]);
         // menyimpan data file yang diupload ke variabel $file
