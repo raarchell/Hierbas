@@ -34,14 +34,14 @@
                         </a>
                     @endif --}}
                 </div>
-                <div class="form-remember">
+                {{-- <div class="form-remember">
                     <div class="form-check">
                         <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                         <label class="form-check-label" for="remember">
                             Remember Me
                         </label>
                     </div>
-                </div>
+                </div> --}}
                 <div class="text-center">
                     <button type="submit" class="btn btn-register mx-auto mt-4">
                         Login
