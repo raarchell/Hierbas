@@ -13,15 +13,15 @@
             </h5>
             <h5 class="alamat-awal mt-5">
                 <i class='fas fa-phone' style='font-size:24px'></i>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0812-3456-7890
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +6222 20521318
             </h5>
             <h5 class="mt-5">
                 <i class='fas fa-envelope' style='font-size:24px'></i>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; abc@xyz.com
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info@yakestelkom.or.id
             </h5>
             <h5 class="mt-5">
                 <i class='fas fa-map-marker-alt' style='font-size:24px'></i>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jl. xxx Bandung, Jawa Barat
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jl. Cisanggarung No. 2, Bandung, Jawa Barat 40115
             </h5>
             <div class="sosial-media">
                 <a href="#" class="mx-md-2"><i class='fab fa-facebook-square' style='font-size:24px'></i></a>
