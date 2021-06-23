@@ -15,14 +15,16 @@ use App\Models\User;
 
 class ApotekerController extends Controller
 {
-    public function dashboard(){
+    public function dashboard()
+    {
         return view('pages.apoteker.dashboard', [
             'jmlkat' => Kategori::count(),
             'jmlrsp' => Resep::count(),
             'jmltnm' => Tanaman::count()
         ]);
     }
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $search = $request->search;
 
         $resep = Resep::where('nama', 'like', "%" . $search . "%")->paginate();
@@ -37,8 +39,9 @@ class ApotekerController extends Controller
     }
 
     // kategori
-        // tabel kategori
-    public function indexKategori(Request $request){
+    // tabel kategori
+    public function indexKategori(Request $request)
+    {
         $items = Kategori::paginate(15);
         return view('pages.apoteker.kategori', [
             'items' => $items
@@ -58,11 +61,13 @@ class ApotekerController extends Controller
             'items' => $items
         ]);
     }
-        //add kategori
-    public function indexAddKategori(){
+    //add kategori
+    public function indexAddKategori()
+    {
         return view('pages.apoteker.addkategori');
     }
-    public function storeKategori(Request $request){
+    public function storeKategori(Request $request)
+    {
         $request->validate([
             'nama' => 'required|unique:kategori|max:30',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
@@ -83,14 +88,16 @@ class ApotekerController extends Controller
 
         return redirect()->route('Aptabelkategori')->with('status', 'Kategori berhasil ditambahkan!');
     }
-        // edit kategori
-    public function indexEditKategori($id){
+    // edit kategori
+    public function indexEditKategori($id)
+    {
         $items = Kategori::findOrFail($id);
         return view('pages.apoteker.editkategori', [
             'items' => $items
         ]);
     }
-    public function updateKategori(Request $request, $id){
+    public function updateKategori(Request $request, $id)
+    {
         $request->validate([
             'nama' => 'required|max:30',
             'foto' => 'file|image|mimes:jpeg,png,jpg',
@@ -112,26 +119,29 @@ class ApotekerController extends Controller
     }
 
     //resep
-        //tabel resep
-    public function indexResep(Request $request){
+    //tabel resep
+    public function indexResep(Request $request)
+    {
         $items = Resep::paginate(15);
         return view('pages.apoteker.resep', [
             'items' => $items
         ]);
     }
-    public function deleteResep($id){
+    public function deleteResep($id)
+    {
         $items = Resep::findOrFail($id);
         $items->delete();
         return redirect()->route('Aptabelresep')->with('status', 'Resep berhasil dihapus');
     }
-    public function searchResep(Request $request){
+    public function searchResep(Request $request)
+    {
         $cari = $request->cari;
         $items = Resep::where('nama', 'like', "%" . $cari . "%")->paginate();
         return view('pages.apoteker.resep', [
             'items' => $items
         ]);
     }
-        // add resep
+    // add resep
     public function indexAddResep()
     {
         $items = Kategori::get();
@@ -168,7 +178,7 @@ class ApotekerController extends Controller
 
         return redirect()->route('Aptabelresep')->with('status', 'Resep obat berhasil ditambahkan!');
     }
-        // edit resep
+    // edit resep
     public function indexEditResep($id)
     {
         $items = Resep::findOrFail($id);
@@ -209,26 +219,29 @@ class ApotekerController extends Controller
     }
 
     // tanaman
-        // tabel tanaman
-    public function indexTanaman(Request $request){
+    // tabel tanaman
+    public function indexTanaman(Request $request)
+    {
         $items = Tanaman::paginate(15);
         return view('pages.apoteker.tanaman', [
             'items' => $items
         ]);
     }
-    public function deleteTanaman($id){
+    public function deleteTanaman($id)
+    {
         $items = Tanaman::findOrFail($id);
         $items->delete();
         return redirect()->route('Aptabeltanaman')->with('status', 'Tanaman herbal berhasil dihapus');
     }
-    public function searchTanaman(Request $request){
+    public function searchTanaman(Request $request)
+    {
         $cari = $request->cari;
         $items = Tanaman::where('nama', 'like', "%" . $cari . "%")->paginate();
         return view('pages.apoteker.tanaman', [
             'items' => $items
         ]);
     }
-        // add tanaman
+    // add tanaman
     public function indexAddTanaman()
     {
         $items = Tanaman::get();
@@ -276,14 +289,16 @@ class ApotekerController extends Controller
 
         return redirect()->route('Aptabeltanaman')->with('status', 'Tanaman berhasil ditambahkan!');
     }
-        // edit tanaman
-    public function indexEditTanaman($id){
+    // edit tanaman
+    public function indexEditTanaman($id)
+    {
         $items = Tanaman::findOrFail($id);
         return view('pages.apoteker.edittanaman', [
             'items' => $items,
         ]);
     }
-    public function updateTanaman(Request $request, $id){
+    public function updateTanaman(Request $request, $id)
+    {
         $request->validate([
             'nama' => 'required|max:30',
             'isi' => 'required',
@@ -324,7 +339,7 @@ class ApotekerController extends Controller
         return redirect()->route('Aptabeltanaman')->with('status', 'Tanaman berhasil diupdate!');
     }
 
-        //profil apoteker
+    //profil apoteker
     // view
     public function profilApoteker()
     {
@@ -336,7 +351,7 @@ class ApotekerController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'foto' => 'file|image|mimes:jpeg,png,jpg',
+            'foto' => 'required | file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
         if ($request->foto != null) {

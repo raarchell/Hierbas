@@ -41,7 +41,7 @@ class KategoriController extends Controller
     {
         $request->validate([
             'nama' => 'required|unique:kategori|max:30',
-            'foto' => 'file|image|mimes:jpeg,png,jpg',
+            'foto' => 'required | file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('foto');

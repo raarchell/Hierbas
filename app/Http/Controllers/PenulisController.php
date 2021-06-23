@@ -47,7 +47,7 @@ class PenulisController extends Controller
         $request->validate([
             'judul' => 'required|max:200',
             'isi_artikel' => 'required',
-            'foto' => 'file|image|mimes:jpeg,png,jpg',
+            'foto' => 'required | file|image|mimes:jpeg,png,jpg',
         ]);
         // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('foto');
