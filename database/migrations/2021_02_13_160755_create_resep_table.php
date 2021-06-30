@@ -22,6 +22,7 @@ class CreateResepTable extends Migration
             $table->text('cara');
             $table->string('foto');
             $table->text('pemakaian');
+            $table->bigInteger('pengunjung')->unsigned()->default(0)->index();
         });
     }
 

@@ -6,6 +6,7 @@ use App\Models\Artikel;
 use App\Models\ArtikelComment;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
+use Session;
 
 class ArtikelController extends Controller
 {
@@ -109,14 +110,18 @@ class ArtikelController extends Controller
     public function postArtikel(Request $request, $id)
     {
         $items = Artikel::findOrFail($id);
+        $itemID = Artikel::where('id',$id)->pluck('id');
+        $viewed = Session::get('viewed_post', []); //ini ngambil session yang namanya 'viewed_post' dengan bentuk type data array biar id yang masuk bisa banyak
+        if (!in_array($itemID, $viewed)) { //ini ngecek apakah di dalam array session yang namanya 'viewed_post' ada id post yang lagi dibuka, jika tidak ada maka dilanjutkan
+            Session::push('viewed_post', $itemID); //ini dia masukkin id post yang lagi dibuka kedalam session yang namanya 'viewed_post'
+            $items->incrementPengunjung(); //ini ngejalanin function yang ada di model yang suda dibuat tadi
+        }
+        $post = Artikel::orderBy('pengunjung','DESC')->take(3)->get();
         $comment = ArtikelComment::with(['user'])->where('id_artikel', $id)->get();
-        $post = Artikel::latest()->get()->random(2);
-        $post1 = Artikel::latest()->get()->random(2);
         return view('pages.post_artikel', [
             'items' => $items,
             'comment' => $comment,
-            'post' => $post,
-            'post1' => $post1
+            'post' => $post
         ]);
     }
     public function comment(Request $request)

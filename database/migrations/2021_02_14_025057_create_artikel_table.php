@@ -18,6 +18,7 @@ class CreateArtikelTable extends Migration
             $table->string('judul');
             $table->text('isi_artikel');
             $table->string('foto');
+            $table->bigInteger('pengunjung')->unsigned()->default(0)->index();
             $table->timestamps();
         });
     }

@@ -13,12 +13,18 @@ class Resep extends Model
         'bahan',
         'cara',
         'foto',
-        'pemakaian'
+        'pemakaian',
+        'pengunjung'
     ];
     protected $table = 'resep';
 
     public function resep()
     {
         return $this->hasMany(Resep::class, 'id_resep', 'id');
+    }
+
+    public function incrementPengunjung() {
+        $this->pengunjung++;
+        return $this->save();
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Resep;
 use App\Models\Kategori;
 use App\Models\ResepComment;
 use App\Models\User;
+use Session;
 use DB;
 
 class ResepController extends Controller
@@ -123,9 +124,15 @@ class ResepController extends Controller
 
     // postingan resep
     public function indexPostResep(Request $request, $id)
-    {
+    {   
         $items = Resep::findOrFail($id);
-        $post = Resep::latest()->get()->random(3);
+        $itemID = Resep::where('id',$id)->pluck('id');
+        $viewed = Session::get('viewed_post', []); //ini ngambil session yang namanya 'viewed_post' dengan bentuk type data array biar id yang masuk bisa banyak
+        if (!in_array($itemID, $viewed)) { //ini ngecek apakah di dalam array session yang namanya 'viewed_post' ada id post yang lagi dibuka, jika tidak ada maka dilanjutkan
+            Session::push('viewed_post', $itemID); //ini dia masukkin id post yang lagi dibuka kedalam session yang namanya 'viewed_post'
+            $items->incrementPengunjung(); //ini ngejalanin function yang ada di model yang suda dibuat tadi
+        }
+        $post = Resep::orderBy('pengunjung','DESC')->take(3)->get();
         $comment = ResepComment::with(['user'])->where('id_resep', $id)->get();
         return view('pages.post_resep', [
             'items' => $items,

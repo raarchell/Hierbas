@@ -103,25 +103,6 @@
                     </div>
                 </div>
                 @endforeach
-                <h3>Most Read</h3>
-                @foreach ($post1 as $post1)
-                <div class="content-sidebar mt-3">
-                    <div class="card">
-                        <div class="isi-recommend row">
-                            <div class="col-sm-3">
-                                <img src="{{ asset('assets/gallery/' . $post1->foto) }}" class="card-img" alt="" style="object-fit: cover">
-                            </div>
-                            <div class="col-sm-9">
-                                <div class="card-body">
-                                    <a href="{{ route('postartikel', $post1->id) }}" class="card-title">
-                                        <h5>{{ $post1->judul }}</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
             </div>
             @endauth
         </div>

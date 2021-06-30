@@ -11,10 +11,16 @@ class Artikel extends Model
         'judul',
         'isi_artikel',
         'foto',
+        'pengunjung'
     ];
     protected $table = 'artikel';
     
     public function artikel(){
         return $this->hasMany(Artikel::class,'id_artikel','id');
+    }
+
+    public function incrementPengunjung() {
+        $this->pengunjung++;
+        return $this->save();
     }
 }
