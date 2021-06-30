@@ -110,11 +110,13 @@ class ArtikelController extends Controller
     {
         $items = Artikel::findOrFail($id);
         $comment = ArtikelComment::with(['user'])->where('id_artikel', $id)->get();
-        $post = Artikel::latest()->get()->random(3);
+        $post = Artikel::latest()->get()->random(2);
+        $post1 = Artikel::latest()->get()->random(2);
         return view('pages.post_artikel', [
             'items' => $items,
             'comment' => $comment,
-            'post' => $post
+            'post' => $post,
+            'post1' => $post1
         ]);
     }
     public function comment(Request $request)
